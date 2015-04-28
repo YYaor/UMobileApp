@@ -1,0 +1,63 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#import "JSONKit.h"
+#import "RCObjectManager.h"
+    #define MainUrl @"http://www.cnsub.net:32021/data.api"
+    #define bHighRetain [[UIScreen mainScreen]bounds].size.height > 480
+    #define USER_DEFAULT [NSUserDefaults standardUserDefaults]
+    #define MainSize [[UIScreen mainScreen] bounds].size
+
+typedef enum{
+    Function_LRBD = 51,//利润变动分析
+    Function_KCJJ = 52,//库存资金占用
+    Function_XSFX = 53,//销售趋势分析
+    Function_YSZZ= 54,//应收总帐
+    Function_ZJYC = 0//资料预测
+}Function_Type;
+
+#define BUNDLE_NAME @"Resource"
+
+#define IMAGE_NAME @"sharesdk_img"
+#define IMAGE_EXT @"jpg"
+
+
+#define CONTENT NSLocalizedString(@"TEXT_SHARE_CONTENT", @"ShareSDK不仅集成简单、支持如QQ好友、微信、新浪微博、腾讯微博等所有社交平台，而且还有强大的统计分析管理后台，实时了解用户、信息流、回流率、传播效应等数据，详情见官网http://sharesdk.cn @ShareSDK")
+#define SHARE_URL @"http://www.mob.com"
+
+
+#define ERROR_INFO(ErrorDomain,ErrorCode,ErroeDescript) [[NSError alloc] initWithDomain:[NSString stringWithFormat:ErrorDomain] code:ErrorCode userInfo:[NSDictionary dictionaryWithObject:ErroeDescript forKey:NSLocalizedDescriptionKey]];
+
+
+#define ERROR_NOINFO(ErrorDomain,ErrorCode) [[NSError alloc] initWithDomain:[NSString stringWithFormat:ErrorDomain] code:ErrorCode userInfo:nil];
+
+
+#define ERROR_DICTINFO(ErrorDomain,ErrorCode,ErroeDictionary) [[NSError alloc] initWithDomain:[NSString stringWithFormat:ErrorDomain] code:ErrorCode userInfo:ErroeDictionary];
+
+#ifdef DEBUG
+
+
+//#define CLog(format, ...) NSLog(format, ##__VA_ARGS__);
+#define CLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+
+#else
+
+#define CLog(format, ...)
+
+
+#endif
+
+#endif
