@@ -18,6 +18,8 @@
 #import "WeiboSDK.h"
 #import <RennSDK/RennSDK.h>
 
+
+
 @implementation AppDelegate
 
 -(void)setInitialSetting{
