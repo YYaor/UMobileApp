@@ -202,6 +202,7 @@
                        [KxMenuItem menuItem:@"新建客户" image:[UIImage imageNamed:@"xjkh_image"] target:self action:@selector(xinjiankehuClick:)],
                        [KxMenuItem menuItem:@"新建订单" image:[UIImage imageNamed:@"xjdd_image"] target:self action:@selector(xinjiandingdanClick:)],
                        [KxMenuItem menuItem:@"条码查询" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(chaxunClick:)],
+                       [KxMenuItem menuItem:@"业务单据" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(yewudanjuClick:)],
                        ];
     [KxMenu showMenuInView:self.view fromRect:CGRectMake(280, 64, 10, 1) menuItems:menus];
 }
@@ -244,6 +245,11 @@
         UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"XinZenDingDanViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+-(void)yewudanjuClick:(id)sender{
+    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"YeWuDanJuViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

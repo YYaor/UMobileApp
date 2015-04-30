@@ -491,6 +491,7 @@
 		2ED54B1F1A092A2100E05AFF /* APRoundedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED54B1E1A092A2100E05AFF /* APRoundedButton.m */; };
 		2ED54B231A092C3F00E05AFF /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED54B221A092C3F00E05AFF /* ServerViewController.m */; };
 		2ED54B261A0937F800E05AFF /* RCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED54B251A0937F800E05AFF /* RCAlertView.m */; };
+		46E9CDE11AF1D4A700AAE80A /* YeWuDanJuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1227,6 +1228,8 @@
 		2ED54B221A092C3F00E05AFF /* ServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerViewController.m; sourceTree = "<group>"; };
 		2ED54B241A0937F800E05AFF /* RCAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RCAlertView.h; sourceTree = "<group>"; };
 		2ED54B251A0937F800E05AFF /* RCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCAlertView.m; sourceTree = "<group>"; };
+		46E9CDDF1AF1D4A700AAE80A /* YeWuDanJuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YeWuDanJuViewController.h; sourceTree = "<group>"; };
+		46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YeWuDanJuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2230,6 +2233,8 @@
 				2ECE643A19FEBCDC0077FAEE /* XinZenDetailViewController.m */,
 				189EABFE19D17A3300D8CF20 /* XinZenDingDanViewController.h */,
 				189EABFF19D17A3300D8CF20 /* XinZenDingDanViewController.m */,
+				46E9CDDF1AF1D4A700AAE80A /* YeWuDanJuViewController.h */,
+				46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */,
 				189EAC0119D1850A00D8CF20 /* CangKuViewController.h */,
 				189EAC0219D1850A00D8CF20 /* CangKuViewController.m */,
 				189EAC0819D1D39800D8CF20 /* XinZenShangPingViewController.h */,
@@ -3062,6 +3067,7 @@
 				189CDA681A0725FC001ECF86 /* RCNetWork.m in Sources */,
 				189A4BAE19C9387E005A6B1F /* MHTextField.m in Sources */,
 				189DE7E719B5C1E300F6A30D /* FMDatabasePool.m in Sources */,
+				46E9CDE11AF1D4A700AAE80A /* YeWuDanJuViewController.m in Sources */,
 				18A44F5F19CD7C17009E658A /* XiaoShouRiBaoViewController.m in Sources */,
 				189DE7CD19B5B76D00F6A30D /* SDWebImageDownloader.m in Sources */,
 				189B96FE1A1C9F7700F5D372 /* RCCheckButton.m in Sources */,

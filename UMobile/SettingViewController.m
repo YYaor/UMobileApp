@@ -34,6 +34,7 @@
                       @"Detail":@[
                               @{@"Name":@"库存数量",@"Image":@"",@"Action":@"stockClick:",@"Type":@"1",@"Value":@"Stock"},
                               @{@"Name":@"可用数量",@"Image":@"",@"Action":@"useClick:",@"Type":@"1",@"Value":@"Usable"},
+                              @{@"Name":@"相同商品自动合并",@"Action":@"fixClick",@"Type":@"1",@"Value":@"Fix"},
                               ]},
                     @{@"Header":@"U+",
                       @"Detail":@[
@@ -169,6 +170,7 @@
         RCChooseButton *button = (RCChooseButton *)[cell viewWithTag:2];
         button.choose = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }else if (type == 1){
+        [self.setting setObject:@"1" forKey:@"Fix"];
         UISwitch *switcher = (UISwitch *)[cell viewWithTag:2];
         switcher.on = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }
