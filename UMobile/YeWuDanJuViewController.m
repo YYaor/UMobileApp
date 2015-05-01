@@ -7,6 +7,7 @@
 //
 
 #import "YeWuDanJuViewController.h"
+#import "ShenHeDtlViewController.h"
 
 @interface YeWuDanJuViewController ()
 
@@ -110,6 +111,29 @@
     
 //    self.scView.contentSize = CGSizeMake(1, height);
     
+}
+
+-(void)buttonClick:(UIButton *)sender{
+    
+    NSDictionary *buttonInfo =  [self.buttons objectAtIndex:sender.tag - 1];
+    ShenHeDtlViewController *vc = (ShenHeDtlViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"ShenHeDtlViewController"];
+    vc.strTitle =  [buttonInfo strForKey:@"Name"];
+    
+    NSArray *rs = [self GetShenHeType:[buttonInfo strForKey:@"Name"]];//根据名称取得缓存的订单名和订单ID，因有见过订单名一样，但是ID不一样的帐套
+    
+    NSString *str = [buttonInfo strForKey:@"Type"] ;//已知数据的订单ID
+    int tp = [str intValue] ;
+    vc.style = [buttonInfo intForKey:@"Style"];
+    
+    if (rs ) {//若网上有取得 数据，则以网上ID为准
+        //网上取得的内容 对应的 订单ID
+        tp = [[rs objectAtIndex:0] intValue];
+    }
+    vc.callFunction = tp;// [buttonInfo intForKey:@"Type"];
+    vc.shType = tp;// [buttonInfo intForKey:@"Type"];
+    
+    vc.searchType = [buttonInfo strForKey:@"SearchType"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 -(NSArray *)GetShenHeType:(NSString *)name{

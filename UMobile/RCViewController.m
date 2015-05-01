@@ -415,9 +415,9 @@
     }
 
     
-    if ([strID length] == 0) strID = @"119";
-    if ([server length] == 0) server = @"www.cnsub.net";
-    if ([serverPort length] == 0) serverPort = @"32021";
+    if ([strID length] == 0) strID = @"18180847173";
+    if ([server length] == 0) server = @"http://u893863.oicp.net";
+    if ([serverPort length] == 0) serverPort = @"32023";
     if ([serverPath length] == 0) serverPath = @"cnsubMB01";
     
     
@@ -469,9 +469,9 @@
     }
 //    NSLog(@"striD %@",strID);
     
-    if ([strID length] == 0) strID = @"119";
-    if ([server length] == 0) server = @"www.cnsub.net";
-    if ([serverPort length] == 0) serverPort = @"32021";
+    if ([strID length] == 0) strID = @"18180847173";
+    if ([server length] == 0) server = @"http://u893863.oicp.net";
+    if ([serverPort length] == 0) serverPort = @"32023";
     if ([serverPath length] == 0) serverPath = @"cnsubMB01";
     
     NSString *serverLink =  [NSString stringWithFormat:@"%@:%@/",server,serverPort];
@@ -704,8 +704,8 @@
     [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Param\"\r\n\r\n"];
     [bodyContent appendFormat:@"%@\r\n-----------------------------%@\r\n",[info JSONString],POST_BOUNDS];
     
-    //[bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Submit\"\r\n\r\n提交\r\n"];
-    //[bodyContent appendFormat:@"-----------------------------%@--\r\n",POST_BOUNDS];
+//    [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Submit\"\r\n\r\n提交\r\n"];
+//    [bodyContent appendFormat:@"-----------------------------%@--\r\n",POST_BOUNDS];
     
     
     //    }
