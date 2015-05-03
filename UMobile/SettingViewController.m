@@ -34,7 +34,7 @@
                       @"Detail":@[
                               @{@"Name":@"库存数量",@"Image":@"",@"Action":@"stockClick:",@"Type":@"1",@"Value":@"Stock"},
                               @{@"Name":@"可用数量",@"Image":@"",@"Action":@"useClick:",@"Type":@"1",@"Value":@"Usable"},
-                              @{@"Name":@"相同商品自动合并",@"Action":@"fixClick",@"Type":@"1",@"Value":@"Fix"},
+                              @{@"Name":@"相同商品自动合并",@"Action":@"fixClick",@"Type":@"1",@"Value":@"MergeSameAgreement"},
                               ]},
                     @{@"Header":@"U+",
                       @"Detail":@[
