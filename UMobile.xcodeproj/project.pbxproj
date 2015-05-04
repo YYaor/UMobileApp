@@ -495,6 +495,7 @@
 		46E9CDE71AF771C900AAE80A /* SSKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE61AF771C900AAE80A /* SSKCViewController.m */; };
 		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
 		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
+		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1239,6 +1240,7 @@
 		46E9CDE91AF771D400AAE80A /* YWDJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJViewController.m; sourceTree = "<group>"; };
 		46E9CDEB1AF771E000AAE80A /* XSMXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMXViewController.h; sourceTree = "<group>"; };
 		46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMXViewController.m; sourceTree = "<group>"; };
+		5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondaryStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1838,6 +1840,7 @@
 				189DE6F619B578C400F6A30D /* AppDelegate.h */,
 				189DE6F719B578C400F6A30D /* AppDelegate.m */,
 				189DE6F919B578C400F6A30D /* Main.storyboard */,
+				5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */,
 				189DE6FC19B578C400F6A30D /* ViewController.h */,
 				189DE6FD19B578C500F6A30D /* ViewController.m */,
 				189DE7D319B5B85700F6A30D /* MainViewController.h */,
@@ -2892,6 +2895,7 @@
 				1899E72119C5828600BA235F /* 预警_03.png in Resources */,
 				1CC985B51A3440DA00C2BC4D /* actionshare@2x.png in Resources */,
 				1834B24D1ACD1EB200DD0E90 /* login1136.png in Resources */,
+				5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */,
 				189C0F8519D0527A0037292A /* FontAwesome.ttf in Resources */,
 				189333E81A1B494C00833C4A /* goods_cb_default.png in Resources */,
 				1899E6E119C5828600BA235F /* 主页_10.png in Resources */,
@@ -3218,8 +3222,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ze xu (5973N9VNX3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ze xu (5973N9VNX3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3280,8 +3284,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: ze xu (5973N9VNX3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ze xu (5973N9VNX3)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ShareSDK/Connection",

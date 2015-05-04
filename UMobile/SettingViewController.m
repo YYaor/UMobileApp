@@ -34,6 +34,7 @@
                       @"Detail":@[
                               @{@"Name":@"库存数量",@"Image":@"",@"Action":@"stockClick:",@"Type":@"1",@"Value":@"Stock"},
                               @{@"Name":@"可用数量",@"Image":@"",@"Action":@"useClick:",@"Type":@"1",@"Value":@"Usable"},
+                              @{@"Name":@"开单默认",@"Image":@"",@"Action":@"setDefaultClick:",@"Type":@"0",@"Value":@"SetDefaultParam"},
                               @{@"Name":@"相同商品自动合并",@"Action":@"fixClick",@"Type":@"1",@"Value":@"MergeSameAgreement"},
                               ]},
                     @{@"Header":@"U+",
@@ -83,7 +84,9 @@
     vc.parentVC = nil;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+-(void)setDefaultClick:(NSDictionary *)info{
+   
+}
 
 #pragma mark -
 
