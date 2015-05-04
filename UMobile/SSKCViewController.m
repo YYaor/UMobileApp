@@ -7,6 +7,7 @@
 //
 
 #import "SSKCViewController.h"
+#import "StockViewController.h"
 
 @interface SSKCViewController ()
 
@@ -16,12 +17,28 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.stockType = [NSMutableArray array];
+    [self setText:[self.stockType ingoreObjectAtIndex:1] forView:self.view withTag:10];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(textField.tag == 10){
+        StockViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"StockViewController"];
+        vc.info = self.stockType;
+        vc.parentVC = self;
+        [self.navigationController pushViewController:vc animated:YES];
+        return NO;
+    }
+    return YES;
+}
+
+-(IBAction)cangkuClick:(id)sender{
+    
 }
 
 /*

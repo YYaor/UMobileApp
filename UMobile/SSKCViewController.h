@@ -8,6 +8,8 @@
 
 #import "RCViewController.h"
 
-@interface SSKCViewController : RCViewController
+@interface SSKCViewController : RCViewController<UITextFieldDelegate>
+
+@property(nonatomic,retain) NSMutableArray *stockType;
 
 @end
