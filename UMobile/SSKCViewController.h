@@ -12,4 +12,8 @@
 
 @property(nonatomic,retain) NSMutableArray *stockType;
 
+-(IBAction)restClick:(id)sender;
+
+-(IBAction)searchClick:(id)sender;
+
 @end

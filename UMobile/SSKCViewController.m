@@ -37,7 +37,11 @@
     return YES;
 }
 
--(IBAction)cangkuClick:(id)sender{
+-(IBAction)restClick:(id)sender{
+    self.stockType = [NSMutableArray array];
+}
+
+-(IBAction)searchClick:(id)sender{
     
 }
 
