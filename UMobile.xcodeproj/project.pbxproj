@@ -495,6 +495,7 @@
 		46E9CDE71AF771C900AAE80A /* SSKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE61AF771C900AAE80A /* SSKCViewController.m */; };
 		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
 		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
+		5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -1240,6 +1241,8 @@
 		46E9CDE91AF771D400AAE80A /* YWDJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJViewController.m; sourceTree = "<group>"; };
 		46E9CDEB1AF771E000AAE80A /* XSMXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMXViewController.h; sourceTree = "<group>"; };
 		46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMXViewController.m; sourceTree = "<group>"; };
+		5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefaultConfigViewController.h; sourceTree = "<group>"; };
+		5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefaultConfigViewController.m; sourceTree = "<group>"; };
 		5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondaryStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2605,6 +2608,8 @@
 				1896B2421A11AFB00016825E /* FeedbackViewController.m */,
 				2EAE7D3A1A1281EC005172DD /* FlowViewController.h */,
 				2EAE7D3B1A1281EC005172DD /* FlowViewController.m */,
+				5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */,
+				5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -3045,6 +3050,7 @@
 				189DE7B519B5B67A00F6A30D /* ASIDataCompressor.m in Sources */,
 				18980DF019EE4DC8006A95A4 /* RCView.m in Sources */,
 				189DE7B219B5B67A00F6A30D /* ASINetworkQueue.m in Sources */,
+				5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */,
 				189DE7E419B5C1E300F6A30D /* FMDatabaseAdditions.m in Sources */,
 				189DB85219B977F100A71C3F /* EFloatBox.m in Sources */,
 				18998A8919BFFABE00BD09AA /* RCImageButton.m in Sources */,
