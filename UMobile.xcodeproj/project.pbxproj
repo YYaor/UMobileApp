@@ -492,6 +492,9 @@
 		2ED54B231A092C3F00E05AFF /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED54B221A092C3F00E05AFF /* ServerViewController.m */; };
 		2ED54B261A0937F800E05AFF /* RCAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ED54B251A0937F800E05AFF /* RCAlertView.m */; };
 		46E9CDE11AF1D4A700AAE80A /* YeWuDanJuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */; };
+		46E9CDE71AF771C900AAE80A /* SSKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE61AF771C900AAE80A /* SSKCViewController.m */; };
+		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
+		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1230,6 +1233,12 @@
 		2ED54B251A0937F800E05AFF /* RCAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCAlertView.m; sourceTree = "<group>"; };
 		46E9CDDF1AF1D4A700AAE80A /* YeWuDanJuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YeWuDanJuViewController.h; sourceTree = "<group>"; };
 		46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YeWuDanJuViewController.m; sourceTree = "<group>"; };
+		46E9CDE51AF771C900AAE80A /* SSKCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKCViewController.h; sourceTree = "<group>"; };
+		46E9CDE61AF771C900AAE80A /* SSKCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKCViewController.m; sourceTree = "<group>"; };
+		46E9CDE81AF771D400AAE80A /* YWDJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJViewController.h; sourceTree = "<group>"; };
+		46E9CDE91AF771D400AAE80A /* YWDJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJViewController.m; sourceTree = "<group>"; };
+		46E9CDEB1AF771E000AAE80A /* XSMXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMXViewController.h; sourceTree = "<group>"; };
+		46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMXViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1853,6 +1862,9 @@
 				189A4BA319C93185005A6B1F /* ShenHe */,
 				189A4BA719C931D9005A6B1F /* KHGL */,
 				189A4BA419C931A1005A6B1F /* PaiHang */,
+				46E9CDE21AF7717100AAE80A /* SSKC */,
+				46E9CDE31AF7718800AAE80A /* YWDJ */,
+				46E9CDE41AF7718E00AAE80A /* XSMX */,
 				189DE6FF19B578C500F6A30D /* Images.xcassets */,
 				189DE6EE19B578C400F6A30D /* Supporting Files */,
 			);
@@ -2594,6 +2606,33 @@
 			name = Setting;
 			sourceTree = "<group>";
 		};
+		46E9CDE21AF7717100AAE80A /* SSKC */ = {
+			isa = PBXGroup;
+			children = (
+				46E9CDE51AF771C900AAE80A /* SSKCViewController.h */,
+				46E9CDE61AF771C900AAE80A /* SSKCViewController.m */,
+			);
+			name = SSKC;
+			sourceTree = "<group>";
+		};
+		46E9CDE31AF7718800AAE80A /* YWDJ */ = {
+			isa = PBXGroup;
+			children = (
+				46E9CDE81AF771D400AAE80A /* YWDJViewController.h */,
+				46E9CDE91AF771D400AAE80A /* YWDJViewController.m */,
+			);
+			name = YWDJ;
+			sourceTree = "<group>";
+		};
+		46E9CDE41AF7718E00AAE80A /* XSMX */ = {
+			isa = PBXGroup;
+			children = (
+				46E9CDEB1AF771E000AAE80A /* XSMXViewController.h */,
+				46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */,
+			);
+			name = XSMX;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2940,6 +2979,7 @@
 				189DE7B319B5B67A00F6A30D /* ASIDownloadCache.m in Sources */,
 				189DB85419B977F100A71C3F /* ELineChart.m in Sources */,
 				2ED54B231A092C3F00E05AFF /* ServerViewController.m in Sources */,
+				46E9CDE71AF771C900AAE80A /* SSKCViewController.m in Sources */,
 				189EAC0A19D1D39800D8CF20 /* XinZenShangPingViewController.m in Sources */,
 				1833148919C83798007C2EFB /* PaiHangKHViewController.m in Sources */,
 				1833148F19C84067007C2EFB /* RCTableTitleView.m in Sources */,
@@ -2957,6 +2997,7 @@
 				1CB1E38A1A74405B005317CE /* XXFliterViewController.m in Sources */,
 				189DE7AC19B5B67A00F6A30D /* ASIS3Request.m in Sources */,
 				2EAE0DAD1A0F6BC3004E4CF6 /* YuJingDDViewController.m in Sources */,
+				46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */,
 				189DB84F19B977F100A71C3F /* EColumnChart.m in Sources */,
 				189DB85119B977F100A71C3F /* EColumnDataModel.m in Sources */,
 				18A44F6F19CDF702009E658A /* ZiJinRiBaoDtlViewController.m in Sources */,
@@ -3040,6 +3081,7 @@
 				18A44F5C19CD790D009E658A /* YingFuRiBaoViewController.m in Sources */,
 				18998AA619C0617500BD09AA /* MJRefreshHeaderView.m in Sources */,
 				189DE7AA19B5B67A00F6A30D /* ASIS3ServiceRequest.m in Sources */,
+				46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */,
 				1896B2431A11AFB00016825E /* FeedbackViewController.m in Sources */,
 				1CD195C11A24EC9D0012F358 /* NSString+Format.m in Sources */,
 				189CF44F19B8C2B800E420D8 /* RibaoViewController.m in Sources */,

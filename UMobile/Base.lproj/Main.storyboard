@@ -27,6 +27,9 @@
                                     <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home7.png" translatesAutoresizingMaskIntoConstraints="NO" id="lak-ce-JzQ">
                                         <rect key="frame" x="111" y="391" width="198" height="100"/>
                                     </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="11" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="主页_11.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ty7-vh-pO4">
+                                        <rect key="frame" x="111" y="498" width="198" height="204"/>
+                                    </imageView>
                                     <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="主页_10.png" translatesAutoresizingMaskIntoConstraints="NO" id="xft-GH-ajY">
                                         <rect key="frame" x="111" y="10" width="197" height="80"/>
                                     </imageView>
@@ -41,6 +44,12 @@
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="7" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home5.png" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-Qn-6bF">
                                         <rect key="frame" x="11" y="391" width="95" height="99"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="10" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home6.png" translatesAutoresizingMaskIntoConstraints="NO" id="ySf-CA-3dU">
+                                        <rect key="frame" x="11" y="603" width="95" height="99"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" tag="9" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home6.png" translatesAutoresizingMaskIntoConstraints="NO" id="1t5-cd-hvf">
+                                        <rect key="frame" x="11" y="497" width="95" height="99"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="home1.png" translatesAutoresizingMaskIntoConstraints="NO" id="RrA-4e-JD3">
                                         <rect key="frame" x="11" y="10" width="95" height="165"/>
@@ -11946,6 +11955,84 @@
             </objects>
             <point key="canvasLocation" x="932" y="2966"/>
         </scene>
+        <!--库存查询-->
+        <scene sceneID="nJG-Wy-KVf">
+            <objects>
+                <viewController storyboardIdentifier="SSKCViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KSN-YG-uHz" customClass="SSKCViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="baI-mJ-6YQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="r9Y-lK-bAF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ara-GA-rBq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="库存查询" id="BqX-2J-IhZ">
+                        <barButtonItem key="leftBarButtonItem" image="back_normal_icon.png" id="tHL-g9-oO5">
+                            <connections>
+                                <action selector="backClick:" destination="KSN-YG-uHz" id="IGt-M7-BmY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BCt-Mo-Fg8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="443" y="3523"/>
+        </scene>
+        <!--业务单据查询-->
+        <scene sceneID="beE-tt-zN3">
+            <objects>
+                <viewController storyboardIdentifier="YWDJViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yRC-98-tZB" customClass="YWDJViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x2u-GJ-nEe"/>
+                        <viewControllerLayoutGuide type="bottom" id="qB1-Sj-qbU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Bkb-Tn-wqW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="业务单据查询" id="c6t-dq-CQb">
+                        <barButtonItem key="leftBarButtonItem" image="back_normal_icon.png" id="rXa-BW-Fa1">
+                            <connections>
+                                <action selector="backClick:" destination="yRC-98-tZB" id="mSF-07-HqI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="haL-V7-o8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="783" y="3516"/>
+        </scene>
+        <!--销售明细查询-->
+        <scene sceneID="vyh-5S-kQT">
+            <objects>
+                <viewController storyboardIdentifier="XSMXViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="N3O-xN-dxk" customClass="XSMXViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Z6H-2R-gab"/>
+                        <viewControllerLayoutGuide type="bottom" id="1r9-4n-s8G"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zMh-kl-faN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="销售明细查询" id="Dj6-W8-0Y3">
+                        <barButtonItem key="leftBarButtonItem" image="back_normal_icon.png" id="cZP-YJ-NUD">
+                            <connections>
+                                <action selector="backClick:" destination="N3O-xN-dxk" id="Egc-Te-h9h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4j6-Io-XFK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109" y="3519"/>
+        </scene>
         <!--应收总帐明细-->
         <scene sceneID="m11-UI-mYB">
             <objects>
@@ -12386,6 +12473,7 @@
         <image name="home3.png" width="224" height="234"/>
         <image name="home4.png" width="224" height="234"/>
         <image name="home5.png" width="224" height="234"/>
+        <image name="home6.png" width="463" height="234"/>
         <image name="home7.png" width="463" height="220"/>
         <image name="ic120.png" width="120" height="120"/>
         <image name="login1136.png" width="640" height="1136"/>

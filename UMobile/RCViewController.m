@@ -418,7 +418,7 @@
     if ([strID length] == 0) strID = @"18180847173";
     if ([server length] == 0) server = @"http://u893863.oicp.net";
     if ([serverPort length] == 0) serverPort = @"32023";
-    if ([serverPath length] == 0) serverPath = @"cnsubMB01";
+    if ([serverPath length] == 0) serverPath = @"cnsubMB02";
     
     
     NSString *serverLink =  [NSString stringWithFormat:@"%@:%@/",server,serverPort];
@@ -472,7 +472,7 @@
     if ([strID length] == 0) strID = @"18180847173";
     if ([server length] == 0) server = @"http://u893863.oicp.net";
     if ([serverPort length] == 0) serverPort = @"32023";
-    if ([serverPath length] == 0) serverPath = @"cnsubMB01";
+    if ([serverPath length] == 0) serverPath = @"cnsubMB02";
     
     NSString *serverLink =  [NSString stringWithFormat:@"%@:%@/",server,serverPort];
     

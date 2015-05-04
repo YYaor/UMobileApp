@@ -29,7 +29,7 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(1, 600);
+    self.scrollView.contentSize = CGSizeMake(1, 800);
     
 
 }
@@ -89,7 +89,10 @@
                      @{@"Name": @"往来单位管理",@"Image":@"kehuguanli",@"Action":@"khglClick:",@"Type":@"0"},
                      @{@"Name": @"商品管理",@"Image":@"shangpinguanli",@"Action":@"spglClick:",@"Type":@"0"},
                      @{@"Name": @"订单管理",@"Image":@"dingdanguanli",@"Action":@"ddglClick:",@"Type":@"0"},
-                     @{@"Name": @"日报",@"Image":@"ribao",@"Action":@"ribaoClick:",@"Type":@"1"}
+                     @{@"Name": @"日报",@"Image":@"ribao",@"Action":@"ribaoClick:",@"Type":@"1"},
+                     @{@"Name": @"实时库存查询",@"Image":@"shishikucunchaxun",@"Action":@"sskcClick:",@"Type":@"0"},
+                     @{@"Name": @"销售明细查询",@"Image":@"xiaoshoumingxichaxun",@"Action":@"xsmxClick:",@"Type":@"1"},
+                     @{@"Name": @"业务单据查询",@"Image":@"yewudanjuchaxun",@"Action":@"ywdjClick:",@"Type":@"0"}
                      ];
     [self setButtonActions];
     
@@ -340,6 +343,21 @@
 
 -(void)ddglClick:(id)sender{
     UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"DDCXViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)sskcClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SSKCViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)ywdjClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"YWDJViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)xsmxClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"XSMXViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
