@@ -477,7 +477,7 @@
         <!--日报-->
         <scene sceneID="DRc-4L-0DZ">
             <objects>
-                <viewController storyboardIdentifier="BaoBiaoViewController " automaticallyAdjustsScrollViewInsets="NO" id="X7t-1x-Yoe" customClass="BaoBiaoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaoBiaoViewController " automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="X7t-1x-Yoe" customClass="BaoBiaoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TRm-yK-nVb"/>
                         <viewControllerLayoutGuide type="bottom" id="EfQ-wi-03L"/>
@@ -1692,7 +1692,7 @@
         <!--报表中心-->
         <scene sceneID="VFC-bN-vYs">
             <objects>
-                <viewController storyboardIdentifier="RibaoViewController" automaticallyAdjustsScrollViewInsets="NO" id="NmJ-sY-LdF" customClass="RibaoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RibaoViewController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="NmJ-sY-LdF" customClass="RibaoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="akC-v7-Kkf"/>
                         <viewControllerLayoutGuide type="bottom" id="IHY-ai-BFj"/>
@@ -11966,7 +11966,94 @@
                     <view key="view" contentMode="scaleToFill" id="ara-GA-rBq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EbM-lr-Kdp" customClass="RCView">
+                                <rect key="frame" x="10" y="72" width="300" height="267"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="查询条件" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tkJ-qx-w5B">
+                                        <rect key="frame" x="14" y="10" width="275" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="商品名称" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6T-bd-Ty1">
+                                        <rect key="frame" x="20" y="53" width="48" height="21"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="仓库" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TzU-xU-vTr">
+                                        <rect key="frame" x="25" y="86" width="28" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OO9-iK-vfk">
+                                        <rect key="frame" x="10" y="40" width="280" height="1"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Bc-VP-Z1d">
+                                        <rect key="frame" x="86" y="52" width="194" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="KSN-YG-uHz" id="29U-CP-eCz"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IBw-6y-ucJ">
+                                        <rect key="frame" x="86" y="85" width="194" height="24"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="KSN-YG-uHz" id="8fp-ST-42p"/>
+                                        </connections>
+                                    </textField>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBK-ZF-n3R" customClass="APRoundedButton">
+                                        <rect key="frame" x="25" y="217" width="90" height="30"/>
+                                        <color key="backgroundColor" red="0.047058828179999998" green="0.70980393890000004" blue="0.90980398650000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="搜索">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d2-YB-JKG" customClass="APRoundedButton">
+                                        <rect key="frame" x="190" y="217" width="90" height="30"/>
+                                        <color key="backgroundColor" red="0.047058828179999998" green="0.70980393890000004" blue="0.90980398650000005" alpha="1" colorSpace="deviceRGB"/>
+                                        <state key="normal" title="重置">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="267" id="pX6-K2-0Bd"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="style">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EbM-lr-Kdp" firstAttribute="leading" secondItem="ara-GA-rBq" secondAttribute="leadingMargin" constant="-6" id="PVr-k7-SL8"/>
+                            <constraint firstItem="EbM-lr-Kdp" firstAttribute="top" secondItem="baI-mJ-6YQ" secondAttribute="bottom" constant="10" id="Tgv-Eh-9R5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="库存查询" id="BqX-2J-IhZ">
                         <barButtonItem key="leftBarButtonItem" image="back_normal_icon.png" id="tHL-g9-oO5">
