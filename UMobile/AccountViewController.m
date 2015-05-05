@@ -15,6 +15,8 @@
 @implementation AccountViewController
 
 @synthesize result,info,title,link;
+@synthesize chooseType;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -94,7 +96,15 @@
     NSUInteger sIndex = self.showIndex > 0?self.showIndex:1;
     [self.info addObjectsFromArray:@[[rs objectAtIndex:0],[rs objectAtIndex:sIndex],[rs ingoreObjectAtIndex:4]]];
     [self.parentVC performSelector:@selector(loadData) withObject:nil];
-    
+    if (chooseType == ChooseAccountType_CKAccount){
+        if (delegate && [delegate respondsToSelector:@selector(CKaccountChoosedId:accountName:)]){
+            [delegate CKaccountChoosedId:[[rs objectAtIndex:0] integerValue] accountName:[rs objectAtIndex:2]];
+        }
+    }else if (chooseType == ChooseAccountType_FKAccount){
+        if (delegate && [delegate respondsToSelector:@selector(FKaccountChoosedId:accountName:)]){
+            [delegate FKaccountChoosedId:[[rs objectAtIndex:0] integerValue] accountName:[rs objectAtIndex:2]];
+        }
+    }
     [self dismiss];
 }
 

@@ -11,8 +11,9 @@
 #import "DepartmentViewController.h"
 #import "KHGLViewController.h"
 #import "CangKuViewController.h"
+#import "AccountViewController.h"
 
-@interface SetDefaultConfigViewController ()<saleViewControllerDelegate,departmentViewControllerDelegate,KHGLViewControllerDelegate,cangkuControllerDelegate>
+@interface SetDefaultConfigViewController ()<saleViewControllerDelegate,departmentViewControllerDelegate,KHGLViewControllerDelegate,cangkuControllerDelegate,accountViewControllerDelegate>
 
 @end
 
@@ -82,8 +83,20 @@
     }else{
         self.DHCKField.text = @"";
     }
-
-
+    //--fk account info
+    if ([[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"FKaccountInfo"]){
+        NSDictionary *dic = [[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"FKaccountInfo"];
+        self.FKZHField.text = [dic objectForKey:@"accountName"];
+    }else{
+        self.FKZHField.text = @"";
+    }
+    //--ck account info
+    if ([[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"SKaccountInfo"]){
+        NSDictionary *dic = [[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"SKaccountInfo"];
+        self.SKZHField.text = [dic objectForKey:@"accountName"];
+    }else{
+        self.SKZHField.text = @"";
+    }
 }
 
 /*
@@ -127,6 +140,15 @@
             cangKu.chooseType = ChooseCkType_DHCK;
         }
         [self.navigationController pushViewController:cangKu animated:YES];
+    }else if(textField == self.FKZHField || textField == self.SKZHField){
+        AccountViewController *account = [storyBoard instantiateViewControllerWithIdentifier:@"AccountViewController.h"];
+        account.delegate = self;
+        if (textField == self.FKZHField){
+            account.chooseType = ChooseAccountType_FKAccount;
+        }else{
+            account.chooseType = ChooseAccountType_CKAccount;
+        }
+        [self.navigationController pushViewController:account animated:YES];
     }
     return NO;
 }
@@ -201,6 +223,31 @@
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:ckId],@"ckId",ckName,@"ckName", nil] forKey:@"DHCKInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
     [self setDefaultValueForTextField];
+}
+#pragma mark AccountViewController delegate
+-(void) FKaccountChoosedId:(NSInteger)accountId accountName:(NSString *)accountName{
+    NSMutableDictionary *dic = nil;
+    if ([self.setting objectForKey:@"SetDefaultParam"]){
+        dic = [NSMutableDictionary dictionaryWithDictionary:[self.setting objectForKey:@"SetDefaultParam"]];
+    }else{
+        dic = [NSMutableDictionary dictionary];
+    }
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:accountId],@"accountId",accountName,@"accountName", nil] forKey:@"FKaccountInfo"];
+    [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [self setDefaultValueForTextField];
+
+}
+-(void) CKaccountChoosedId:(NSInteger)accountId accountName:(NSString *)accountName{
+    NSMutableDictionary *dic = nil;
+    if ([self.setting objectForKey:@"SetDefaultParam"]){
+        dic = [NSMutableDictionary dictionaryWithDictionary:[self.setting objectForKey:@"SetDefaultParam"]];
+    }else{
+        dic = [NSMutableDictionary dictionary];
+    }
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:accountId],@"accountId",accountName,@"accountName", nil] forKey:@"SKaccountInfo"];
+    [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [self setDefaultValueForTextField];
+
 }
 
 - (void)dealloc {

@@ -496,9 +496,9 @@
 		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
 		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
 		46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */; };
-		5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
 		C8472C501AF888DE00022C3D /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
+		C8472C531AF8CEA900022C3D /* USettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8472C521AF8CEA900022C3D /* USettingModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1248,6 +1248,8 @@
 		5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefaultConfigViewController.h; sourceTree = "<group>"; };
 		5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefaultConfigViewController.m; sourceTree = "<group>"; };
 		5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondaryStoryboard.storyboard; sourceTree = "<group>"; };
+		C8472C511AF8CEA900022C3D /* USettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USettingModel.h; sourceTree = "<group>"; };
+		C8472C521AF8CEA900022C3D /* USettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USettingModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2616,6 +2618,8 @@
 				2EAE7D3B1A1281EC005172DD /* FlowViewController.m */,
 				5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */,
 				5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */,
+				C8472C511AF8CEA900022C3D /* USettingModel.h */,
+				C8472C521AF8CEA900022C3D /* USettingModel.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -2976,6 +2980,7 @@
 				189DE7E619B5C1E300F6A30D /* FMResultSet.m in Sources */,
 				1CD906021A7E20FD00363E7C /* pinyin.c in Sources */,
 				1CD072FC1A30A1D100441F68 /* RCTableView.m in Sources */,
+				C8472C531AF8CEA900022C3D /* USettingModel.m in Sources */,
 				189DE76919B5B52000F6A30D /* RCTableHeadSortView.m in Sources */,
 				189EAC0319D1850A00D8CF20 /* CangKuViewController.m in Sources */,
 				189DE6FE19B578C500F6A30D /* ViewController.m in Sources */,
