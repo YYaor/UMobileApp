@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "SetDefaultConfigViewController.h"
 
 @interface SettingViewController ()
 
@@ -86,7 +87,7 @@
 }
 -(void)setDefaultClick:(NSDictionary *)info{
     UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
-    RCViewController *vc = [myStoryBoard instantiateViewControllerWithIdentifier:@"SetDefaultConfigViewController"];
+    SetDefaultConfigViewController *vc = [myStoryBoard instantiateViewControllerWithIdentifier:@"SetDefaultConfigViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
