@@ -85,7 +85,9 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 -(void)setDefaultClick:(NSDictionary *)info{
-   
+    UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    RCViewController *vc = [myStoryBoard instantiateViewControllerWithIdentifier:@"SetDefaultConfigViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -
