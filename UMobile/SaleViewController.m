@@ -12,6 +12,7 @@
 
 @synthesize result;
 @synthesize selectId;
+@synthesize delegate;
 
 -(void)viewDidLoad{
     
@@ -128,7 +129,9 @@
     [self.departMentInfo addObjectsFromArray:@[[rs objectAtIndex:4],[rs objectAtIndex:5],[rs objectAtIndex:4]]];
     
     [self.parentVC performSelector:@selector(loadData) withObject:nil];
-    
+    if (delegate && [delegate respondsToSelector:@selector(salesmanSelectedWithSalesId:salesName:)]){
+        [delegate salesmanSelectedWithSalesId:[[rs objectAtIndex:0] integerValue]  salesName:[rs objectAtIndex:1]];
+    }
     [self dismiss];
 }
 

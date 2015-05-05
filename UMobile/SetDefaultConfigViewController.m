@@ -7,8 +7,9 @@
 //
 
 #import "SetDefaultConfigViewController.h"
+#import "SaleViewController.h"
 
-@interface SetDefaultConfigViewController ()
+@interface SetDefaultConfigViewController ()<saleViewControllerDelegate>
 
 @end
 
@@ -35,8 +36,13 @@
     // Dispose of any resources that can be recreated.
 }
 -(void) setDefaultValueForTextField{
+    if ([[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"salesInfo"]){
+        NSDictionary *dic = [[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"salesInfo"];
+        self.JSRField.text = [dic objectForKey:@"salesName"];
+    }else{
+        self.JSRField.text = @"";
+    }
 
-    
 }
 
 /*
@@ -50,8 +56,27 @@
 */
 #pragma mark UITextField Delegate
 -(BOOL) textFieldShouldBeginEditing:(UITextField *)textField{
-    
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    if (textField == self.JSRField){
+        SaleViewController *vc = [storyBoard instantiateViewControllerWithIdentifier:@"SaleViewController"];
+        vc.delegate = self;
+        [self.navigationController pushViewController:vc animated:YES];
+    }else if (textField == self.BMField){
+        
+    }
     return NO;
+}
+#pragma mark SaleViewControllerDelegate
+-(void) salesmanSelectedWithSalesId:(NSInteger)salesId salesName:(NSString *)salesName{
+    NSMutableDictionary *dic = nil;
+    if ([self.setting objectForKey:@"SetDefaultParam"]){
+        dic = [NSMutableDictionary dictionaryWithDictionary:[self.setting objectForKey:@"SetDefaultParam"]];
+    }else{
+        dic = [NSMutableDictionary dictionary];
+    }
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:salesId],@"salesId",salesName,@"salesName", nil] forKey:@"salesInfo"];
+    [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [self setDefaultValueForTextField];
 }
 
 - (void)dealloc {
