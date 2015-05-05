@@ -113,6 +113,27 @@
     return YES;
 }
 
+-(void)sortMenuClick:(KxMenuItem *)item{
+    NSDictionary *dates = @{@"本日":@"Today",@"本周":@"thisWeek",@"本月":@"thisMonth"};
+    NSDictionary *info = [[self GetOM] getFlowDate];
+    [self setText:[info strForKey:[dates strForKey:item.title]] forView:self.view withTag:1];
+    [self setText:[info strForKey:@"Today"] forView:self.view withTag:2];
+}
+
+
+- (IBAction)sortClick:(id)sender {
+    if ([KxMenu sharedMenu].isVisiable) {
+        [KxMenu dismissMenu];
+        return;
+    }
+    NSArray *menus = @[
+                       [KxMenuItem menuItem:@"本日" image:[UIImage imageNamed:@"popup_icon_approve_date"] target:self action:@selector(sortMenuClick:)],
+                       [KxMenuItem menuItem:@"本周" image:[UIImage imageNamed:@"popup_icon_approve_curweek"] target:self action:@selector(sortMenuClick:)],
+                       [KxMenuItem menuItem:@"本月" image:[UIImage imageNamed:@"popup_icon_approve_curmonth"] target:self action:@selector(sortMenuClick:)],
+                       ];
+    [KxMenu showMenuInView:self.view fromRect:CGRectMake(160, 64, 10, 1) menuItems:menus];
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
