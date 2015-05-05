@@ -11,7 +11,7 @@
 
 @protocol saleViewControllerDelegate <NSObject>
 
--(void) salesmanSelectedWithSalesId:(NSInteger) salesId salesName:(NSString *)salesName;
+-(void) salesmanSelectedWithSalesId:(NSInteger) salesId salesName:(NSString *)salesName departId:(NSInteger) departId departName:(NSString *)departName;
 
 @end
 

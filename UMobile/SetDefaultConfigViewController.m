@@ -42,6 +42,13 @@
     }else{
         self.JSRField.text = @"";
     }
+    //-----depart info
+    if ([[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"departInfo"]){
+        NSDictionary *dic = [[self.setting objectForKey:@"SetDefaultParam"] objectForKey:@"departInfo"];
+        self.BMField.text = [dic objectForKey:@"departName"];
+    }else{
+        self.BMField.text = @"";
+    }
 
 }
 
@@ -67,7 +74,7 @@
     return NO;
 }
 #pragma mark SaleViewControllerDelegate
--(void) salesmanSelectedWithSalesId:(NSInteger)salesId salesName:(NSString *)salesName{
+-(void) salesmanSelectedWithSalesId:(NSInteger)salesId salesName:(NSString *)salesName departId:(NSInteger)departId departName:(NSString *)departName{
     NSMutableDictionary *dic = nil;
     if ([self.setting objectForKey:@"SetDefaultParam"]){
         dic = [NSMutableDictionary dictionaryWithDictionary:[self.setting objectForKey:@"SetDefaultParam"]];
@@ -75,6 +82,7 @@
         dic = [NSMutableDictionary dictionary];
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:salesId],@"salesId",salesName,@"salesName", nil] forKey:@"salesInfo"];
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:departId],@"departId",departName,@"departName", nil] forKey:@"departInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
     [self setDefaultValueForTextField];
 }
