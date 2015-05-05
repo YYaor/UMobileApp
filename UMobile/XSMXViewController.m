@@ -12,6 +12,7 @@
 #import "CustomerListViewController.h"
 #import "StockViewController.h"
 #import "RCDateView.h"
+#import "XSMXDetailViewController.h"
 
 @interface XSMXViewController ()
 
@@ -160,14 +161,18 @@
                         [[self.checkType ingoreObjectAtIndex:0] intValue],
                         [self GetUserID]
                         ];
-    NSString *link = [self GetLinkWithFunction:72 andParam:param];
+//    NSString *link = [self GetLinkWithFunction:72 andParam:param];
+//    
+//    DDGLViewController *vc = (DDGLViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DDGLViewController"];
+//    vc.link = link;
+//    vc.param = param;
+//    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
+//    [self.navigationController pushViewController:vc animated:YES];
+//    //    NSString *link =  []
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    XSMXDetailViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"XSMXDetailViewController"];
+    [self.navigationController pushViewController:detail animated:YES];
     
-    DDGLViewController *vc = (DDGLViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DDGLViewController"];
-    vc.link = link;
-    vc.param = param;
-    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
-    [self.navigationController pushViewController:vc animated:YES];
-    //    NSString *link =  []
 }
 
 /*
