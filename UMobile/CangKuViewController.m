@@ -14,6 +14,8 @@
 
 @implementation CangKuViewController
 @synthesize result,info,title,link;
+@synthesize chooseType;
+@synthesize delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -150,6 +152,15 @@
     // change   ghd 0205
     if ([self.title isEqualToString:@"选择账套"]) {
         [self.parentVC performSelector:@selector(resetUser)];
+    }
+    if (chooseType == ChooseCkType_FHCK){
+        if (delegate && [delegate respondsToSelector:@selector(FHCKSelectedWithckId:ckName:)]){
+            [delegate FHCKSelectedWithckId:[[rs objectAtIndex:0] integerValue] ckName:[rs objectAtIndex:1]];
+        }
+    }else if (chooseType == ChooseCkType_DHCK){
+        if (delegate && [delegate respondsToSelector:@selector(DHCKSelectedWihtckId:ckName:)]){
+            [delegate DHCKSelectedWihtckId:[[rs objectAtIndex:0] integerValue] ckName:[rs objectAtIndex:1]];
+        }
     }
     
     [self.parentVC performSelector:@selector(loadData) withObject:nil];

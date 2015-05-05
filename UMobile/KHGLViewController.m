@@ -16,6 +16,7 @@
 
 @implementation KHGLViewController
 @synthesize result,bSelect;
+@synthesize type,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -164,6 +165,16 @@
         NSArray *rsf = @[[rs objectAtIndex:0],[rs objectAtIndex:2]];
         [self.customerInfo addObjectsFromArray:rsf];
         [self.parentVC performSelector:@selector(loadData) withObject:nil];
+        if (type == KHGLType_ChooseClient){
+            if (delegate && [delegate respondsToSelector:@selector(clientSelectedWithClientId:clientName:)]){
+                [delegate clientSelectedWithClientId:[[rs objectAtIndex:0] integerValue] clientName:[rs objectAtIndex:2]];
+            }
+        }else if (type == KHGLType_ChooseSupplier){
+            if (delegate && [delegate respondsToSelector:@selector(supplierSelectedWithSupplierId:supplierName:)]){
+                [delegate supplierSelectedWithSupplierId:[[rs objectAtIndex:0] integerValue] supplierName:[rs objectAtIndex:2]];
+            }
+        }
+        
         [self dismiss];
     }else{
         KHGLDtlViewController *vc =  (KHGLDtlViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"KHGLDtlViewController"];
