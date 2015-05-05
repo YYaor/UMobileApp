@@ -8,8 +8,17 @@
 
 #import "RCViewController.h"
 #import "RCImageButton.h"
+#import "RCMutileView.h"
+#import "XinZenHeaderViewController.h"
 
 @interface YeWuDanJuViewController : RCViewController
-@property(nonatomic,retain) NSMutableArray *buttons;
-@property(nonatomic,retain) NSMutableDictionary *types;
+
+@property (retain, nonatomic) IBOutlet RCMutileView *mutileView;
+@property (retain, nonatomic) NSMutableArray *products;
+@property (retain, nonatomic) NSMutableDictionary *headInfo;
+@property (nonatomic) BOOL bEdit;
+@property (nonatomic,retain) NSString *InvId;
+@property (nonatomic,retain) NSString *AccID;
+
+@property (nonatomic) BOOL bClean;
 @end

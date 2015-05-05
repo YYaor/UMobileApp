@@ -100,9 +100,6 @@
                               @"mContent":vc1.allInfo};
         [[self GetOM] saveOrder:dic];
     }
-
-
- 
 }
 
 
