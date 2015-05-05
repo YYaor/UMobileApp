@@ -327,7 +327,7 @@
 }
 
 -(void)ribaoClick:(id)sender{
-    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"RibaoViewController"];
+    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"RBViewController"];
     [self.navigationController presentViewController:vc animated:YES completion:NULL];
 }
 

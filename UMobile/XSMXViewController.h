@@ -8,6 +8,10 @@
 
 #import "RCViewController.h"
 
-@interface XSMXViewController : RCViewController
-
+@interface XSMXViewController : RCViewController<UITextFieldDelegate>
+@property(nonatomic,retain) NSMutableArray *orderType;
+@property(nonatomic,retain) NSMutableArray *salesType;
+@property(nonatomic,retain) NSMutableArray *customerType;
+@property(nonatomic,retain) NSMutableArray *stockType;
+@property(nonatomic,retain) NSMutableArray *checkType;
 @end
