@@ -141,7 +141,7 @@
         }
         [self.navigationController pushViewController:cangKu animated:YES];
     }else if(textField == self.FKZHField || textField == self.SKZHField){
-        AccountViewController *account = [storyBoard instantiateViewControllerWithIdentifier:@"AccountViewController.h"];
+        AccountViewController *account = [storyBoard instantiateViewControllerWithIdentifier:@"AccountViewController"];
         account.delegate = self;
         if (textField == self.FKZHField){
             account.chooseType = ChooseAccountType_FKAccount;
