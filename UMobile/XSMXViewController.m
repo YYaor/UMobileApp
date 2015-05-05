@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self resetData];
+    [self loadData];
     // Do any additional setup after loading the view.
 }
 

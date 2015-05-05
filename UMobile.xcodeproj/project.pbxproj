@@ -495,6 +495,7 @@
 		46E9CDE71AF771C900AAE80A /* SSKCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE61AF771C900AAE80A /* SSKCViewController.m */; };
 		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
 		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
+		46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */; };
 		5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
 /* End PBXBuildFile section */
@@ -1241,6 +1242,8 @@
 		46E9CDE91AF771D400AAE80A /* YWDJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJViewController.m; sourceTree = "<group>"; };
 		46E9CDEB1AF771E000AAE80A /* XSMXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMXViewController.h; sourceTree = "<group>"; };
 		46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMXViewController.m; sourceTree = "<group>"; };
+		46E9CDEE1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YeWuDanJuXinZenViewController.h; sourceTree = "<group>"; };
+		46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YeWuDanJuXinZenViewController.m; sourceTree = "<group>"; };
 		5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefaultConfigViewController.h; sourceTree = "<group>"; };
 		5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefaultConfigViewController.m; sourceTree = "<group>"; };
 		5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondaryStoryboard.storyboard; sourceTree = "<group>"; };
@@ -2253,6 +2256,8 @@
 				189EABFF19D17A3300D8CF20 /* XinZenDingDanViewController.m */,
 				46E9CDDF1AF1D4A700AAE80A /* YeWuDanJuViewController.h */,
 				46E9CDE01AF1D4A700AAE80A /* YeWuDanJuViewController.m */,
+				46E9CDEE1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.h */,
+				46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */,
 				189EAC0119D1850A00D8CF20 /* CangKuViewController.h */,
 				189EAC0219D1850A00D8CF20 /* CangKuViewController.m */,
 				189EAC0819D1D39800D8CF20 /* XinZenShangPingViewController.h */,
@@ -2997,6 +3002,7 @@
 				189DE76819B5B52000F6A30D /* RCObjectManager.m in Sources */,
 				189DE7AB19B5B67A00F6A30D /* ASIS3BucketObject.m in Sources */,
 				1833148319C83749007C2EFB /* PaiHangViewController.m in Sources */,
+				46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */,
 				1CAB76FB1A768AF200501A27 /* YYYFliterViewController.m in Sources */,
 				189DB85819B977F100A71C3F /* UICountingLabel.m in Sources */,
 				18998AA919C0617500BD09AA /* UIView+Extension.m in Sources */,
