@@ -8,8 +8,9 @@
 
 #import "SetDefaultConfigViewController.h"
 #import "SaleViewController.h"
+#import "DepartmentViewController.h"
 
-@interface SetDefaultConfigViewController ()<saleViewControllerDelegate>
+@interface SetDefaultConfigViewController ()<saleViewControllerDelegate,departmentViewControllerDelegate>
 
 @end
 
@@ -69,7 +70,10 @@
         vc.delegate = self;
         [self.navigationController pushViewController:vc animated:YES];
     }else if (textField == self.BMField){
-        
+        //---choose department
+        DepartmentViewController *department = [storyBoard instantiateViewControllerWithIdentifier:@"DepartmentViewController"];
+        department.delegate = self;
+        [self.navigationController pushViewController:department animated:YES];
     }
     return NO;
 }
@@ -82,6 +86,18 @@
         dic = [NSMutableDictionary dictionary];
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:salesId],@"salesId",salesName,@"salesName", nil] forKey:@"salesInfo"];
+    [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:departId],@"departId",departName,@"departName", nil] forKey:@"departInfo"];
+    [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [self setDefaultValueForTextField];
+}
+#pragma mark departmentControllerDelegate
+-(void) departmentSelectedWith:(NSInteger)departId departName:(NSString *)departName{
+    NSMutableDictionary *dic = nil;
+    if ([self.setting objectForKey:@"SetDefaultParam"]){
+        dic = [NSMutableDictionary dictionaryWithDictionary:[self.setting objectForKey:@"SetDefaultParam"]];
+    }else{
+        dic = [NSMutableDictionary dictionary];
+    }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:departId],@"departId",departName,@"departName", nil] forKey:@"departInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
     [self setDefaultValueForTextField];

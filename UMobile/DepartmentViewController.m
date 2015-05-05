@@ -12,6 +12,7 @@
 
 @synthesize result;
 @synthesize selectId;
+@synthesize delegate;
 
 -(void)viewDidLoad{
     
@@ -122,7 +123,9 @@
     [self.info removeAllObjects];
     [self.info addObjectsFromArray:@[[rs objectAtIndex:0],[rs objectAtIndex:2],[rs ingoreObjectAtIndex:0]]];
     [self.parentVC performSelector:@selector(loadData) withObject:nil];
-    
+    if (delegate && [delegate respondsToSelector:@selector(departmentSelectedWith:departName:)]){
+        [delegate departmentSelectedWith:[[rs objectAtIndex:1] integerValue] departName:[rs objectAtIndex:2]];
+    }
     [self dismiss];
 }
 
