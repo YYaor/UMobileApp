@@ -498,6 +498,7 @@
 		46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */; };
 		5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
+		C8472C501AF888DE00022C3D /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -2949,6 +2950,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8472C501AF888DE00022C3D /* SetDefaultConfigViewController.m in Sources */,
 				189EAC0019D17A3300D8CF20 /* XinZenDingDanViewController.m in Sources */,
 				2EC5CCD21A0E65A900DD9858 /* ScanViewController.m in Sources */,
 				189DE7CC19B5B76D00F6A30D /* SDWebImageDecoder.m in Sources */,
@@ -3056,7 +3058,6 @@
 				189DE7B519B5B67A00F6A30D /* ASIDataCompressor.m in Sources */,
 				18980DF019EE4DC8006A95A4 /* RCView.m in Sources */,
 				189DE7B219B5B67A00F6A30D /* ASINetworkQueue.m in Sources */,
-				5C14F95F1AF7C3B600438A69 /* SetDefaultConfigViewController.m in Sources */,
 				189DE7E419B5C1E300F6A30D /* FMDatabaseAdditions.m in Sources */,
 				189DB85219B977F100A71C3F /* EFloatBox.m in Sources */,
 				18998A8919BFFABE00BD09AA /* RCImageButton.m in Sources */,
@@ -3234,8 +3235,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ze xu (5973N9VNX3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ze xu (5973N9VNX3)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -3273,8 +3274,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -3344,7 +3345,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ShareSDK/Connection",

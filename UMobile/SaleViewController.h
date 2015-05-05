@@ -9,6 +9,12 @@
 #import "RCViewController.h"
 #import "LeftView.h"
 
+@protocol saleViewControllerDelegate <NSObject>
+
+-(void) salesmanSelectedWithSalesId:(NSInteger) salesId salesName:(NSString *)salesName departId:(NSInteger) departId departName:(NSString *)departName;
+
+@end
+
 @interface SaleViewController : RCViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,LeftViewDelagete>{
     NSInteger page;
     LeftView *leftView;
@@ -24,5 +30,7 @@
 @property (nonatomic, retain) NSString *selectId;
 
 @property (nonatomic) NSUInteger CustomerType;
+
+@property(nonatomic , assign) id<saleViewControllerDelegate> delegate;
 
 @end
