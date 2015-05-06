@@ -84,6 +84,16 @@ static const CGFloat cellHeight = 60;
     [_dataTableView release];
     [super dealloc];
 }
+- (IBAction)disMiss:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+}
+
+-(BOOL)shouldAutorotate{
+    return YES;
+}
 #pragma mark-
 -(void) contentOffsetXChange:(CGFloat)offsetX{
     scrollOffsetX = offsetX;

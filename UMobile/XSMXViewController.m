@@ -13,6 +13,7 @@
 #import "StockViewController.h"
 #import "RCDateView.h"
 #import "XSMXDetailViewController.h"
+#import "RCLeftNavigationController.h"
 
 @interface XSMXViewController ()
 
@@ -171,7 +172,10 @@
 //    //    NSString *link =  []
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     XSMXDetailViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"XSMXDetailViewController"];
-    [self.navigationController pushViewController:detail animated:YES];
+    RCLeftNavigationController *navi = [[RCLeftNavigationController alloc] initWithRootViewController:detail];
+    [self presentViewController:navi animated:YES completion:^{
+    }];
+    [navi release];
     
 }
 
