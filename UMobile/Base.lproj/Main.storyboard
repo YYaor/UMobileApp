@@ -8135,9 +8135,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="multchoose.png" translatesAutoresizingMaskIntoConstraints="NO" id="WPU-oc-6NC">
                                         <rect key="frame" x="160" y="0.0" width="80" height="31"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="singlechoose.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-rU-6cW">
-                                        <rect key="frame" x="240" y="0.0" width="80" height="31"/>
-                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="singlechoose.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kef-rU-6cW"/>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="条码扫描" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BkL-dy-714">
                                         <rect key="frame" x="0.0" y="29" width="80" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -8254,28 +8252,42 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jm3-Rq-7U3">
-                                <rect key="frame" x="0.0" y="503" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="473" width="320" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="数量:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HAP-Fr-SWQ">
-                                        <rect key="frame" x="13" y="1" width="42" height="21"/>
+                                        <rect key="frame" x="13" y="31" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUn-2x-Skb" customClass="RCNumberLabel">
-                                        <rect key="frame" x="43" y="1" width="80" height="21"/>
+                                        <rect key="frame" x="43" y="31" width="80" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="金额:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUg-jU-oG3">
-                                        <rect key="frame" x="188" y="1" width="42" height="21"/>
+                                        <rect key="frame" x="188" y="31" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrD-dN-caJ" customClass="RCNumberLabel">
-                                        <rect key="frame" x="220" y="1" width="100" height="21"/>
+                                        <rect key="frame" x="220" y="31" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IQb-w6-rcM">
+                                        <rect key="frame" x="43" y="0.0" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="42b-pe-T3o" id="fFf-Fh-pej"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="优惠:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lg2-HA-9BX">
+                                        <rect key="frame" x="13" y="4" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -8283,7 +8295,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="4tx-vv-f2X"/>
+                                    <constraint firstAttribute="height" constant="50" id="4tx-vv-f2X"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -8304,6 +8316,7 @@
                     <connections>
                         <outlet property="tableView" destination="5Lo-Ne-RgS" id="eSU-I7-fT0"/>
                         <outlet property="totalView" destination="Jm3-Rq-7U3" id="xvx-D9-wNN"/>
+                        <outlet property="youhuiText" destination="IQb-w6-rcM" id="aSk-5P-LO5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LKd-q9-YEt" userLabel="First Responder" sceneMemberID="firstResponder"/>

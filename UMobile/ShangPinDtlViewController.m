@@ -7,6 +7,7 @@
 //
 
 #import "ShangPinDtlViewController.h"
+#import "KCLBViewController.h"
 
 @interface ShangPinDtlViewController ()
 
@@ -150,7 +151,10 @@
 }
 
 -(IBAction)KCXXClick:(id)sender{
-    NSLog(@"库存信息");
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    KCLBViewController *vc = (KCLBViewController *)[sb instantiateViewControllerWithIdentifier:@"KCLBViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

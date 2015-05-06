@@ -65,6 +65,13 @@
 //    }
 //}
 
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    CGRect rect = self.totalView.frame;
+    rect.origin.y -=236;
+    self.totalView.frame = rect;
+    return YES;
+}
+
 -(void)keyboardWillShow:(id)info{
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 280, 0);
 }
