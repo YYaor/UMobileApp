@@ -66,10 +66,20 @@
 //}
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
-    CGRect rect = self.totalView.frame;
-    rect.origin.y -=236;
-    self.totalView.frame = rect;
+    for (NSLayoutConstraint *constr in self.view.constraints) {
+        if (constr.firstItem == self.totalView && constr.firstAttribute == NSLayoutAttributeBottom) {
+            constr.constant -=216-45;
+        }
+    }
     return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    for (NSLayoutConstraint *constr in self.view.constraints) {
+        if (constr.firstItem == self.totalView && constr.firstAttribute == NSLayoutAttributeBottom) {
+            constr.constant +=216-45;
+        }
+    }
 }
 
 -(void)keyboardWillShow:(id)info{
