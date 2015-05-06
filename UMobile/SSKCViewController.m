@@ -17,7 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self resetData];
+    [self loadData];
+    
+}
+
+-(void)resetData{
     self.stockType = [NSMutableArray array];
+}
+
+-(void)loadData{
     [self setText:[self.stockType ingoreObjectAtIndex:1] forView:self.view withTag:10];
 }
 
@@ -38,10 +47,14 @@
 }
 
 -(IBAction)restClick:(id)sender{
-    self.stockType = [NSMutableArray array];
+    [self resetData];
+    [self loadData];
 }
 
 -(IBAction)searchClick:(id)sender{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"KCCXViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
     
 }
 

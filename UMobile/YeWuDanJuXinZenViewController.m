@@ -8,6 +8,7 @@
 #define NUMBERS @"1234567890."
 
 #import "YeWuDanJuXinZenViewController.h"
+#import "USettingModel.h"
 
 @interface YeWuDanJuXinZenViewController ()
 
@@ -31,10 +32,32 @@
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"5"]] forKey:@"5"];
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"6"]] forKey:@"6"];
+            NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
+            [_allInfo setObject:peopleArr forKey:@"4"];
+            
+            NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
+            [_allInfo setObject:bumenArr forKey:@"5"];
+            
+            NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
+            [_allInfo setObject:CKArr forKey:@"6"];
+            
+            NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"8",[USettingModel getSetting].SKZHName, nil];
+            [_allInfo setObject:SKArr forKey:@"8"];
         }else{
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"3"]] forKey:@"3"];
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
             [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"7"]] forKey:@"7"];
+            NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
+            [_allInfo setObject:peopleArr forKey:@"4"];
+            
+            NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
+            [_allInfo setObject:bumenArr forKey:@"5"];
+            
+            NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
+            [_allInfo setObject:CKArr forKey:@"6"];
+            
+            NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"9",[USettingModel getSetting].SKZHName, nil];
+            [_allInfo setObject:SKArr forKey:@"9"];
         }
         
         

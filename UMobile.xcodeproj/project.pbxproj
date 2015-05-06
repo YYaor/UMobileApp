@@ -496,6 +496,8 @@
 		46E9CDEA1AF771D400AAE80A /* YWDJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDE91AF771D400AAE80A /* YWDJViewController.m */; };
 		46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */; };
 		46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */; };
+		46E9CDF31AF9B12E00AAE80A /* KCCXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDF21AF9B12D00AAE80A /* KCCXViewController.m */; };
+		46E9CDF61AF9C14B00AAE80A /* KCLBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E9CDF51AF9C14B00AAE80A /* KCLBViewController.m */; };
 		5C3A6EB01AF9000F003BAB97 /* XSMXDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A6EAF1AF9000F003BAB97 /* XSMXDetailViewController.m */; };
 		5C3A6EB31AF901E4003BAB97 /* XSMXDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A6EB21AF901E4003BAB97 /* XSMXDetailTableViewCell.m */; };
 		5C3A6EB61AF902AA003BAB97 /* XSMXDetailHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3A6EB51AF902AA003BAB97 /* XSMXDetailHeaderView.m */; };
@@ -1249,6 +1251,10 @@
 		46E9CDEC1AF771E000AAE80A /* XSMXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XSMXViewController.m; sourceTree = "<group>"; };
 		46E9CDEE1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YeWuDanJuXinZenViewController.h; sourceTree = "<group>"; };
 		46E9CDEF1AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YeWuDanJuXinZenViewController.m; sourceTree = "<group>"; };
+		46E9CDF11AF9B12D00AAE80A /* KCCXViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCCXViewController.h; sourceTree = "<group>"; };
+		46E9CDF21AF9B12D00AAE80A /* KCCXViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCCXViewController.m; sourceTree = "<group>"; };
+		46E9CDF41AF9C14B00AAE80A /* KCLBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KCLBViewController.h; sourceTree = "<group>"; };
+		46E9CDF51AF9C14B00AAE80A /* KCLBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KCLBViewController.m; sourceTree = "<group>"; };
 		5C14F95D1AF7C3B600438A69 /* SetDefaultConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDefaultConfigViewController.h; sourceTree = "<group>"; };
 		5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDefaultConfigViewController.m; sourceTree = "<group>"; };
 		5C3A6EAE1AF9000F003BAB97 /* XSMXDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XSMXDetailViewController.h; sourceTree = "<group>"; };
@@ -2641,6 +2647,10 @@
 			children = (
 				46E9CDE51AF771C900AAE80A /* SSKCViewController.h */,
 				46E9CDE61AF771C900AAE80A /* SSKCViewController.m */,
+				46E9CDF11AF9B12D00AAE80A /* KCCXViewController.h */,
+				46E9CDF21AF9B12D00AAE80A /* KCCXViewController.m */,
+				46E9CDF41AF9C14B00AAE80A /* KCLBViewController.h */,
+				46E9CDF51AF9C14B00AAE80A /* KCLBViewController.m */,
 			);
 			name = SSKC;
 			sourceTree = "<group>";
@@ -3005,6 +3015,7 @@
 				189DE76919B5B52000F6A30D /* RCTableHeadSortView.m in Sources */,
 				189EAC0319D1850A00D8CF20 /* CangKuViewController.m in Sources */,
 				189DE6FE19B578C500F6A30D /* ViewController.m in Sources */,
+				46E9CDF31AF9B12E00AAE80A /* KCCXViewController.m in Sources */,
 				18A44F6619CDB674009E658A /* FeiYongRiBaoViewController.m in Sources */,
 				189DE7D019B5B76D00F6A30D /* UIButton+WebCache.m in Sources */,
 				18F5C1061A14A847009E9A02 /* ShangPinXZViewController.m in Sources */,
@@ -3127,6 +3138,7 @@
 				18A44F5C19CD790D009E658A /* YingFuRiBaoViewController.m in Sources */,
 				18998AA619C0617500BD09AA /* MJRefreshHeaderView.m in Sources */,
 				189DE7AA19B5B67A00F6A30D /* ASIS3ServiceRequest.m in Sources */,
+				46E9CDF61AF9C14B00AAE80A /* KCLBViewController.m in Sources */,
 				46E9CDED1AF771E000AAE80A /* XSMXViewController.m in Sources */,
 				1896B2431A11AFB00016825E /* FeedbackViewController.m in Sources */,
 				1CD195C11A24EC9D0012F358 /* NSString+Format.m in Sources */,
@@ -3326,8 +3338,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Bin Tong (BSJ86TK2RG)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: ze xu (5973N9VNX3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ze xu (5973N9VNX3)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ShareSDK/Connection",
