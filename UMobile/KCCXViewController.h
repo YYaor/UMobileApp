@@ -22,6 +22,9 @@
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (retain, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property (nonatomic,retain) NSString *cangkuName;
+@property (nonatomic,retain) NSString *shangpinName;
+
 @property (nonatomic) BOOL bSelect;
 @property (nonatomic,assign) NSMutableArray *products;
 @property (nonatomic,retain) NSString *searchCode;

@@ -9,6 +9,9 @@
 #import "KCLBViewController.h"
 
 @interface KCLBViewController ()
+{
+    NSMutableArray *array;
+}
 
 @end
 
@@ -16,14 +19,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupRefresh:self.tableView];
+    [self.tableView headerBeginRefreshing];
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)headerRereshing{
+    [array removeAllObjects];
+    NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"%lu,'%@',20,-1",(unsigned long)self.shID,[self GetUserID]]];
+    
+    __block KCLBViewController *tempSelf = self;
+    [self setFooterRefresh:self.tableView];
+    [self StartQuery:link completeBlock:^(id obj) {
+        NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
+        [array addObjectsFromArray:rs];
+        [tempSelf.tableView reloadData];
+        [tempSelf.tableView headerEndRefreshing];
+    } lock:NO];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    return array.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *identify = @"cellList";
@@ -31,6 +51,10 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
     }
+    
+    [self setText:[array objectAtIndex:1] forView:self.view withTag:1];
+    [self setText:[array objectAtIndex:2] forView:self.view withTag:2];
+    [self setText:[array objectAtIndex:3] forView:self.view withTag:3];
     return cell;
 }
 

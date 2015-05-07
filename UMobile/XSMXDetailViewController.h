@@ -11,5 +11,7 @@
 @interface XSMXDetailViewController : RCViewController<UITableViewDataSource,UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *dataTableView;
 @property (nonatomic , retain) NSMutableArray *dataArray;
+@property (nonatomic,retain) NSString *link;
+@property (nonatomic,retain) NSString *parma;
 
 @end

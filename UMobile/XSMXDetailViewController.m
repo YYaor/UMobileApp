@@ -25,12 +25,26 @@ static const CGFloat cellHeight = 60;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     dataArray = [[NSMutableArray alloc] init];
-    for (int i = 0;i<4;i++){
-        XSMXDetailCellModel *model = [XSMXDetailCellModel parseDataFromArray:nil];
-        [dataArray addObject:model];
-    }
-    [self.dataTableView reloadData];
+    [self setupRefresh:self.dataTableView];
+    [self.dataTableView headerBeginRefreshing];
+    
 }
+
+-(void)headerRereshing{
+     __block XSMXDetailViewController *tempSelf = self;
+    [dataArray removeAllObjects];
+    [self StartQuery:self.link completeBlock:^(id obj) {
+        NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
+        for (NSArray *array in rs) {
+            XSMXDetailCellModel *model = [XSMXDetailCellModel parseDataFromArray:array];
+            [tempSelf.dataArray addObject:model];
+        }
+        [tempSelf.dataTableView headerEndRefreshing];
+        [tempSelf.dataTableView reloadData];
+    } lock:YES];
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -82,6 +96,8 @@ static const CGFloat cellHeight = 60;
 
 - (void)dealloc {
     [_dataTableView release];
+    self.link = nil;
+    self.parma = nil;
     [super dealloc];
 }
 - (IBAction)disMiss:(UIBarButtonItem *)sender {

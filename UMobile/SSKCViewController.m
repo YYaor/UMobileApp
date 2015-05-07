@@ -8,6 +8,7 @@
 
 #import "SSKCViewController.h"
 #import "StockViewController.h"
+#import "KCCXViewController.h"
 
 @interface SSKCViewController ()
 
@@ -53,7 +54,11 @@
 
 -(IBAction)searchClick:(id)sender{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
-    UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"KCCXViewController"];
+    KCCXViewController *vc = (KCCXViewController *)[storyboard instantiateViewControllerWithIdentifier:@"KCCXViewController"];
+    UITextField *tf = (UITextField *)[self.view viewWithTag:10];
+    UITextField *tf1 = (UITextField *)[self.view viewWithTag:9];
+    vc.shangpinName = tf1.text;
+    vc.cangkuName = tf.text;
     [self.navigationController pushViewController:vc animated:YES];
     
 }

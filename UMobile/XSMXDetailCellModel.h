@@ -9,18 +9,6 @@
 #import <Foundation/Foundation.h>
 
 @interface XSMXDetailCellModel : NSObject
-//[dateLabel release] ,dateLabel = nil;
-//[numberLabel release],numberLabel = nil;
-//
-//[typeLabel release],typeLabel = nil;
-//[companyLabel release],companyLabel = nil;
-//[storeLabel release],storeLabel = nil;
-//[itemNameLabel release],itemNameLabel = nil;
-//[itemAmountLabel release],itemAmountLabel = nil;
-//[largnessAmountLabel release],largnessAmountLabel = nil;
-//[moneyLabel release],moneyLabel = nil;
-//[costMoneyLabel release],costMoneyLabel = nil;
-//[profitLabel release],profitLabel = nil;
 
 @property(nonatomic , retain) NSString *dateString;
 @property(nonatomic , retain) NSString *numberString;

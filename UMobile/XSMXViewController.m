@@ -151,19 +151,21 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"'%@','%@',%d,'%@',%d,%d,%d,%d,%@",
-                        [self getTextFromView:self.view withTag:1],
-                        [self getTextFromView:self.view withTag:2],
-                        [[self.orderType ingoreObjectAtIndex:0] intValue],
+    NSString *param =  [NSString stringWithFormat:@"'%@','%@',%d,%d,%d,'%@','%@','%@',20,0",
                         [self getTextFromView:self.view withTag:4],
-                        [[self.salesType ingoreObjectAtIndex:0] intValue],
+                        [self getTextFromView:self.view withTag:3],
                         [[self.customerType ingoreObjectAtIndex:0] intValue],
                         [[self.stockType ingoreObjectAtIndex:0] intValue],
-                        [[self.checkType ingoreObjectAtIndex:0] intValue],
+                        [[self.salesType ingoreObjectAtIndex:0] intValue],
+                        [self getTextFromView:self.view withTag:1],
+                        [self getTextFromView:self.view withTag:2],
                         [self GetUserID]
                         ];
-//    NSString *link = [self GetLinkWithFunction:72 andParam:param];
-//    
+    NSString *link = [self GetLinkWithFunction:93 andParam:param];
+    
+    
+    
+//
 //    DDGLViewController *vc = (DDGLViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DDGLViewController"];
 //    vc.link = link;
 //    vc.param = param;
@@ -172,6 +174,8 @@
 //    //    NSString *link =  []
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     XSMXDetailViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"XSMXDetailViewController"];
+    detail.parma = param;
+    detail.link = link;
     RCLeftNavigationController *navi = [[RCLeftNavigationController alloc] initWithRootViewController:detail];
     [self presentViewController:navi animated:YES completion:^{
     }];

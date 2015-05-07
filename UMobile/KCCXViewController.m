@@ -52,7 +52,7 @@
 
 -(void)headerRereshing{
     page = 1;
-    NSString *link = [self GetLinkWithFunction:12 andParam:[NSString stringWithFormat:@"20,%d,%@,'%@',1",page,leftView.selectID,[self.searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"'%@','%@',%@,20,-1",[self.shangpinName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[self.cangkuName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[[self GetUserID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     __block SPGLViewController *tempSelf = self;
     [self setFooterRefresh:self.tableView];
@@ -68,7 +68,7 @@
 
 -(void)footerRereshing{
     page ++ ;
-    NSString *link = [self GetLinkWithFunction:12 andParam:[NSString stringWithFormat:@"20,%d,%@,'%@',1",page,leftView.selectID,[self.searchBar.text stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
+    NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"'%@','%@',%@,20,-1",[self.shangpinName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[self.cangkuName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[[self GetUserID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
     __block SPGLViewController *tempSelf = self;
     [self StartQuery:link completeBlock:^(id obj) {
@@ -89,24 +89,11 @@
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 2) {
-        if ([self.setting intForKey:@"Classics"] == 0) {
-            [self.setting setObject:@"1" forKey:@"Classics"];
-            [self.setting setObject:@"0" forKey:@"Simple"];
-        }else{
-            [self.setting setObject:@"0" forKey:@"Classics"];
-            [self.setting setObject:@"1" forKey:@"Simple"];
-        }
-        [USER_DEFAULT setObject:self.setting forKey:@"Setting"];
-        [self.tableView reloadData];
-    }else if (buttonIndex == 1){
-        ScanViewController *vc = (ScanViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"ScanViewController"];
+ if (buttonIndex == 1){
+     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        ScanViewController *vc = (ScanViewController *) [sb instantiateViewControllerWithIdentifier:@"ScanViewController"];
         vc.parentVC = self;
         [self.navigationController pushViewController:vc animated:YES];
-    }else{
-        //清除缓存，可重新下载图片
-        [self clearPictureCache];
-        [self.tableView reloadRowsAtIndexPaths:[self.tableView indexPathsForVisibleRows] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
 
@@ -149,25 +136,23 @@
     }
     NSArray *rs =  [self.result objectAtIndex:indexPath.row];
     [self setText:[rs objectAtIndex:2] forView:cell withTag:1];
-    [self setText:[rs objectAtIndex:4] forView:cell withTag:2];
-    [self setText:[rs objectAtIndex:7] forView:cell withTag:3];
-    [self setText:[rs objectAtIndex:5] forView:cell withTag:4];
-    [self setText:[rs objectAtIndex:6] forView:cell withTag:5];
-    [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:8] doubleValue]] forView:cell withTag:6];
-    [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:9] doubleValue]] forView:cell withTag:7];
+    [self setText:[rs objectAtIndex:3] forView:cell withTag:2];
+    [self setText:[rs objectAtIndex:4] forView:cell withTag:3];
+    [self setText:[NSString stringWithFormat:@"%.0f",[[rs objectAtIndex:5] doubleValue]] forView:cell withTag:6];
+    [self setText:[NSString stringWithFormat:@"%.0f",[[rs objectAtIndex:6] doubleValue]] forView:cell withTag:7];
     
     if([self.setting intForKey:@"Stock"] == 0){
 //        [self setHiden:cell withTag:16];
-        [self setHiden:cell withTag:6];
+//        [self setHiden:cell withTag:6];
     }
     
     if ([self.setting intForKey:@"Usable"] == 0){
 //        [self setHiden:cell withTag:17];
-        [self setHiden:cell withTag:7];
+//        [self setHiden:cell withTag:7];
     }
     
     
-    [self setProductImage:[rs objectAtIndex:0] inImageView:[cell viewWithTag:8]];
+//    [self setProductImage:[rs objectAtIndex:0] inImageView:[cell viewWithTag:8]];
     
     
     return cell;

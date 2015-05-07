@@ -124,7 +124,7 @@
     if ([[self GetOM].rightsMode count] == 0) {
         return;
     }
-    for (int i =  1 ;  i < 9 ; i ++){
+    for (int i =  1 ;  i < 12 ; i ++){
         UIImageView *imageView = (UIImageView *) [self.scrollView viewWithTag:i];
         if (![[[self GetOM].rightsMode objectAtIndex:i] isEqualToString:@"True"]) {
             //不接受点击
@@ -378,13 +378,13 @@
     [self StartQuery:[self GetLinkWithFunction:85 andParam:param] completeBlock:^(id obj) {
         
         NSMutableArray *mode = [[[obj objectFromJSONString] objectForKey:@"D_Data"] firstObject];
-        [tempSelf GetOM].rightsMode =  mode;//@[@"False",@"False",@"True",@"False",@"True",@"False",@"False",@"False",@"False"];
+//        [tempSelf GetOM].rightsMode =  mode;//@[@"False",@"False",@"True",@"False",@"True",@"False",@"False",@"False",@"False"];
         
         //0业务设置,1审核,2预警,3排行榜,4报表中心,5客户管理,6商品管理,7订单查询,8日报,9移动禁用 True False
-        if([[mode objectAtIndex:9] isEqualToString: @"True"]){//9移动禁用，退出
-            [tempSelf makeToastInWindow:@"移动化应用已禁用"];
-            [tempSelf.navigationController popToRootViewControllerAnimated:YES];
-        }
+//        if([[mode objectAtIndex:9] isEqualToString: @"True"]){//9移动禁用，退出
+//            [tempSelf makeToastInWindow:@"移动化应用已禁用"];
+//            [tempSelf.navigationController popToRootViewControllerAnimated:YES];
+//        }
         [tempSelf setButtonEnable];
         //设置按钮
         

@@ -153,6 +153,8 @@
 -(IBAction)KCXXClick:(id)sender{
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     KCLBViewController *vc = (KCLBViewController *)[sb instantiateViewControllerWithIdentifier:@"KCLBViewController"];
+     NSArray *rs =  [self.result firstObject];
+    vc.shID = [[rs objectAtIndex:0] integerValue];
     [self.navigationController pushViewController:vc animated:YES];
     
 }

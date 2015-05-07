@@ -135,7 +135,7 @@
         }
     }
     [self.view endEditing:YES];
-    NSString *param = [NSString stringWithFormat:@"'%@','%@','01'",
+    NSString *param = [NSString stringWithFormat:@"'%@','%@','02'",
                        [self getTextFromView:self.view withTag:1],
                        [self getTextFromView:self.view withTag:2]
                        ];
