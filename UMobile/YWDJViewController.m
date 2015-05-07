@@ -12,6 +12,7 @@
 #import "StockViewController.h"
 #import "CustomerListViewController.h"
 #import "RCDateView.h"
+#import "YWDJListViewController.h"
 
 @interface YWDJViewController ()
 
@@ -145,7 +146,7 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"'%@','%@',%d,'%@',%d,%d,%d,%d,%@",
+    NSString *param =  [NSString stringWithFormat:@"20,0,'%@','%@',%d,'%@',%d,%d,%d,%d,%@",
                         [self getTextFromView:self.view withTag:1],
                         [self getTextFromView:self.view withTag:2],
                         [[self.orderType ingoreObjectAtIndex:0] intValue],
@@ -156,9 +157,9 @@
                         [[self.checkType ingoreObjectAtIndex:0] intValue],
                         [self GetUserID]
                         ];
-    NSString *link = [self GetLinkWithFunction:72 andParam:param];
-    
-    DDGLViewController *vc = (DDGLViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DDGLViewController"];
+    NSString *link = [self GetLinkWithFunction:89 andParam:param];
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
     vc.link = link;
     vc.param = param;
     vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单

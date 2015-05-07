@@ -9,6 +9,9 @@
 #import "YWDJListViewController.h"
 
 @interface YWDJListViewController ()
+{
+    NSMutableArray *array;
+}
 
 @end
 
@@ -16,8 +19,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setupRefresh:self.dataTableView];
+    [self.dataTableView headerBeginRefreshing];
 }
+
+-(void)headerRereshing{
+    __block YWDJListViewController *tempSelf = self;
+    [self setFooterRefresh:self.dataTableView];
+    [self StartQuery:self.link completeBlock:^(id obj) {
+        NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
+        [array addObjectsFromArray:rs];
+        [tempSelf.dataTableView reloadData];
+        [tempSelf.dataTableView headerEndRefreshing];
+    } lock:NO];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return array.count;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSString *identify = @"YWDJCell";
+    UITableViewCell *cell = [self.dataTableView dequeueReusableCellWithIdentifier:identify];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
+    }
+    
+    return cell;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

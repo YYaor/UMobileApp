@@ -52,9 +52,10 @@
         cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
     }
     
-    [self setText:[array objectAtIndex:1] forView:self.view withTag:1];
-    [self setText:[array objectAtIndex:2] forView:self.view withTag:2];
-    [self setText:[array objectAtIndex:3] forView:self.view withTag:3];
+    NSArray *rs = [array objectAtIndex:indexPath.row];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:1];
+    [self setText:[rs objectAtIndex:2] forView:cell withTag:2];
+    [self setText:[rs objectAtIndex:3] forView:cell withTag:3];
     return cell;
 }
 
