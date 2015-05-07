@@ -7,6 +7,8 @@
 //
 
 #import "YWDJDetailViewController.h"
+#import "YWDJMainDetailViewController.h"
+#import "YWDJProcutDetailViewController.h"
 
 @interface YWDJDetailViewController ()
 
@@ -17,6 +19,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    
+    YWDJProcutDetailViewController *productDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJProcutDetailViewController"];
+    productDetail.parentVC = self;
+    
+    YWDJMainDetailViewController *mainDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJMainDetailViewController"];
+    mainDetail.parentVC = self;
+    self.mutliView.titles = @[@"商品明细",@"主单据"];
+    self.mutliView.viewControllers = @[productDetail,mainDetail];
+    [productDetail release];
+    [mainDetail release];
+    
+    
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
 }
