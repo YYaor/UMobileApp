@@ -505,6 +505,10 @@
 		5CE0E8491AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */; };
 		C8472C501AF888DE00022C3D /* SetDefaultConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C14F95E1AF7C3B600438A69 /* SetDefaultConfigViewController.m */; };
 		C8472C531AF8CEA900022C3D /* USettingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C8472C521AF8CEA900022C3D /* USettingModel.m */; };
+		C86820381AFB0FEE00A86975 /* YWDJListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86820371AFB0FEE00A86975 /* YWDJListViewController.m */; };
+		C868203B1AFB100C00A86975 /* YWDJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C868203A1AFB100C00A86975 /* YWDJDetailViewController.m */; };
+		C868203E1AFB103A00A86975 /* YWDJProcutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */; };
+		C86820411AFB105200A86975 /* YWDJMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1268,6 +1272,14 @@
 		5CE0E8481AF7B0CB00AE79F7 /* SecondaryStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SecondaryStoryboard.storyboard; sourceTree = "<group>"; };
 		C8472C511AF8CEA900022C3D /* USettingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USettingModel.h; sourceTree = "<group>"; };
 		C8472C521AF8CEA900022C3D /* USettingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USettingModel.m; sourceTree = "<group>"; };
+		C86820361AFB0FEE00A86975 /* YWDJListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJListViewController.h; sourceTree = "<group>"; };
+		C86820371AFB0FEE00A86975 /* YWDJListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJListViewController.m; sourceTree = "<group>"; };
+		C86820391AFB100C00A86975 /* YWDJDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJDetailViewController.h; sourceTree = "<group>"; };
+		C868203A1AFB100C00A86975 /* YWDJDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJDetailViewController.m; sourceTree = "<group>"; };
+		C868203C1AFB103A00A86975 /* YWDJProcutDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJProcutDetailViewController.h; sourceTree = "<group>"; };
+		C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJProcutDetailViewController.m; sourceTree = "<group>"; };
+		C868203F1AFB105200A86975 /* YWDJMainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJMainDetailViewController.h; sourceTree = "<group>"; };
+		C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJMainDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2660,6 +2672,14 @@
 			children = (
 				46E9CDE81AF771D400AAE80A /* YWDJViewController.h */,
 				46E9CDE91AF771D400AAE80A /* YWDJViewController.m */,
+				C86820361AFB0FEE00A86975 /* YWDJListViewController.h */,
+				C86820371AFB0FEE00A86975 /* YWDJListViewController.m */,
+				C86820391AFB100C00A86975 /* YWDJDetailViewController.h */,
+				C868203A1AFB100C00A86975 /* YWDJDetailViewController.m */,
+				C868203C1AFB103A00A86975 /* YWDJProcutDetailViewController.h */,
+				C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */,
+				C868203F1AFB105200A86975 /* YWDJMainDetailViewController.h */,
+				C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */,
 			);
 			name = YWDJ;
 			sourceTree = "<group>";
@@ -3009,6 +3029,7 @@
 				18998AA519C0617500BD09AA /* MJRefreshFooterView.m in Sources */,
 				18B3ED5219C6FF430066DA25 /* RCLineChart.m in Sources */,
 				189DE7E619B5C1E300F6A30D /* FMResultSet.m in Sources */,
+				C868203B1AFB100C00A86975 /* YWDJDetailViewController.m in Sources */,
 				1CD906021A7E20FD00363E7C /* pinyin.c in Sources */,
 				1CD072FC1A30A1D100441F68 /* RCTableView.m in Sources */,
 				C8472C531AF8CEA900022C3D /* USettingModel.m in Sources */,
@@ -3017,6 +3038,7 @@
 				189DE6FE19B578C500F6A30D /* ViewController.m in Sources */,
 				46E9CDF31AF9B12E00AAE80A /* KCCXViewController.m in Sources */,
 				18A44F6619CDB674009E658A /* FeiYongRiBaoViewController.m in Sources */,
+				C868203E1AFB103A00A86975 /* YWDJProcutDetailViewController.m in Sources */,
 				189DE7D019B5B76D00F6A30D /* UIButton+WebCache.m in Sources */,
 				18F5C1061A14A847009E9A02 /* ShangPinXZViewController.m in Sources */,
 				189EABFD19D178A100D8CF20 /* XinZenHeaderViewController.m in Sources */,
@@ -3040,6 +3062,7 @@
 				1CB1E3861A742555005317CE /* XXDMXViewController.m in Sources */,
 				189DE75F19B5B52000F6A30D /* RCNavigationBar.m in Sources */,
 				189DE76819B5B52000F6A30D /* RCObjectManager.m in Sources */,
+				C86820411AFB105200A86975 /* YWDJMainDetailViewController.m in Sources */,
 				189DE7AB19B5B67A00F6A30D /* ASIS3BucketObject.m in Sources */,
 				1833148319C83749007C2EFB /* PaiHangViewController.m in Sources */,
 				46E9CDF01AF8ABE500AAE80A /* YeWuDanJuXinZenViewController.m in Sources */,
@@ -3125,6 +3148,7 @@
 				18C97D5C19D2EE8F0028EEA9 /* Toast+UIView.m in Sources */,
 				189DE7A219B5B67A00F6A30D /* ASICloudFilesContainerRequest.m in Sources */,
 				184425741A36B6C800228862 /* GDataXMLNode.m in Sources */,
+				C86820381AFB0FEE00A86975 /* YWDJListViewController.m in Sources */,
 				189C0F8219D0527A0037292A /* FAImageView.m in Sources */,
 				189C0F8319D0527A0037292A /* NSString+FontAwesome.m in Sources */,
 				189DE75D19B5B52000F6A30D /* ProgressHUD.m in Sources */,
