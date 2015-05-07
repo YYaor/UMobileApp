@@ -518,7 +518,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDu-IZ-9Wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="235" y="650"/>
+            <point key="canvasLocation" x="223" y="680"/>
         </scene>
         <!--业务单据-商品明细-->
         <scene sceneID="ehT-Q4-moa">
@@ -681,10 +681,139 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="MingChengLabel" destination="4zp-s1-Bko" id="zkU-Fs-KJN"/>
+                        <outlet property="bianMaLabel" destination="mnF-If-60J" id="peG-hs-uOM"/>
+                        <outlet property="danJiaLabel" destination="biA-Ha-1n9" id="zNQ-jE-wFy"/>
+                        <outlet property="danWeiLabel" destination="5rd-5j-SvU" id="cM0-T1-QVk"/>
+                        <outlet property="guiGeLabel" destination="zkh-sl-5M8" id="hvS-1W-420"/>
+                        <outlet property="piHaoXingXiLabel" destination="Tnm-qF-Fv7" id="c1p-Oz-yx5"/>
+                        <outlet property="shuLiangLabel" destination="296-7s-NHu" id="xrB-ed-1AC"/>
+                        <outlet property="xingHaoLabel" destination="Xhl-Oz-0Vh" id="snq-fV-rMV"/>
+                        <outlet property="zheHouDanJiaLabel" destination="Cwf-Uz-ezO" id="zO0-dR-922"/>
+                        <outlet property="zheHouJingELabel" destination="0Nk-9q-o3v" id="May-sI-QuR"/>
+                        <outlet property="zhenPingLabel" destination="ub9-BW-cKx" id="5zx-du-woL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2QS-zY-h9L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="604" y="651"/>
+        </scene>
+        <!--业务单据详情-->
+        <scene sceneID="Hu6-3y-S4Z">
+            <objects>
+                <viewController storyboardIdentifier="YWDJDetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lCv-hA-CGe" userLabel="业务单据详情" customClass="YWDJDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cWu-Z7-zBE"/>
+                        <viewControllerLayoutGuide type="bottom" id="zQt-DR-fki"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Fq-gv-PrP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GIQ-Ka-X4a" customClass="RCMutileView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="454"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wxc-nc-zf0" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="454" width="320" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Sx-N7-WUQ">
+                                        <rect key="frame" x="10" y="3" width="96" height="44"/>
+                                        <color key="backgroundColor" red="0.047058823529411764" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="复制">
+                                            <color key="titleColor" red="0.93725490196078431" green="0.93725490196078431" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.radius">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="copyButtonClicked:" destination="lCv-hA-CGe" eventType="touchUpInside" id="saV-jN-vfE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzp-l5-PQ4">
+                                        <rect key="frame" x="111" y="3" width="97" height="44"/>
+                                        <color key="backgroundColor" red="0.047058823530000002" green="0.70980392160000005" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="蓝牙打印">
+                                            <color key="titleColor" red="0.93725490196078431" green="0.93725490196078431" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.radius">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="printButtonClicked:" destination="lCv-hA-CGe" eventType="touchUpInside" id="iGY-JA-je3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9WG-zA-pqn">
+                                        <rect key="frame" x="214" y="3" width="96" height="44"/>
+                                        <color key="backgroundColor" red="0.047058823529411764" green="0.70980392156862748" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="删除">
+                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.corner.radius">
+                                                <integer key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="deleteButtonClicked:" destination="lCv-hA-CGe" eventType="touchUpInside" id="BxN-Br-ihM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Rzp-l5-PQ4" firstAttribute="width" secondItem="8Sx-N7-WUQ" secondAttribute="width" id="AA0-SM-CRw"/>
+                                    <constraint firstItem="8Sx-N7-WUQ" firstAttribute="top" secondItem="Wxc-nc-zf0" secondAttribute="top" constant="3" id="Dyl-7S-IEL"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rzp-l5-PQ4" secondAttribute="bottom" constant="3" id="G28-65-TGE"/>
+                                    <constraint firstItem="9WG-zA-pqn" firstAttribute="width" secondItem="Rzp-l5-PQ4" secondAttribute="width" id="Lbw-jn-Efl"/>
+                                    <constraint firstItem="9WG-zA-pqn" firstAttribute="top" secondItem="Wxc-nc-zf0" secondAttribute="top" constant="3" id="Lhv-mo-FVC"/>
+                                    <constraint firstAttribute="trailing" secondItem="9WG-zA-pqn" secondAttribute="trailing" constant="10" id="RvT-wT-5GW"/>
+                                    <constraint firstAttribute="height" constant="50" id="S8B-mM-e5d"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Sx-N7-WUQ" secondAttribute="bottom" constant="3" id="fCM-jZ-QwL"/>
+                                    <constraint firstItem="Rzp-l5-PQ4" firstAttribute="leading" secondItem="8Sx-N7-WUQ" secondAttribute="trailing" constant="5" id="g0A-Fq-AQX"/>
+                                    <constraint firstItem="9WG-zA-pqn" firstAttribute="leading" secondItem="Rzp-l5-PQ4" secondAttribute="trailing" constant="6" id="ltb-mx-rYR"/>
+                                    <constraint firstItem="8Sx-N7-WUQ" firstAttribute="leading" secondItem="Wxc-nc-zf0" secondAttribute="leading" constant="10" id="pSE-M5-PFC"/>
+                                    <constraint firstItem="Rzp-l5-PQ4" firstAttribute="top" secondItem="Wxc-nc-zf0" secondAttribute="top" constant="3" id="sAt-DQ-G73"/>
+                                    <constraint firstAttribute="bottom" secondItem="9WG-zA-pqn" secondAttribute="bottom" constant="3" id="yGv-Z0-19y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Wxc-nc-zf0" secondAttribute="trailing" id="IVL-mI-6A7"/>
+                            <constraint firstItem="GIQ-Ka-X4a" firstAttribute="leading" secondItem="0Fq-gv-PrP" secondAttribute="leading" id="KL6-Ph-V6j"/>
+                            <constraint firstItem="Wxc-nc-zf0" firstAttribute="leading" secondItem="0Fq-gv-PrP" secondAttribute="leading" id="MkR-gy-Z0b"/>
+                            <constraint firstAttribute="trailing" secondItem="GIQ-Ka-X4a" secondAttribute="trailing" id="WqR-s7-ylN"/>
+                            <constraint firstItem="Wxc-nc-zf0" firstAttribute="top" secondItem="GIQ-Ka-X4a" secondAttribute="bottom" id="fzg-JF-vwr"/>
+                            <constraint firstItem="GIQ-Ka-X4a" firstAttribute="top" secondItem="0Fq-gv-PrP" secondAttribute="top" id="n2x-4M-aqh"/>
+                            <constraint firstAttribute="bottom" secondItem="Wxc-nc-zf0" secondAttribute="bottom" id="w3x-HC-KZX"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="业务单据详情" id="Ars-VH-8N9">
+                        <barButtonItem key="leftBarButtonItem" image="back_normal_icon.png" id="pSn-T6-86J">
+                            <connections>
+                                <action selector="backClick:" destination="lCv-hA-CGe" id="R9T-Jj-YYo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="dataCopyButton" destination="8Sx-N7-WUQ" id="3mX-7z-eOi"/>
+                        <outlet property="deleteButton" destination="9WG-zA-pqn" id="kzg-Ui-d03"/>
+                        <outlet property="mutliView" destination="GIQ-Ka-X4a" id="Pnc-TF-VQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HiG-RT-jtf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="269" y="1266"/>
         </scene>
         <!--业务单据-主单据-->
         <scene sceneID="EjD-ci-DiI">
@@ -1169,6 +1298,22 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="DanJuRiQiLabel" destination="nNl-yd-YQh" id="vs2-Bj-9LW"/>
+                        <outlet property="changKuLabel" destination="vKj-hF-LnN" id="BAK-ep-LMv"/>
+                        <outlet property="danJuBianHaoLabel" destination="Vnq-5h-SWC" id="iI0-Hc-lyP"/>
+                        <outlet property="fuJiaShuoMing" destination="ALQ-re-KlR" id="Yx3-cy-bHM"/>
+                        <outlet property="jinShouRenLabel" destination="Jma-zu-T2y" id="JJQ-fA-XmG"/>
+                        <outlet property="jingENeiRongLabel" destination="xFf-VK-JDY" id="H5O-TX-N6H"/>
+                        <outlet property="lianXiDianHua" destination="MR0-f1-ixc" id="Btk-vJ-JYr"/>
+                        <outlet property="lianXiRenLabel" destination="0TE-Wz-A9q" id="YDL-fY-lYI"/>
+                        <outlet property="mingChengLabel" destination="mLI-sU-jsB" id="qDl-YN-Ogq"/>
+                        <outlet property="shouJiHaoLabel" destination="osz-Co-0Cz" id="ite-RH-G18"/>
+                        <outlet property="shouKuanJingELabel" destination="qAF-P4-Mqv" id="UOp-HX-bm9"/>
+                        <outlet property="shouKuanZhangHuLabel" destination="s0I-5g-7w6" id="xjs-1Z-qVi"/>
+                        <outlet property="shuLianLabel" destination="6nl-kb-kY9" id="S3b-dN-Jwg"/>
+                        <outlet property="zhaiYaoLabel" destination="hJe-gD-22P" id="B74-Hx-biD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Flc-wM-dYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

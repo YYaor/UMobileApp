@@ -18,6 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (IBAction)copyButtonClicked:(UIButton *)sender {
+}
+- (IBAction)printButtonClicked:(UIButton *)sender {
+}
+- (IBAction)deleteButtonClicked:(UIButton *)sender {
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -34,4 +40,11 @@
 }
 */
 
+- (void)dealloc {
+    [_mutliView release];
+    [_printButton release];
+    [_dataCopyButton release];
+    [_deleteButton release];
+    [super dealloc];
+}
 @end

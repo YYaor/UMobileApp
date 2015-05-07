@@ -34,4 +34,21 @@
 }
 */
 
+- (void)dealloc {
+    [_danJuBianHaoLabel release];
+    [_DanJuRiQiLabel release];
+    [_changKuLabel release];
+    [_jinShouRenLabel release];
+    [_shuLianLabel release];
+    [_jingENeiRongLabel release];
+    [_shouKuanZhangHuLabel release];
+    [_shouKuanJingELabel release];
+    [_mingChengLabel release];
+    [_lianXiRenLabel release];
+    [_lianXiDianHua release];
+    [_shouJiHaoLabel release];
+    [_zhaiYaoLabel release];
+    [_fuJiaShuoMing release];
+    [super dealloc];
+}
 @end

@@ -34,4 +34,18 @@
 }
 */
 
+- (void)dealloc {
+    [_MingChengLabel release];
+    [_bianMaLabel release];
+    [_guiGeLabel release];
+    [_xingHaoLabel release];
+    [_danWeiLabel release];
+    [_shuLiangLabel release];
+    [_danJiaLabel release];
+    [_zheHouDanJiaLabel release];
+    [_zhenPingLabel release];
+    [_zheHouJingELabel release];
+    [_piHaoXingXiLabel release];
+    [super dealloc];
+}
 @end
