@@ -29,7 +29,7 @@
         [self computeTotal];
     self.orderType = @"预设出库售价";
     self.delProducts = [NSMutableArray array];
-    
+    self.youhuiText.keyboardType = UIKeyboardTypeDecimalPad;
     // add notifi
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(sendCompanyMessage:) name:@"sendCompanyMessage" object:nil];
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(sendOrderMessage:) name:@"sendOrderMessage" object:nil];
@@ -88,6 +88,9 @@
         }
     }
     [self.view layoutIfNeeded];
+    //---
+    textField.text = [NSString stringWithFormat:@"%.2f",[textField.text floatValue]];
+    [self computeTotal];
 }
 
 -(void)keyboardWillShow:(id)info{
@@ -225,7 +228,7 @@
             tot += [arr floatForKey:@"金额"];
         }
     }
-
+    disTotal -= [self.youhuiText.text floatValue];
         
 //        if ([arr intForKey:@"赠品"] == 0)
 //            tot += [arr floatForKey:@"折后金额"];;

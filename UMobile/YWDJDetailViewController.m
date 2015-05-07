@@ -28,10 +28,6 @@
     mainDetail.parentVC = self;
     self.mutliView.titles = @[@"商品明细",@"主单据"];
     self.mutliView.viewControllers = @[productDetail,mainDetail];
-    [productDetail release];
-    [mainDetail release];
-    
-    
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
 }
