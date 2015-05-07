@@ -67,8 +67,12 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
     for (NSLayoutConstraint *constr in self.view.constraints) {
-        if (constr.firstItem == self.totalView && constr.firstAttribute == NSLayoutAttributeBottom) {
-            constr.constant -=216-45;
+        if (constr.secondItem == self.totalView && constr.secondAttribute == NSLayoutAttributeBottom) {
+            [UIView animateWithDuration:0.3 animations:^{
+                constr.constant +=216;
+                [self.view layoutIfNeeded];
+            }];
+            
         }
     }
     return YES;
@@ -76,10 +80,14 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     for (NSLayoutConstraint *constr in self.view.constraints) {
-        if (constr.firstItem == self.totalView && constr.firstAttribute == NSLayoutAttributeBottom) {
-            constr.constant +=216-45;
+        if (constr.secondItem == self.totalView && constr.secondAttribute == NSLayoutAttributeBottom) {
+            [UIView animateWithDuration:0.3 animations:^{
+                constr.constant -=216;
+                [self.view layoutIfNeeded];
+            }];
         }
     }
+    [self.view layoutIfNeeded];
 }
 
 -(void)keyboardWillShow:(id)info{
