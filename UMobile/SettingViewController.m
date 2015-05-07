@@ -176,7 +176,7 @@
         RCChooseButton *button = (RCChooseButton *)[cell viewWithTag:2];
         button.choose = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }else if (type == 1){
-        [self.setting setObject:@"1" forKey:@"Fix"];
+        [self.setting setObject:@"1" forKey:@"MergeSameAgreement"];
         UISwitch *switcher = (UISwitch *)[cell viewWithTag:2];
         switcher.on = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }
