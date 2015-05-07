@@ -131,7 +131,7 @@
                        [KxMenuItem menuItem:@"本周" image:[UIImage imageNamed:@"popup_icon_approve_curweek"] target:self action:@selector(sortMenuClick:)],
                        [KxMenuItem menuItem:@"本月" image:[UIImage imageNamed:@"popup_icon_approve_curmonth"] target:self action:@selector(sortMenuClick:)],
                        ];
-    [KxMenu showMenuInView:self.view fromRect:CGRectMake(160, 64, 10, 1) menuItems:menus];
+    [KxMenu showMenuInView:self.view fromRect:CGRectMake(160, 0, 10, 1) menuItems:menus];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
