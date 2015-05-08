@@ -23,11 +23,16 @@
     
     YWDJProcutDetailViewController *productDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJProcutDetailViewController"];
     productDetail.parentVC = self;
+    productDetail.array = self.array;
     
     YWDJMainDetailViewController *mainDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJMainDetailViewController"];
     mainDetail.parentVC = self;
+    mainDetail.array = self.array;
     self.mutliView.titles = @[@"商品明细",@"主单据"];
     self.mutliView.viewControllers = @[productDetail,mainDetail];
+    self.mutliView.selectIndex = 1;
+    
+
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
 }

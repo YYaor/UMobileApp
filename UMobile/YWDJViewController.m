@@ -169,7 +169,7 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"20,0,'%@','%@',%d,'%@',%d,%d,%d,%d,%@",
+    NSString *param =  [NSString stringWithFormat:@"20,0,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'@""','@""','@""',%@",
                         [self getTextFromView:self.view withTag:1],
                         [self getTextFromView:self.view withTag:2],
                         [[self.orderType ingoreObjectAtIndex:0] intValue],

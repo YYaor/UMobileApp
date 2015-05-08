@@ -15,5 +15,6 @@
 
 @property (retain, nonatomic) IBOutlet UIButton *printButton;
 @property (retain, nonatomic) IBOutlet UIButton *deleteButton;
+@property (retain, nonatomic) NSMutableArray *array;
 
 @end

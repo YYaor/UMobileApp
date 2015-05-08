@@ -7,6 +7,7 @@
 //
 
 #import "YWDJListViewController.h"
+#import "YWDJDetailViewController.h"
 
 @interface YWDJListViewController ()
 {
@@ -43,8 +44,25 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
     }
+    NSArray *rs = [array objectAtIndex:indexPath.row];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:1];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:2];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:3];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:4];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:5];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:6];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:7];
+    
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    YWDJDetailViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YWDJDetailViewController"];
+    NSMutableArray *rs = [array objectAtIndex:indexPath.row];
+    vc.array =rs;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

@@ -16,7 +16,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.danJuBianHaoLabel.text = [self.array objectAtIndex:5];
+    self.DanJuRiQiLabel.text =[self.array objectAtIndex:4];
+    self.changKuLabel.text =[self.array objectAtIndex:13];
+    self.jinShouRenLabel.text = [self.array objectAtIndex:15];
+    self.shuLianLabel.text = [self.array objectAtIndex:23];
+    self.jingENeiRongLabel.text = [self.array objectAtIndex:16];
+    self.shouKuanZhangHuLabel.text = [self.array objectAtIndex:21];
+    self.shouKuanJingELabel.text = [self.array objectAtIndex:22];
+    
+    self.mingChengLabel.text = [self.array objectAtIndex:8];
+    self.lianXiRenLabel.text = [self.array objectAtIndex:9];
+    self.lianXiDianHua.text = [self.array objectAtIndex:10];
+    self.shouJiHaoLabel.text = [self.array objectAtIndex:11];
+    
+    self.zhaiYaoLabel.text = [self.array objectAtIndex:18];
+    self.fuJiaShuoMing.text = [self.array objectAtIndex:19];
 }
 
 - (void)didReceiveMemoryWarning {
