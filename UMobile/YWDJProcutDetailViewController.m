@@ -7,15 +7,19 @@
 //
 
 #import "YWDJProcutDetailViewController.h"
+#import "YWDJProductDetailCell.h"
 
 @interface YWDJProcutDetailViewController ()
 
 @end
 
 @implementation YWDJProcutDetailViewController
+@synthesize array;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    array = [[NSMutableArray alloc] init];
+    [array addObject:@"1"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,19 +36,24 @@
     // Pass the selected object to the new view controller.
 }
 */
+-(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return array.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIden = @"cell";
+    YWDJProductDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIden];
+    if (!cell){
+        cell = [[YWDJProductDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIden];
+    }
+    [cell updateData];
+    return cell;
+}
+-(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 188;
+}
 
 - (void)dealloc {
-    [_MingChengLabel release];
-    [_bianMaLabel release];
-    [_guiGeLabel release];
-    [_xingHaoLabel release];
-    [_danWeiLabel release];
-    [_shuLiangLabel release];
-    [_danJiaLabel release];
-    [_zheHouDanJiaLabel release];
-    [_zhenPingLabel release];
-    [_zheHouJingELabel release];
-    [_piHaoXingXiLabel release];
+
     [super dealloc];
 }
 @end

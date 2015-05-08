@@ -509,6 +509,7 @@
 		C868203B1AFB100C00A86975 /* YWDJDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C868203A1AFB100C00A86975 /* YWDJDetailViewController.m */; };
 		C868203E1AFB103A00A86975 /* YWDJProcutDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */; };
 		C86820411AFB105200A86975 /* YWDJMainDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */; };
+		C8A687961AFCA60D006FDF95 /* YWDJProductDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A687951AFCA60D006FDF95 /* YWDJProductDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1280,6 +1281,8 @@
 		C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJProcutDetailViewController.m; sourceTree = "<group>"; };
 		C868203F1AFB105200A86975 /* YWDJMainDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJMainDetailViewController.h; sourceTree = "<group>"; };
 		C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJMainDetailViewController.m; sourceTree = "<group>"; };
+		C8A687941AFCA60D006FDF95 /* YWDJProductDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YWDJProductDetailCell.h; sourceTree = "<group>"; };
+		C8A687951AFCA60D006FDF95 /* YWDJProductDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YWDJProductDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2678,6 +2681,8 @@
 				C868203A1AFB100C00A86975 /* YWDJDetailViewController.m */,
 				C868203C1AFB103A00A86975 /* YWDJProcutDetailViewController.h */,
 				C868203D1AFB103A00A86975 /* YWDJProcutDetailViewController.m */,
+				C8A687941AFCA60D006FDF95 /* YWDJProductDetailCell.h */,
+				C8A687951AFCA60D006FDF95 /* YWDJProductDetailCell.m */,
 				C868203F1AFB105200A86975 /* YWDJMainDetailViewController.h */,
 				C86820401AFB105200A86975 /* YWDJMainDetailViewController.m */,
 			);
@@ -3010,6 +3015,7 @@
 				189DE7CC19B5B76D00F6A30D /* SDWebImageDecoder.m in Sources */,
 				189DE76219B5B52000F6A30D /* NSString+Language.m in Sources */,
 				182312AD1A2C4F0300A52FB0 /* OrderProducts2ViewController.m in Sources */,
+				C8A687961AFCA60D006FDF95 /* YWDJProductDetailCell.m in Sources */,
 				5C3A6EB91AF90D7B003BAB97 /* XSMXDetailCellModel.m in Sources */,
 				2EB9178519F5782E0018C27B /* DDGLViewController.m in Sources */,
 				18286A971A5CD35C00078F1B /* UIScrollView+DHSmartScreenshot.m in Sources */,

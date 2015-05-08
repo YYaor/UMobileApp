@@ -182,10 +182,11 @@
                         ];
     NSString *link = [self GetLinkWithFunction:89 andParam:param];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
-    YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
-    vc.link = link;
-    vc.param = param;
-    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
+//    YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
+//    vc.link = link;
+//    vc.param = param;
+//    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
+    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YWDJDetailViewController"];
     [self.navigationController pushViewController:vc animated:YES];
     //    NSString *link =  []
 }
