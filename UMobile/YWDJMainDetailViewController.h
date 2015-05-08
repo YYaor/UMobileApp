@@ -27,5 +27,7 @@
 @property (retain, nonatomic) IBOutlet UILabel *zhaiYaoLabel;
 @property (retain, nonatomic) IBOutlet UILabel *fuJiaShuoMing;
 
+@property (retain, nonatomic) NSMutableArray *array;
+
 
 @end
