@@ -43,7 +43,10 @@ static const CGFloat cellHeight = 60;
         [tempSelf.dataTableView reloadData];
     } lock:YES];
 }
-
+-(void)footerRereshing{
+    [self.dataTableView footerEndRefreshing];
+    [self.dataTableView  removeFooter];
+}
 
 
 - (void)didReceiveMemoryWarning {

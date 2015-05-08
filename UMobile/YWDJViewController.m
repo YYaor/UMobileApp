@@ -47,6 +47,9 @@
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if (textField.tag == 9 || textField.tag == 10){
+        return YES;
+    }
     if (textField.tag != 1 && textField.tag != 2 && textField.tag != 4 ){
         //        CangKuViewController *vc = (CangKuViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CangKuViewController"];
         if (textField.tag != 5 && textField.tag != 6 && textField.tag != 7) {
@@ -98,7 +101,6 @@
             vc.parentVC = self;
             [self.navigationController pushViewController:vc animated:YES];
         }
-        
         return NO;
     }else if (textField.tag == 1 || textField.tag == 2){
         RCDateView *dateView =  [[[RCDateView alloc]init] autorelease];
@@ -112,6 +114,27 @@
         return NO;
     }
     return YES;
+}
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    UIScrollView *scroll = nil;
+    for (UIScrollView *scrollView in self.view.subviews){
+        scroll = scrollView;
+        break;
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y+216);
+    }];
+}
+-(void) textFieldDidEndEditing:(UITextField *)textField{
+    UIScrollView *scroll = nil;
+    for (UIScrollView *scrollView in self.view.subviews){
+        scroll = scrollView;
+        break;
+    }
+    [UIView animateWithDuration:0.3 animations:^{
+        scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y-216);
+    }];
+
 }
 
 -(void)sortMenuClick:(KxMenuItem *)item{
