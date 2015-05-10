@@ -116,25 +116,28 @@
     return YES;
 }
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    UIScrollView *scroll = nil;
-    for (UIScrollView *scrollView in self.view.subviews){
-        scroll = scrollView;
-        break;
+    if (textField.tag == 9|| textField.tag==10){
+        UIScrollView *scroll = nil;
+        for (UIScrollView *scrollView in self.view.subviews){
+            scroll = scrollView;
+            break;
+        }
+        [UIView animateWithDuration:0.3 animations:^{
+            scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y+216);
+        }];
     }
-    [UIView animateWithDuration:0.3 animations:^{
-        scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y+216);
-    }];
 }
 -(void) textFieldDidEndEditing:(UITextField *)textField{
-    UIScrollView *scroll = nil;
-    for (UIScrollView *scrollView in self.view.subviews){
-        scroll = scrollView;
-        break;
+    if (textField.tag == 9 || textField.tag == 10){
+        UIScrollView *scroll = nil;
+        for (UIScrollView *scrollView in self.view.subviews){
+            scroll = scrollView;
+            break;
+        }
+        [UIView animateWithDuration:0.3 animations:^{
+            scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y-216);
+        }];
     }
-    [UIView animateWithDuration:0.3 animations:^{
-        scroll.contentOffset = CGPointMake(scroll.contentOffset.x, scroll.contentOffset.y-216);
-    }];
-
 }
 
 -(void)sortMenuClick:(KxMenuItem *)item{
@@ -169,7 +172,7 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"20,0,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'@""','@""','@""',%@",
+    NSString *param =  [NSString stringWithFormat:@"20,1,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'%@','%@','%@',%@",
                         [self getTextFromView:self.view withTag:1],
                         [self getTextFromView:self.view withTag:2],
                         [[self.orderType ingoreObjectAtIndex:0] intValue],
@@ -178,15 +181,17 @@
                         [[self.customerType ingoreObjectAtIndex:0] intValue],
                         [[self.stockType ingoreObjectAtIndex:0] intValue],
                         [[self.checkType ingoreObjectAtIndex:0] intValue],
+                        @"",
+                        @"",
+                        @"",
                         [self GetUserID]
                         ];
     NSString *link = [self GetLinkWithFunction:89 andParam:param];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
-//    YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
-//    vc.link = link;
-//    vc.param = param;
-//    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
-    UIViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YWDJDetailViewController"];
+    YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
+    vc.link = link;
+    vc.param = param;
+    vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
     [self.navigationController pushViewController:vc animated:YES];
     //    NSString *link =  []
 }
