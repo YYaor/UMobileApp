@@ -172,19 +172,19 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"20,1,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'%@','%@','%@',%@",
-                        [self getTextFromView:self.view withTag:1],
-                        [self getTextFromView:self.view withTag:2],
+    NSString *param =  [NSString stringWithFormat:@"20,1,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'%@','%@','%@',%d",
+                        [self getTextFromView:self.contentView withTag:1],
+                        [self getTextFromView:self.contentView withTag:2],
                         [[self.orderType ingoreObjectAtIndex:0] intValue],
-                        [self getTextFromView:self.view withTag:4],
+                        [self getTextFromView:self.contentView withTag:4],
                         [[self.salesType ingoreObjectAtIndex:0] intValue],
                         [[self.customerType ingoreObjectAtIndex:0] intValue],
                         [[self.stockType ingoreObjectAtIndex:0] intValue],
                         [[self.checkType ingoreObjectAtIndex:0] intValue],
+                        [self getTextFromView:self.contentView withTag:9],
+                        [self getTextFromView:self.contentView withTag:10],
                         @"",
-                        @"",
-                        @"",
-                        [self GetUserID]
+                        [[self GetUserID] intValue]
                         ];
     NSString *link = [self GetLinkWithFunction:89 andParam:param];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
@@ -195,8 +195,6 @@
     [self.navigationController pushViewController:vc animated:YES];
     //    NSString *link =  []
 }
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -212,4 +210,8 @@
 }
 */
 
+- (void)dealloc {
+    [_contentView release];
+    [super dealloc];
+}
 @end
