@@ -155,11 +155,11 @@
     }
     if (chooseType == ChooseCkType_FHCK){
         if (delegate && [delegate respondsToSelector:@selector(FHCKSelectedWithckId:ckName:)]){
-            [delegate FHCKSelectedWithckId:[[rs objectAtIndex:0] integerValue] ckName:[rs objectAtIndex:1]];
+            [delegate FHCKSelectedWithckId:[[rs objectAtIndex:2] integerValue] ckName:[rs objectAtIndex:1]];
         }
     }else if (chooseType == ChooseCkType_DHCK){
         if (delegate && [delegate respondsToSelector:@selector(DHCKSelectedWihtckId:ckName:)]){
-            [delegate DHCKSelectedWihtckId:[[rs objectAtIndex:0] integerValue] ckName:[rs objectAtIndex:1]];
+            [delegate DHCKSelectedWihtckId:[[rs objectAtIndex:2] integerValue] ckName:[rs objectAtIndex:1]];
         }
     }
     

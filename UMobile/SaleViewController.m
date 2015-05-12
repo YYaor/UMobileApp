@@ -130,7 +130,7 @@
     
     [self.parentVC performSelector:@selector(loadData) withObject:nil];
     if (delegate && [delegate respondsToSelector:@selector(salesmanSelectedWithSalesId:salesName:departId:departName:)]){
-        [delegate salesmanSelectedWithSalesId:[[rs objectAtIndex:0] integerValue]  salesName:[rs objectAtIndex:1] departId:[[rs objectAtIndex:4] integerValue] departName:[rs objectAtIndex:5]];
+        [delegate salesmanSelectedWithSalesId:[[rs objectAtIndex:2] integerValue]  salesName:[rs objectAtIndex:1] departId:[[rs objectAtIndex:4] integerValue] departName:[rs objectAtIndex:5]];
     }
     [self dismiss];
 }
