@@ -92,9 +92,9 @@
 //    contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
 //    contentView.layer.borderWidth = 0.5;
     NSArray *rs = [array objectAtIndex:indexPath.row];
-    [self setText:[rs objectAtIndex:9] forView:contentView withTag:1];
+    [self setText:[rs objectAtIndex:7] forView:contentView withTag:1];
     [self setText:[rs objectAtIndex:4] forView:contentView withTag:2];
-    [self setText:[rs objectAtIndex:15] forView:contentView withTag:3];
+    [self setText:[rs objectAtIndex:8] forView:contentView withTag:3];
     [self setText:[rs objectAtIndex:5] forView:contentView withTag:4];
     [self setText:[NSString stringWithFormat:@"金额:%@",[rs objectAtIndex:16]] forView:contentView withTag:5];
     [self setText:[rs objectAtIndex:2] forView:contentView withTag:6];
