@@ -12402,6 +12402,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="contentView" destination="Wd4-Uc-zWu" id="fRv-qB-hyd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haL-V7-o8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,8 +7,10 @@
 //
 
 #import "RCViewController.h"
+#import "RCView.h"
 
 @interface YWDJViewController : RCViewController<UITextFieldDelegate>
+@property (retain, nonatomic) IBOutlet RCView *contentView;
 
 @property(nonatomic,retain) NSMutableArray *orderType;
 @property(nonatomic,retain) NSMutableArray *salesType;
