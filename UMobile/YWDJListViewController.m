@@ -94,7 +94,7 @@
     [self setText:[rs objectAtIndex:4] forView:contentView withTag:2];
     [self setText:[rs objectAtIndex:15] forView:contentView withTag:3];
     [self setText:[rs objectAtIndex:5] forView:contentView withTag:4];
-    [self setText:[rs objectAtIndex:16] forView:contentView withTag:5];
+    [self setText:[NSString stringWithFormat:@"金额:%@",[rs objectAtIndex:16]] forView:contentView withTag:5];
     [self setText:[rs objectAtIndex:2] forView:contentView withTag:6];
     [self setText:[rs objectAtIndex:1] forView:contentView withTag:7];
     

@@ -19,6 +19,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.dataCopyButton.layer.cornerRadius = 2;
+    self.printButton.layer.cornerRadius = 2;
+    self.deleteButton.layer.cornerRadius = 2;
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     
     YWDJProcutDetailViewController *productDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJProcutDetailViewController"];
