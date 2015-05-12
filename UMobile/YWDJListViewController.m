@@ -68,7 +68,7 @@
         [blockSelf.dataTableView footerEndRefreshing];
         if (rs.count <= 0 && blockSelf.paramArray.count > 1){
             NSNumber *pageNumber = [blockSelf.paramArray objectAtIndex:1];
-            NSNumber *newPage = [NSNumber numberWithInt:MAX([pageNumber intValue]-1,0)];
+            NSNumber *newPage = [NSNumber numberWithInt:MAX([pageNumber intValue]-1,1)];
             [blockSelf.paramArray replaceObjectAtIndex:1 withObject:newPage];
         }
     } lock:NO];
