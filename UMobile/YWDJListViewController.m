@@ -21,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     array = [[NSMutableArray alloc] init];
+    self.dataTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self updateTotoalMoneyLabelString];
     [self setupRefresh:self.dataTableView];
     [self setFooterRefresh:self.dataTableView];
@@ -82,8 +83,12 @@
     UITableViewCell *cell = [self.dataTableView dequeueReusableCellWithIdentifier:identify];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identify] autorelease];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     UIView *contentView = [cell.contentView viewWithTag:10];
+    contentView.layer.cornerRadius = 4;
+    contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    contentView.layer.borderWidth = 0.75;
     NSArray *rs = [array objectAtIndex:indexPath.row];
     [self setText:[rs objectAtIndex:9] forView:contentView withTag:1];
     [self setText:[rs objectAtIndex:4] forView:contentView withTag:2];

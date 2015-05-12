@@ -18,10 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    array = [[NSMutableArray alloc] init];
-    [array addObject:@"1"];
-}
 
+}
+-(void) loadData{
+    
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -45,7 +46,21 @@
     if (!cell){
         cell = [[YWDJProductDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIden];
     }
-    [cell updateData];
+    NSArray *rs = [array objectAtIndex:indexPath.row];
+    UIView *contentView = [cell.contentView viewWithTag:100];
+    if (rs.count > 10){
+        [self setText:[rs objectAtIndex:0] forView:contentView withTag:1];
+        [self setText:[rs objectAtIndex:1] forView:contentView withTag:2];
+        [self setText:[rs objectAtIndex:2] forView:contentView withTag:3];
+        [self setText:[rs objectAtIndex:3] forView:contentView withTag:4];
+        [self setText:[rs objectAtIndex:4] forView:contentView withTag:5];
+        [self setText:[rs objectAtIndex:5] forView:contentView withTag:6];
+        [self setText:[rs objectAtIndex:6] forView:contentView withTag:7];
+        [self setText:[rs objectAtIndex:7] forView:contentView withTag:8];
+        [self setText:[rs objectAtIndex:8] forView:contentView withTag:9];
+        [self setText:[rs objectAtIndex:9] forView:contentView withTag:10];
+        [self setText:[rs objectAtIndex:10] forView:contentView withTag:10];
+    }
     return cell;
 }
 -(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

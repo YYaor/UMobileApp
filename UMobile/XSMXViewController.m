@@ -130,7 +130,6 @@
     [self setText:[info strForKey:@"Today"] forView:self.view withTag:2];
 }
 
-
 - (IBAction)sortClick:(id)sender {
     if ([KxMenu sharedMenu].isVisiable) {
         [KxMenu dismissMenu];
