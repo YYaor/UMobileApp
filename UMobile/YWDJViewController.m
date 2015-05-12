@@ -172,7 +172,7 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"20,1,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'%@','%@','%@',%d",
+    NSString *param =  [NSString stringWithFormat:@"20,0,'%@','%@',%d,'%@',%d,%d,%d,%d,1,'%@','%@','%@',%d",
                         [self getTextFromView:self.contentView withTag:1],
                         [self getTextFromView:self.contentView withTag:2],
                         [[self.orderType ingoreObjectAtIndex:0] intValue],
@@ -186,11 +186,28 @@
                         @"",
                         [[self GetUserID] intValue]
                         ];
+    NSMutableArray *paramArray = [NSMutableArray arrayWithObjects:
+                                  [NSNumber numberWithInt:20],
+                                  [NSNumber numberWithInt:0],
+                                  [self getTextFromView:self.contentView withTag:1],
+                                  [self getTextFromView:self.contentView withTag:2],
+                                  [NSNumber numberWithInt:[[self.orderType ingoreObjectAtIndex:0] intValue]],
+                                  [self getTextFromView:self.contentView withTag:4],
+                                  [NSNumber numberWithInt:[[self.salesType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:[[self.customerType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:[[self.stockType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:[[self.checkType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:1],
+                                  [self getTextFromView:self.contentView withTag:9],
+                                  [self getTextFromView:self.contentView withTag:10],
+                                  @"",
+                                  [NSNumber numberWithInt:[[self GetUserID] intValue]], nil];
     NSString *link = [self GetLinkWithFunction:89 andParam:param];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
     vc.link = link;
     vc.param = param;
+    vc.paramArray = paramArray;
     vc.callFunction = [[self.orderType ingoreObjectAtIndex:0] intValue];// 值为 5 或 6 判断是进货订单或销售订单
     [self.navigationController pushViewController:vc animated:YES];
     //    NSString *link =  []

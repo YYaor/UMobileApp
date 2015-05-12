@@ -360,7 +360,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LJz-0e-sWB">
-                                <rect key="frame" x="0.0" y="44" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="YWDJCell" id="JKD-6a-a8q">
@@ -368,7 +368,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JKD-6a-a8q" id="Dp9-ap-k1H">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmR-Y1-psD">
+                                                <view tag="10" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmR-Y1-psD">
                                                     <rect key="frame" x="6" y="6" width="308" height="113"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0oO-Tw-VkC">
@@ -490,15 +490,27 @@
                                     <outlet property="delegate" destination="pv2-vx-NTC" id="IhS-fE-naC"/>
                                 </connections>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A22-KQ-xiu">
+                                <rect key="frame" x="0.0" y="464" width="320" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="p7U-HH-0FE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.94901960784313721" green="0.60784313725490191" blue="0.28235294117647058" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TyK-Aw-WPd" firstAttribute="top" secondItem="gvA-Ay-AqE" secondAttribute="top" id="7uo-8G-kXE"/>
+                            <constraint firstItem="A22-KQ-xiu" firstAttribute="top" secondItem="LJz-0e-sWB" secondAttribute="bottom" id="7xh-wE-tJm"/>
                             <constraint firstAttribute="trailing" secondItem="TyK-Aw-WPd" secondAttribute="trailing" id="A1E-9H-nUH"/>
                             <constraint firstAttribute="trailing" secondItem="LJz-0e-sWB" secondAttribute="trailing" id="ASX-0f-u9M"/>
                             <constraint firstItem="LJz-0e-sWB" firstAttribute="top" secondItem="TyK-Aw-WPd" secondAttribute="bottom" id="AuF-Sd-eEd"/>
                             <constraint firstItem="LJz-0e-sWB" firstAttribute="leading" secondItem="gvA-Ay-AqE" secondAttribute="leading" id="E0r-i6-WHW"/>
-                            <constraint firstAttribute="bottom" secondItem="LJz-0e-sWB" secondAttribute="bottom" id="Mpi-Ay-Zcq"/>
+                            <constraint firstItem="A22-KQ-xiu" firstAttribute="leading" secondItem="gvA-Ay-AqE" secondAttribute="leading" id="IsT-Hr-KGs"/>
+                            <constraint firstAttribute="bottom" secondItem="A22-KQ-xiu" secondAttribute="bottom" id="exE-tH-NWN"/>
+                            <constraint firstAttribute="trailing" secondItem="A22-KQ-xiu" secondAttribute="trailing" id="fPb-cW-1y7"/>
                             <constraint firstItem="TyK-Aw-WPd" firstAttribute="leading" secondItem="gvA-Ay-AqE" secondAttribute="leading" id="hrk-a9-vbd"/>
                         </constraints>
                     </view>
@@ -514,6 +526,7 @@
                     <connections>
                         <outlet property="dataSearchBar" destination="TyK-Aw-WPd" id="1zQ-pA-6CN"/>
                         <outlet property="dataTableView" destination="LJz-0e-sWB" id="VM6-Kc-ipU"/>
+                        <outlet property="totalMoneyLabel" destination="A22-KQ-xiu" id="vnY-u6-5P4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kDu-IZ-9Wh" userLabel="First Responder" sceneMemberID="firstResponder"/>
