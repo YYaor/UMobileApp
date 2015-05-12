@@ -32,9 +32,11 @@ static const CGFloat cellHeight = 60;
 
 -(void)headerRereshing{
      __block XSMXDetailViewController *tempSelf = self;
-    [dataArray removeAllObjects];
-    [self StartQuery:self.link completeBlock:^(id obj) {
+    NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
+    NSString *linkString = [self GetLinkWithFunction:93 andParam:paramString];
+    [self StartQuery:linkString completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
+        [tempSelf.dataArray removeAllObjects];
         for (NSArray *array in rs) {
             XSMXDetailCellModel *model = [XSMXDetailCellModel parseDataFromArray:array];
             [tempSelf.dataArray addObject:model];
@@ -44,8 +46,30 @@ static const CGFloat cellHeight = 60;
     } lock:YES];
 }
 -(void)footerRereshing{
-    [self.dataTableView footerEndRefreshing];
-    [self.dataTableView  removeFooter];
+    __block XSMXDetailViewController *tempSelf = self;
+    //----page++
+    if (self.paramArray.count > 9){
+        NSNumber *pageNumber = [self.paramArray objectAtIndex:1];
+        NSNumber *newPage = [NSNumber numberWithInt:[pageNumber intValue]+1];
+        [self.paramArray replaceObjectAtIndex:9 withObject:newPage];
+    }
+    NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
+    NSString *linkString = [self GetLinkWithFunction:93 andParam:paramString];
+    [self StartQuery:linkString completeBlock:^(id obj) {
+        NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
+        for (NSArray *array in rs) {
+            XSMXDetailCellModel *model = [XSMXDetailCellModel parseDataFromArray:array];
+            [tempSelf.dataArray addObject:model];
+        }
+        [tempSelf.dataTableView footerEndRefreshing];
+        [tempSelf.dataTableView reloadData];
+        if (rs.count <= 0 && tempSelf.paramArray.count > 9){
+            NSNumber *pageNumber = [tempSelf.paramArray objectAtIndex:1];
+            NSNumber *newPage = [NSNumber numberWithInt:MAX([pageNumber intValue]-1,1)];
+            [tempSelf.paramArray replaceObjectAtIndex:9 withObject:newPage];
+        }
+    } lock:YES];
+
 }
 
 

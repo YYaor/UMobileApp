@@ -13,5 +13,6 @@
 @property (nonatomic , retain) NSMutableArray *dataArray;
 @property (nonatomic,retain) NSString *link;
 @property (nonatomic,retain) NSString *parma;
+@property (nonatomic,retain) NSMutableArray *paramArray;
 
 @end

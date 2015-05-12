@@ -51,7 +51,8 @@
     
 }
 - (IBAction)CZButtonClicked:(UIButton *)sender {
-    
+    [self.setting removeObjectForKey:@"SetDefaultParam"];
+    [self setDefaultValueForTextField];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -181,6 +182,7 @@
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:salesId],@"salesId",salesName,@"salesName", nil] forKey:@"salesInfo"];
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:departId],@"departId",departName,@"departName", nil] forKey:@"departInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 }
 #pragma mark departmentControllerDelegate
@@ -193,6 +195,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:departId],@"departId",departName,@"departName", nil] forKey:@"departInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 }
 #pragma mark KHGLController delegate
@@ -205,6 +208,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:clientId],@"clientId",clientName,@"clientName", nil] forKey:@"clientInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 
 }
@@ -217,6 +221,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:supplierId],@"supplierId",supplierName,@"supplierName", nil] forKey:@"supplierInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 }
 #pragma mark cangkuController delegate
@@ -229,6 +234,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:ckId],@"ckId",ckName,@"ckName", nil] forKey:@"FHCKInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 }
 -(void) DHCKSelectedWihtckId:(NSInteger)ckId ckName:(NSString *)ckName{
@@ -240,6 +246,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:ckId],@"ckId",ckName,@"ckName", nil] forKey:@"DHCKInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 }
 #pragma mark AccountViewController delegate
@@ -252,6 +259,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:accountId],@"accountId",accountName,@"accountName", nil] forKey:@"FKaccountInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 
 }
@@ -264,6 +272,7 @@
     }
     [dic setObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithInteger:accountId],@"accountId",accountName,@"accountName", nil] forKey:@"SKaccountInfo"];
     [self.setting setObject:dic forKey:@"SetDefaultParam"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     [self setDefaultValueForTextField];
 
 }

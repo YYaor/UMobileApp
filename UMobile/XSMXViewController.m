@@ -130,7 +130,6 @@
     [self setText:[info strForKey:@"Today"] forView:self.view withTag:2];
 }
 
-
 - (IBAction)sortClick:(id)sender {
     if ([KxMenu sharedMenu].isVisiable) {
         [KxMenu dismissMenu];
@@ -151,7 +150,7 @@
 }
 
 - (IBAction)searchClick:(id)sender {
-    NSString *param =  [NSString stringWithFormat:@"'%@','%@',%d,%d,%d,'%@','%@','%@',20,0",
+    NSString *param =  [NSString stringWithFormat:@"'%@','%@',%d,%d,%d,'%@','%@',%@,20,1",
                         [self getTextFromView:self.view withTag:4],
                         [self getTextFromView:self.view withTag:3],
                         [[self.customerType ingoreObjectAtIndex:0] intValue],
@@ -163,7 +162,17 @@
                         ];
     NSString *link = [self GetLinkWithFunction:93 andParam:param];
     
-    
+    NSMutableArray *paramArray = [NSMutableArray arrayWithObjects:
+                                  [self getTextFromView:self.view withTag:4],
+                                  [self getTextFromView:self.view withTag:3],
+                                  [NSNumber numberWithInt:[[self.customerType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:[[self.stockType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:[[self.salesType ingoreObjectAtIndex:0] intValue]],
+                                  [self getTextFromView:self.view withTag:1],
+                                  [self getTextFromView:self.view withTag:2],
+                                  [NSNumber numberWithInt:[[self GetUserID] intValue]],
+                                  [NSNumber numberWithInt:20],
+                                  [NSNumber numberWithInt:1], nil];
     
 //
 //    DDGLViewController *vc = (DDGLViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"DDGLViewController"];
@@ -176,6 +185,7 @@
     XSMXDetailViewController *detail = [storyBoard instantiateViewControllerWithIdentifier:@"XSMXDetailViewController"];
     detail.parma = param;
     detail.link = link;
+    detail.paramArray = paramArray;
     RCLeftNavigationController *navi = [[RCLeftNavigationController alloc] initWithRootViewController:detail];
     [self presentViewController:navi animated:YES completion:^{
     }];

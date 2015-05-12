@@ -274,6 +274,24 @@
     //NSDictionary* dic =  test.JSONValue;
     return test;
 }
+-(NSString *)getParamStringWithParamArray:(NSArray *)paramArray{
+    NSMutableString *paramString = [[[NSMutableString alloc] init] autorelease];
+    for (int i=0;i<[paramArray count];i++){
+        if ([[paramArray objectAtIndex:i] isKindOfClass:[NSString class]]){
+            [paramString appendString:[NSString stringWithFormat:@"'%@'",[paramArray objectAtIndex:i]]];
+        }else if ([[paramArray objectAtIndex:i] isKindOfClass:[NSNumber class]]){
+            NSNumber *tempNum = [paramArray objectAtIndex:i];
+            [paramString appendString:[NSString stringWithFormat:@"%d",[tempNum intValue]]];
+        }
+        if (i != [paramArray count]-1){
+            [paramString appendString:@","];
+        }
+    }
+    if (paramString.length == 0){
+        [paramString appendString:@""];
+    }
+    return paramString;
+}
 
 #pragma mark -
 #pragma refresh
