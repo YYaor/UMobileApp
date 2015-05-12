@@ -12,6 +12,7 @@
 #import "KHGLViewController.h"
 #import "CangKuViewController.h"
 #import "AccountViewController.h"
+#import "USettingModel.h"
 
 @interface SetDefaultConfigViewController ()<saleViewControllerDelegate,departmentViewControllerDelegate,KHGLViewControllerDelegate,cangkuControllerDelegate,accountViewControllerDelegate>
 
@@ -30,7 +31,24 @@
     self.CZButton.layer.cornerRadius = 1.5;
 }
 - (IBAction)back:(UIBarButtonItem *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    USettingModel *model = [USettingModel getSetting];
+//    NSString *param = @"-1,-1,-1,-1,-1,-1,-1,-1,-1";
+    NSString *param =  [NSString stringWithFormat:@"%d,%d,%d,%d,%d,%d,%d,%d,%d,",
+                                                    model.JSRId,
+                                                    model.BMId,
+                                                    model.KHId,
+                                                    model.GRSId,
+                                                    model.FHCKId,
+                                                    model.DHCKId,
+                                                    model.FKZHId,
+                                                    model.SKZHId,
+                                                    [[self GetUserID] intValue]];
+     NSString *link = [self GetLinkWithFunction:99 andParam:param];
+    __block SetDefaultConfigViewController *tempSelf = self;
+    [self StartQuery:link completeBlock:^(id obj) {
+       [tempSelf.navigationController popViewControllerAnimated:YES];
+    } lock:NO];
+    
 }
 - (IBAction)CZButtonClicked:(UIButton *)sender {
     

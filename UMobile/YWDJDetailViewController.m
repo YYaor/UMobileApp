@@ -35,10 +35,45 @@
 
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
+    
 }
 - (IBAction)printButtonClicked:(UIButton *)sender {
+    NSMutableString *stringToPrint = [[NSMutableString alloc] initWithString:@""];
+    for(int i = 0;i<[self.array count];i++)
+    {
+        [stringToPrint appendFormat:@"%@",[self.array objectAtIndex:i]];
+        
+        [stringToPrint appendFormat:@"\n"];
+        
+    }
+    UIPrintInteractionController *pic = [UIPrintInteractionController sharedPrintController];
+    
+    UIPrintInfo *printInfo = [UIPrintInfo printInfo];
+    printInfo.outputType = UIPrintInfoOutputGeneral;
+    printInfo.jobName = @"业务主单据";
+    pic.printInfo = printInfo;
+    
+    UISimpleTextPrintFormatter *textFormatter = [[UISimpleTextPrintFormatter alloc]
+                                                 initWithText:stringToPrint];
+    textFormatter.startPage = 0;
+    textFormatter.contentInsets = UIEdgeInsetsMake(72.0, 72.0, 72.0, 72.0); // 1 inch margins
+    textFormatter.maximumContentWidth = 6 * 72.0;
+    pic.printFormatter = textFormatter;
+    pic.showsPageRange = YES;
+    
+    void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) =
+    ^(UIPrintInteractionController *printController, BOOL completed, NSError *error)
+    {
+        if (!completed && error)
+        {
+            NSLog(@"Printing could not complete because of error: %@", error);
+        }
+    };
+    
+    [pic presentAnimated:YES completionHandler:completionHandler];
 }
 - (IBAction)deleteButtonClicked:(UIButton *)sender {
+    
 }
 
 - (void)didReceiveMemoryWarning {

@@ -98,11 +98,11 @@
     [self.parentVC performSelector:@selector(loadData) withObject:nil];
     if (chooseType == ChooseAccountType_CKAccount){
         if (delegate && [delegate respondsToSelector:@selector(CKaccountChoosedId:accountName:)]){
-            [delegate CKaccountChoosedId:[[rs objectAtIndex:0] integerValue] accountName:[rs objectAtIndex:2]];
+            [delegate CKaccountChoosedId:[[rs objectAtIndex:2] integerValue] accountName:[rs objectAtIndex:2]];
         }
     }else if (chooseType == ChooseAccountType_FKAccount){
         if (delegate && [delegate respondsToSelector:@selector(FKaccountChoosedId:accountName:)]){
-            [delegate FKaccountChoosedId:[[rs objectAtIndex:0] integerValue] accountName:[rs objectAtIndex:2]];
+            [delegate FKaccountChoosedId:[[rs objectAtIndex:2] integerValue] accountName:[rs objectAtIndex:2]];
         }
     }
     [self dismiss];
