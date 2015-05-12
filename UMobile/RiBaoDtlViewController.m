@@ -277,19 +277,21 @@
         if (invId == -1) invId = 0;
         link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"%d,'%@',%d,20,%d,%@",[self.sId integerValue],[self.fliterDic strForKey:@"1"],invId,page,[self GetUserID]]];
     }else if (self.callFunction == 25){
-        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,%d,%d,'%@',%@,'%@',%d",page,[self.sId integerValue],[self.fliterDic strForKey:@"1"],[self.fliterDic strForKey:@"2"],[self GetCurrentDate],self.dateType]];
+        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,%d,%d,'%@',%@,'%@',%d，%d",page,[self.sId integerValue],[self.fliterDic strForKey:@"1"],[self.fliterDic strForKey:@"2"],[self GetCurrentDate],self.dateType,[self GetUserID]]];
     }else if (self.callFunction == 18){
         link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,%d,'',%d",page, [[self GetUserID] intValue]]];
     }else if (self.callFunction == 28){
-        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,%d,%d,'%@',%@,'%@'",page,[self.sId integerValue],[self.fliterDic strForKey:@"1"],[self.fliterDic strForKey:@"2"],[self GetCurrentDate]]];
+        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,%d,%d,'%@',%@,'%@',%d",page,[self.sId integerValue],[self.fliterDic strForKey:@"1"],[self.fliterDic strForKey:@"2"],[self GetCurrentDate],[self GetUserID]]];
     }else if (self.callFunction == 27 ){//应付日报列表
-        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,1,'%@','%@'",
+        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,1,'%@','%@',%d",
                                                                      [[self.fliterDic strForKey:@"1"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                                                                     [self GetCurrentDate]]];
+                                                                     [self GetCurrentDate],
+                                                                     [self GetUserID]]];
     }else if (self.callFunction == 24){//应收日报统计
-        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,1,'%@','%@'",
+        link = [self GetLinkWithFunction:self.callFunction andParam:[NSString stringWithFormat:@"20,1,'%@','%@',%d",
                                                                      [[self.fliterDic strForKey:@"1"] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],
-                                                                     [self GetCurrentDate]]];
+                                                                     [self GetCurrentDate],
+                                                                     [self GetUserID]]];
     }else if (self.callFunction == 31){
         link = [self GetLinkWithFunction:self.callFunction andParam:
                 [NSString stringWithFormat:@"20,%d,%d,'%@','%@',%d,%d,%d,'%@',%d",
