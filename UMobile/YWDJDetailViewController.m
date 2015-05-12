@@ -10,13 +10,17 @@
 #import "YWDJMainDetailViewController.h"
 #import "YWDJProcutDetailViewController.h"
 #import "YeWuDanJuXinZenViewController.h"
+#import "YeWuDanJuViewController.h"
 
 @interface YWDJDetailViewController ()
 
 @end
 
 @implementation YWDJDetailViewController
-
+{
+    YWDJProcutDetailViewController *productDetail;
+    YWDJMainDetailViewController *mainDetail;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -25,11 +29,11 @@
     self.deleteButton.layer.cornerRadius = 2;
     UIStoryboard *storyBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     
-    YWDJProcutDetailViewController *productDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJProcutDetailViewController"];
+    productDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJProcutDetailViewController"];
     productDetail.parentVC = self;
     productDetail.array = self.array;
     
-    YWDJMainDetailViewController *mainDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJMainDetailViewController"];
+    mainDetail = [storyBoard instantiateViewControllerWithIdentifier:@"YWDJMainDetailViewController"];
     mainDetail.parentVC = self;
     mainDetail.array = self.array;
     self.mutliView.titles = @[@"商品明细",@"主单据"];
@@ -40,7 +44,9 @@
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YeWuDanJuXinZenViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YeWuDanJuXinZenViewController"];
+    YeWuDanJuViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YeWuDanJuViewController"];
+    vc.copieddataArray = mainDetail.array;
+    vc.products = productDetail.dataArray;
     [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)printButtonClicked:(UIButton *)sender {

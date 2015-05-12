@@ -17,6 +17,7 @@
 
 @synthesize headInfo;
 @synthesize products;
+@synthesize copieddataArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

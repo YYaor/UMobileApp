@@ -20,5 +20,7 @@
 @property (nonatomic,retain) NSString *InvId;
 @property (nonatomic,retain) NSString *AccID;
 
+@property(nonatomic , retain) NSArray *copieddataArray;
+@property(nonatomic , retain) NSArray *copiedProductArray;
 @property (nonatomic) BOOL bClean;
 @end
