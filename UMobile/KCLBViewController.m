@@ -26,8 +26,8 @@
 }
 
 -(void)headerRereshing{
-    [array removeAllObjects];
-    NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"%lu,'%@',20,-1",(unsigned long)self.shID,[self GetUserID]]];
+    array = [[NSMutableArray alloc]init];
+    NSString *link = [self GetLinkWithFunction:92 andParam:[NSString stringWithFormat:@"%lu,'%@',20,0",(unsigned long)self.shID,[self GetUserID]]];
     
     __block KCLBViewController *tempSelf = self;
     [self setFooterRefresh:self.tableView];
@@ -80,6 +80,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)dealloc{
+    [super dealloc];
+    [array release], array = nil;
 }
 
 /*

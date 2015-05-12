@@ -10,5 +10,5 @@
 
 @interface KCLBViewController : RCViewController<UITableViewDataSource,UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSUInteger shID;
+@property (nonatomic,assign) NSUInteger shID;
 @end
