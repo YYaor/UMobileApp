@@ -7,7 +7,7 @@
 //
 
 #import "YWDJMainDetailViewController.h"
-
+#import "KxMenu.h"
 @interface YWDJMainDetailViewController ()
 
 @end
@@ -32,7 +32,41 @@
     
     self.zhaiYaoLabel.text = [self.array objectAtIndex:18];
     self.fuJiaShuoMing.text = [self.array objectAtIndex:19];
+    self.shouJiHaoLabel.userInteractionEnabled = YES;
+    self.lianXiDianHua.userInteractionEnabled = YES;
+    
+    [self.shouJiHaoLabel addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick)]];
+    [self.lianXiDianHua addGestureRecognizer:[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapClick)]];
 }
+
+-(void)tapClick{
+    NSArray *menus = @[
+                       [KxMenuItem menuItem:@"拨打电话" image:[UIImage imageNamed:@"guhua"] target:self action:@selector(addressInfoClick:)],
+                       [KxMenuItem menuItem:@"拨打手机" image:[UIImage imageNamed:@"popup_icon_phone"] target:self action:@selector(addressInfoClick:)],
+                       [KxMenuItem menuItem:@"发送短信" image:[UIImage imageNamed:@"popup_icon_msg"] target:self action:@selector(addressInfoClick:)],
+                       ];
+    
+    [KxMenu showMenuInView:self.view fromRect:CGRectMake(self.shouJiHaoLabel.frame.origin.x+10, self.shouJiHaoLabel.frame.origin.y+self.shouJiHaoLabel.frame.size.height+5, 100, 150) menuItems:menus];
+}
+
+-(void)addressInfoClick:(KxMenuItem *)item{
+    NSDictionary *info =@{@"拨打电话":@"1",@"拨打手机":@"2",@"发送短信":@"3"};
+    switch ([info intForKey:item.title]) {
+        case 1:
+            [self callANumber:self.lianXiDianHua.text];
+            break;
+        case 2:
+            [self callANumber:self.shouJiHaoLabel.text];
+            break;
+        case 3:
+            [self sendToNumber:self.shouJiHaoLabel.text];
+            break;
+        default:
+            break;
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

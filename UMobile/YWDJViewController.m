@@ -29,11 +29,11 @@
 -(void)resetData{
     [self setText:[self GetCurrentDate] forView:self.view withTag:1];
     [self setText:[self GetCurrentDate] forView:self.view withTag:2];
-    self.orderType = [NSMutableArray arrayWithObjects:@"6",@"销售订单", nil];
+    self.orderType = [NSMutableArray arrayWithObjects:@"6",@"销售单", nil];
     self.salesType = [NSMutableArray array];
     self.customerType = [NSMutableArray array];
     self.stockType = [NSMutableArray array];
-    self.checkType = [NSMutableArray arrayWithObjects:@"2",@"未审", nil];
+    self.checkType = [NSMutableArray arrayWithObjects:@"1",@"未审", nil];
 }
 
 -(void)loadData{
@@ -55,18 +55,13 @@
         if (textField.tag != 5 && textField.tag != 6 && textField.tag != 7) {
             CangKuViewController *vc = (CangKuViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"CangKuViewController"];
             switch (textField.tag) {
-                case 3:
-                    vc.info = self.orderType;
-                    vc.title = @"单据类型";
-                    vc.result = @[@[@"5",@"进货订单"],@[@"6",@"销售订单"]];
-                    break;
                 case 8:
                     vc.info = self.checkType;
                     vc.title = @"审核状态";
                     if ([self.setting intForKey:@"ISBS"] == 1) {
-                        vc.result = @[@[@"0",@"所有"],@[@"1",@"已审"],@[@"2",@"未审"],@[@"3",@"审核中"]];
+                        vc.result = @[@[@"0",@"所有"],@[@"2",@"已审"],@[@"1",@"未审"],@[@"3",@"审核中"]];
                     }else{
-                        vc.result = @[@[@"0",@"所有"],@[@"1",@"已审"],@[@"2",@"未审"]];
+                        vc.result = @[@[@"0",@"所有"],@[@"2",@"已审"],@[@"1",@"未审"]];
                     }
                     
                 default:
@@ -191,13 +186,13 @@
                                   [NSNumber numberWithInt:1],
                                   [self getTextFromView:self.contentView withTag:1],
                                   [self getTextFromView:self.contentView withTag:2],
-                                  [NSNumber numberWithInt:[[self.orderType ingoreObjectAtIndex:0] intValue]],
+                                  [NSNumber numberWithInt:1],
                                   [self getTextFromView:self.contentView withTag:4],
                                   [NSNumber numberWithInt:[[self.salesType ingoreObjectAtIndex:0] intValue]],
                                   [NSNumber numberWithInt:[[self.customerType ingoreObjectAtIndex:0] intValue]],
                                   [NSNumber numberWithInt:[[self.stockType ingoreObjectAtIndex:0] intValue]],
                                   [NSNumber numberWithInt:[[self.checkType ingoreObjectAtIndex:0] intValue]],
-                                  [NSNumber numberWithInt:1],
+                                  [NSNumber numberWithInt:0],
                                   [self getTextFromView:self.contentView withTag:9],
                                   [self getTextFromView:self.contentView withTag:10],
                                   @"",
