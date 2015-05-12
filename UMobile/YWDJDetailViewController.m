@@ -9,6 +9,7 @@
 #import "YWDJDetailViewController.h"
 #import "YWDJMainDetailViewController.h"
 #import "YWDJProcutDetailViewController.h"
+#import "YeWuDanJuXinZenViewController.h"
 
 @interface YWDJDetailViewController ()
 
@@ -35,7 +36,9 @@
 
 }
 - (IBAction)copyButtonClicked:(UIButton *)sender {
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    YeWuDanJuXinZenViewController *vc = [sb instantiateViewControllerWithIdentifier:@"YeWuDanJuXinZenViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 - (IBAction)printButtonClicked:(UIButton *)sender {
     NSMutableString *stringToPrint = [[NSMutableString alloc] initWithString:@""];
