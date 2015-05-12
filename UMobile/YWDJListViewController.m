@@ -121,7 +121,7 @@
 }
 -(void) searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     if (self.paramArray.count > 13){
-        [self.paramArray replaceObjectAtIndex:13 withObject:[NSString stringWithFormat:@"'%@'",searchBar.text]];
+        [self.paramArray replaceObjectAtIndex:13 withObject:[NSString stringWithFormat:@"%@",searchBar.text]];
     }
     [self headerRereshing];
     [searchBar resignFirstResponder];
