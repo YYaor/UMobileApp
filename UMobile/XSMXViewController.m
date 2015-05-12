@@ -165,9 +165,9 @@
     NSMutableArray *paramArray = [NSMutableArray arrayWithObjects:
                                   [self getTextFromView:self.view withTag:4],
                                   [self getTextFromView:self.view withTag:3],
-                                  [NSNumber numberWithInt:[[self.customerType ingoreObjectAtIndex:0] intValue]],
-                                  [NSNumber numberWithInt:[[self.stockType ingoreObjectAtIndex:0] intValue]],
-                                  [NSNumber numberWithInt:[[self.salesType ingoreObjectAtIndex:0] intValue]],
+                                  [self.customerType ingoreObjectAtIndex:1],
+                                  [self.stockType ingoreObjectAtIndex:1],
+                                  [self.salesType ingoreObjectAtIndex:1],
                                   [self getTextFromView:self.view withTag:1],
                                   [self getTextFromView:self.view withTag:2],
                                   [NSNumber numberWithInt:[[self GetUserID] intValue]],

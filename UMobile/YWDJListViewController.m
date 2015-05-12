@@ -42,6 +42,7 @@
     __block YWDJListViewController *tempSelf = self;
     NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
     NSString *thelink = [self GetLinkWithFunction:89 andParam:paramString];
+    thelink = [thelink stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self StartQuery:thelink completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
         [array removeAllObjects];
@@ -61,6 +62,7 @@
     }
     NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
     NSString *thelink = [self GetLinkWithFunction:89 andParam:paramString];
+    thelink = [thelink stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self StartQuery:thelink completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
         [array addObjectsFromArray:rs];
@@ -87,8 +89,8 @@
     }
     UIView *contentView = [cell.contentView viewWithTag:10];
     contentView.layer.cornerRadius = 4;
-    contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    contentView.layer.borderWidth = 0.75;
+//    contentView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    contentView.layer.borderWidth = 0.5;
     NSArray *rs = [array objectAtIndex:indexPath.row];
     [self setText:[rs objectAtIndex:9] forView:contentView withTag:1];
     [self setText:[rs objectAtIndex:4] forView:contentView withTag:2];

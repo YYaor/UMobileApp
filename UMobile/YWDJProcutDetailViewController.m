@@ -15,9 +15,11 @@
 
 @implementation YWDJProcutDetailViewController
 @synthesize array;
+@synthesize dataArray;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dataArray = [[NSMutableArray alloc] init];
 
 }
 -(void) loadData{
@@ -38,7 +40,7 @@
 }
 */
 -(NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return array.count;
+    return dataArray.count;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *cellIden = @"cell";
@@ -46,7 +48,7 @@
     if (!cell){
         cell = [[YWDJProductDetailCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIden];
     }
-    NSArray *rs = [array objectAtIndex:indexPath.row];
+    NSArray *rs = [dataArray objectAtIndex:indexPath.row];
     UIView *contentView = [cell.contentView viewWithTag:100];
     if (rs.count > 10){
         [self setText:[rs objectAtIndex:0] forView:contentView withTag:1];
@@ -68,7 +70,7 @@
 }
 
 - (void)dealloc {
-
+    [dataArray release],dataArray = nil;
     [super dealloc];
 }
 @end

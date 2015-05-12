@@ -11,7 +11,7 @@
 @implementation XSMXDetailCellModel
 +(XSMXDetailCellModel *)parseDataFromArray:(NSArray *)dataArray{
     XSMXDetailCellModel *model = [[[XSMXDetailCellModel alloc] init] autorelease];
-    model.typeString = [dataArray objectAtIndex:4];
+    model.dateString = [dataArray objectAtIndex:4];
     model.numberString = [dataArray objectAtIndex:5];
     
     model.typeString = [dataArray objectAtIndex:6];

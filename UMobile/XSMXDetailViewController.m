@@ -34,6 +34,7 @@ static const CGFloat cellHeight = 60;
      __block XSMXDetailViewController *tempSelf = self;
     NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
     NSString *linkString = [self GetLinkWithFunction:93 andParam:paramString];
+    linkString = [linkString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self StartQuery:linkString completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
         [tempSelf.dataArray removeAllObjects];
@@ -55,6 +56,7 @@ static const CGFloat cellHeight = 60;
     }
     NSString *paramString = [self getParamStringWithParamArray:self.paramArray];
     NSString *linkString = [self GetLinkWithFunction:93 andParam:paramString];
+    linkString = [linkString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self StartQuery:linkString completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
         for (NSArray *array in rs) {

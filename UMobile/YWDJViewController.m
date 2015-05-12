@@ -188,7 +188,7 @@
                         ];
     NSMutableArray *paramArray = [NSMutableArray arrayWithObjects:
                                   [NSNumber numberWithInt:20],
-                                  [NSNumber numberWithInt:0],
+                                  [NSNumber numberWithInt:1],
                                   [self getTextFromView:self.contentView withTag:1],
                                   [self getTextFromView:self.contentView withTag:2],
                                   [NSNumber numberWithInt:[[self.orderType ingoreObjectAtIndex:0] intValue]],
@@ -202,6 +202,20 @@
                                   [self getTextFromView:self.contentView withTag:10],
                                   @"",
                                   [NSNumber numberWithInt:[[self GetUserID] intValue]], nil];
+//    paramArray = [NSMutableArray arrayWithObjects:
+//                  [self getTextFromView:self.contentView withTag:1],
+//                  [self getTextFromView:self.contentView withTag:2],
+//                  [NSNumber numberWithInt:[[self.orderType ingoreObjectAtIndex:0] intValue]],
+//                  [self getTextFromView:self.contentView withTag:4],
+//                  [NSNumber numberWithInt:[[self.salesType ingoreObjectAtIndex:0] intValue]],
+//                  [NSNumber numberWithInt:[[self.customerType ingoreObjectAtIndex:0] intValue]],
+//                  [NSNumber numberWithInt:[[self.stockType ingoreObjectAtIndex:0] intValue]],
+//                  [NSNumber numberWithInt:[[self.checkType ingoreObjectAtIndex:0] intValue]],
+//                  [NSNumber numberWithInt:[[self GetUserID] intValue]],
+//                  @"",
+//                  [NSNumber numberWithInt:20],
+//                  [NSNumber numberWithInt:1],
+//                  @"", nil];
     NSString *link = [self GetLinkWithFunction:89 andParam:param];
     UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
     YWDJListViewController *vc = (YWDJListViewController *)[sb instantiateViewControllerWithIdentifier:@"YWDJListViewController"];
