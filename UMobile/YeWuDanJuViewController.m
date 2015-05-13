@@ -8,6 +8,7 @@
 
 #import "YeWuDanJuViewController.h"
 #import "ShenHeDtlViewController.h"
+#import "YeWuDanJuXinZenViewController.h"
 
 @interface YeWuDanJuViewController ()<UIPrintInteractionControllerDelegate,PrintDelegate>
 
@@ -26,12 +27,12 @@
         NSLog(@"%@", str);
     }
     
-    XinZenHeaderViewController *vc1 = (XinZenHeaderViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"YeWuDanJuXinZenViewController"];
+    YeWuDanJuXinZenViewController *vc1 = (YeWuDanJuXinZenViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"YeWuDanJuXinZenViewController"];
     XinZenDetailViewController *vc2 = (XinZenDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"XinZenDetailViewController"];
     vc1.parentVC = self;
     vc1.delegate = self;
     vc1.allInfo = self.headInfo;
-    
+    vc1.copiedDataArray = self.copieddataArray;
     
     vc1.bEdit = self.bEdit;
     vc1.bClean = self.bClean;

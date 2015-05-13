@@ -17,6 +17,7 @@
 @implementation YeWuDanJuXinZenViewController
 
 @synthesize allInfo=_allInfo,titles,titles_in,titles_out;
+@synthesize copiedDataArray;
 
 -(NSMutableDictionary *)allInfo{
     if(_allInfo == nil){
@@ -29,42 +30,86 @@
         
         NSDictionary *hInfo = [[self GetOM] getOrder:[self.setting strForKey:@"Identy"]];
         if ([self.setting intForKey:@"ISBS"] == 1) {
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"5"]] forKey:@"5"];
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"6"]] forKey:@"6"];
-            NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
-            [_allInfo setObject:peopleArr forKey:@"4"];
-            
-            NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
-            [_allInfo setObject:bumenArr forKey:@"5"];
-            
-            NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
-            [_allInfo setObject:CKArr forKey:@"6"];
-            
-            NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"8",[USettingModel getSetting].SKZHName, nil];
-            [_allInfo setObject:SKArr forKey:@"8"];
+            if (self.copiedDataArray && copiedDataArray.count > 25){
+                //--往来单位
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:6],[copiedDataArray objectAtIndex:8], nil] forKey:@"3"];
+                //--经手人
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"4"];
+                //--部门
+                //[_allInfo setObject:[NSArray arrayWithObjects:[copiedDataArray objectAtIndex:0],[copiedDataArray objectAtIndex:0], nil] forKey:@"5"];
+                //--仓库
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:12],[copiedDataArray objectAtIndex:13], nil] forKey:@"6"];
+                //--摘要
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"7"];
+                //--付款帐户
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"8"];
+                //--付款金额
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"9"];
+                //--附加说明
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"10"];
+                //--审核人
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:24],[copiedDataArray objectAtIndex:25], nil] forKey:@"11"];
+                
+            }else{
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"5"]] forKey:@"5"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"6"]] forKey:@"6"];
+                NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
+                [_allInfo setObject:peopleArr forKey:@"4"];
+                
+                NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
+                [_allInfo setObject:bumenArr forKey:@"5"];
+                
+                NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
+                [_allInfo setObject:CKArr forKey:@"6"];
+                
+                NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"8",[USettingModel getSetting].SKZHName, nil];
+                [_allInfo setObject:SKArr forKey:@"8"];
+            }
         }else{
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"3"]] forKey:@"3"];
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
-            [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"7"]] forKey:@"7"];
-            NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
-            [_allInfo setObject:peopleArr forKey:@"4"];
-            
-            NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
-            [_allInfo setObject:bumenArr forKey:@"5"];
-            
-            NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
-            [_allInfo setObject:CKArr forKey:@"6"];
-            
-            NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"9",[USettingModel getSetting].SKZHName, nil];
-            [_allInfo setObject:SKArr forKey:@"9"];
+            if (copiedDataArray && copiedDataArray.count > 25){
+                //--经手人
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"3"];
+                //--部门
+                //[_allInfo setObject:[NSArray arrayWithObjects:[copiedDataArray objectAtIndex:0],[copiedDataArray objectAtIndex:0], nil] forKey:@"4"];
+                //--往来单位
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:6],[copiedDataArray objectAtIndex:8], nil] forKey:@"5"];
+                //--入库仓库
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:12],[copiedDataArray objectAtIndex:13], nil] forKey:@"6"];
+                //--摘要
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"7"];
+                //--付款帐户
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"8"];
+                //--付款金额
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"9"];
+                //--附加说明
+                [_allInfo setObject:[NSArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"10"];
+                //--审核人
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:24],[copiedDataArray objectAtIndex:25], nil] forKey:@"11"];
+
+            }else{
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"3"]] forKey:@"3"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"7"]] forKey:@"7"];
+                NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
+                [_allInfo setObject:peopleArr forKey:@"4"];
+                
+                NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
+                [_allInfo setObject:bumenArr forKey:@"5"];
+                
+                NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
+                [_allInfo setObject:CKArr forKey:@"6"];
+                
+                NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"9",[USettingModel getSetting].SKZHName, nil];
+                [_allInfo setObject:SKArr forKey:@"9"];
+            }
         }
         
         
         
         
         
-        for(int i = 0 ; i < 11 ; i ++){
+        for(int i = 0 ; i < 12 ; i ++){
             NSString *key = [NSString stringWithFormat:@"%d",i];
             if (![_allInfo objectForKey:key])
                 [_allInfo setObject:[NSMutableArray array] forKey:key];
@@ -80,7 +125,7 @@
     if (_allInfo) [_allInfo release];
     _allInfo = [allInfo retain];
     
-    for(int i = 0 ; i < 11 ; i ++){
+    for(int i = 0 ; i < 12 ; i ++){
         NSString *key = [NSString stringWithFormat:@"%d",i];
         if (![_allInfo objectForKey:key])
             [_allInfo setObject:[NSMutableArray array] forKey:key];
@@ -172,7 +217,7 @@
             [self.allInfo setObject:[NSMutableArray array] forKey:key];
         }
     }else{
-        for (NSString *key in @[@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10"]){
+        for (NSString *key in @[@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11"]){
             [self.allInfo setObject:[NSMutableArray array] forKey:key];
         }
     }
@@ -268,7 +313,7 @@
     return nil;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row == 11) {
+    if (indexPath.row == 12) {
         return 60;
     }
     return 44;

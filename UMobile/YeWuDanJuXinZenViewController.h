@@ -32,6 +32,7 @@
 }
 
 @property (nonatomic,retain) NSMutableDictionary *allInfo;
+@property (nonatomic , retain) NSArray *copiedDataArray;
 
 @property (nonatomic,retain) NSArray *titles;
 @property (nonatomic,retain) NSArray *titles_in;
