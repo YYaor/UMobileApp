@@ -11,6 +11,6 @@
 @interface YWDJProcutDetailViewController : RCViewController<UITableViewDataSource,UITableViewDelegate>
 
 @property (retain, nonatomic) NSMutableArray *array;
-
+@property (retain, nonatomic) IBOutlet UITableView *dataTableView;
 @property(nonatomic , retain) NSMutableArray *dataArray;
 @end
