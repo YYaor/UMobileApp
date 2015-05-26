@@ -202,6 +202,8 @@
     [self setText:[rs objectAtIndex:0] forView:cell withTag:6];
     
     [self setText:[rs objectAtIndex:17] forView:cell withTag:7];  //审核状态
+//    [self setText:[rs objectAtIndex:17] forView:cell withTag:8]; //保质日期
+//    [self setText:[rs objectAtIndex:17] forView:cell withTag:9]; //截止日期
     
     UITextField *textField = (UITextField *)[cell viewWithTag:7];
     textField.textColor = [[rs objectAtIndex:17] isEqualToString:@"未审核"]?[UIColor redColor]:[UIColor blackColor];
