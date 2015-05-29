@@ -148,6 +148,8 @@ typedef enum{
 
 -(void)clearPictureCache;
 
+-(NSString *) getParamStringWithParamArray:(NSArray *)paramArray;
+
 @property (nonatomic) int shType;//审核类型
 @property (nonatomic) int yjType;//预警类型
 

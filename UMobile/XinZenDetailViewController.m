@@ -29,7 +29,7 @@
         [self computeTotal];
     self.orderType = @"预设出库售价";
     self.delProducts = [NSMutableArray array];
-    
+    self.youhuiText.keyboardType = UIKeyboardTypeDecimalPad;
     // add notifi
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(sendCompanyMessage:) name:@"sendCompanyMessage" object:nil];
 //    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(sendOrderMessage:) name:@"sendOrderMessage" object:nil];
@@ -64,6 +64,34 @@
 //        self.orderType = @"预设出库售价";
 //    }
 //}
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    for (NSLayoutConstraint *constr in self.view.constraints) {
+        if (constr.secondItem == self.totalView && constr.secondAttribute == NSLayoutAttributeBottom) {
+            [UIView animateWithDuration:0.3 animations:^{
+                constr.constant +=216;
+                [self.view layoutIfNeeded];
+            }];
+            
+        }
+    }
+    return YES;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    for (NSLayoutConstraint *constr in self.view.constraints) {
+        if (constr.secondItem == self.totalView && constr.secondAttribute == NSLayoutAttributeBottom) {
+            [UIView animateWithDuration:0.3 animations:^{
+                constr.constant -=216;
+                [self.view layoutIfNeeded];
+            }];
+        }
+    }
+    [self.view layoutIfNeeded];
+    //---
+    textField.text = [NSString stringWithFormat:@"%.2f",[textField.text floatValue]];
+    [self computeTotal];
+}
 
 -(void)keyboardWillShow:(id)info{
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 280, 0);
@@ -200,7 +228,7 @@
             tot += [arr floatForKey:@"金额"];
         }
     }
-
+    disTotal -= [self.youhuiText.text floatValue];
         
 //        if ([arr intForKey:@"赠品"] == 0)
 //            tot += [arr floatForKey:@"折后金额"];;

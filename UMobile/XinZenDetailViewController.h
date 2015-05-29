@@ -22,6 +22,7 @@
 @property (retain, nonatomic) NSMutableArray *products;
 @property (retain, nonatomic) NSMutableArray *delProducts;
 @property (retain, nonatomic) IBOutlet UIView *totalView;
+@property (retain, nonatomic) IBOutlet UITextField *youhuiText;
 
 @property (retain, nonatomic) NSString *total;
 @property (retain, nonatomic) NSString *count;

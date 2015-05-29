@@ -1,74 +1,58 @@
 //
-//  XinZenDingDanViewController.m
+//  YeWuDanJuViewController.m
 //  UMobile
 //
-//  新增订单
-//  订单录入
-//
-//  Created by  APPLE on 2014/9/23.
-//  Copyright (c) 2014年  APPLE. All rights reserved.
+//  Created by mocha on 15/4/30.
+//  Copyright (c) 2015年  APPLE. All rights reserved.
 //
 
-#import "XinZenDingDanViewController.h"
+#import "YeWuDanJuViewController.h"
+#import "ShenHeDtlViewController.h"
+#import "YeWuDanJuXinZenViewController.h"
 
-@interface XinZenDingDanViewController ()<UIPrintInteractionControllerDelegate,PrintDelegate>
+@interface YeWuDanJuViewController ()<UIPrintInteractionControllerDelegate,PrintDelegate>
 
 @end
 
-@implementation XinZenDingDanViewController
+@implementation YeWuDanJuViewController
 
 @synthesize headInfo;
 @synthesize products;
+@synthesize copieddataArray;
 
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [super viewDidLoad];
-    
     for (int i = 0; i < 20; i ++) {
         NSString * str = [self GetCurrentDateTime];
         NSLog(@"%@", str);
     }
     
-    XinZenHeaderViewController *vc1 = (XinZenHeaderViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"XinZenHeaderViewController"];
+    YeWuDanJuXinZenViewController *vc1 = (YeWuDanJuXinZenViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"YeWuDanJuXinZenViewController"];
     XinZenDetailViewController *vc2 = (XinZenDetailViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"XinZenDetailViewController"];
     vc1.parentVC = self;
     vc1.delegate = self;
     vc1.allInfo = self.headInfo;
-    
+    vc1.copiedDataArray = self.copieddataArray;
     
     vc1.bEdit = self.bEdit;
     vc1.bClean = self.bClean;
-    if (self.bEdit) self.navigationItem.title = @"订单录入";
+    if (self.bEdit) self.navigationItem.title = @"业务单据录入";
     vc2.parentVC = self;
     vc2.products = self.products;
     vc2.bClean = self.bClean;
     self.mutileView.viewControllers = @[vc1,vc2];
     self.mutileView.titles = @[@"基本信息",@"商品明细"];
-    //"VER":"U+",
-    // 主表字段说明":[单据ID,单据编号,单据标识,单据类型,单据日期,单据时间,单据日期时间,操作日期,单据状态,折扣,优惠金额,往来单位ID,仓库ID,经手人ID,备注,摘要,金额,折后金额,含税金额,成交金额,总数量,收/付款账户ID,收/付款金额,发/取货日期]
-
-
+    // Do any additional setup after loading the view.
 }
-
 
 -(NSNumber *)numValue:(NSString *)str{
     return [NSNumber numberWithInteger:[str integerValue]];
 }
 
 -(NSString *)floatValue:(NSString *)str{
-//    NSNumber *number = [NSNumber numberWithFloat:[str floatValue]];
-//    NSLog(@"%@=%f",number,[number floatValue]);
-//    return number;// [NSNumber numberWithFloat:[str floatValue]];
+    //    NSNumber *number = [NSNumber numberWithFloat:[str floatValue]];
+    //    NSLog(@"%@=%f",number,[number floatValue]);
+    //    return number;// [NSNumber numberWithFloat:[str floatValue]];
     return [NSString stringWithFormat:@"%0.2f",[str floatValue]];
 }
 
@@ -102,8 +86,6 @@
     }
 }
 
-
-//新增订单按钮
 - (IBAction)submitClick:(id)sender {
     
     XinZenHeaderViewController *vc1 = (XinZenHeaderViewController *) [self.mutileView.viewControllers objectAtIndex:0];
@@ -148,44 +130,44 @@
     }
     
     /*临时注释  ghd
-    // 区分BS参数
-    if ([[self setting] intForKey:@"ISBS"] == 1) {
-        NSArray *M_Data = @[[NSNumber numberWithInt:0],
-                            [[hInfo objectForKey:@"2"] ingoreObjectAtIndex:1],
-                            [NSNumber numberWithInt:0],
-                            [self numValue:[[hInfo objectForKey:@"0"] ingoreObjectAtIndex:0]],
-                            [[hInfo objectForKey:@"1"] ingoreObjectAtIndex:1],
-                            [self GetCurrentTime],
-                            // 到货日期
-                            [self numValue:[[hInfo objectForKey:@"7"] ingoreObjectAtIndex:0]],
-                            // 往来单位
-                            [self numValue:[[hInfo objectForKey:@"5"] ingoreObjectAtIndex:0]],
-                            [self numValue:[[hInfo objectForKey:@"3"] ingoreObjectAtIndex:0]],
-                            // 部门ID
-                            
-                            
-                            [self GetCurrentDateTime],
-                            [self GetCurrentDate],
-                            [NSNumber numberWithInt:-1],
-                            [NSNumber numberWithInt:100],
-                            [NSNumber numberWithInt:0],
-                            [self numValue:[[hInfo objectForKey:@"5"] ingoreObjectAtIndex:0]],
-                            [self numValue:[[hInfo objectForKey:@"7"] ingoreObjectAtIndex:0]],
-                            [self numValue:[[hInfo objectForKey:@"3"] ingoreObjectAtIndex:0]],
-                            [[hInfo objectForKey:@"6"] ingoreObjectAtIndex:1],
-                            [[hInfo objectForKey:@"8"] ingoreObjectAtIndex:1],
-                            [[hInfo objectForKey:@"8"] ingoreObjectAtIndex:1],
-                            [self floatValue:vc2.total],
-                            [self floatValue:vc2.total],
-                            [self floatValue:vc2.total],
-                            [self floatValue:vc2.total],
-                            [self floatValue:vc2.count],
-                            [self numValue:[[hInfo objectForKey:@"9"] ingoreObjectAtIndex:0]],
-                            [self floatValue:[[hInfo objectForKey:@"10"] ingoreObjectAtIndex:1]],
-                            [self numValue:[self GetUserID]]
-                            ];
-    }
-    */
+     // 区分BS参数
+     if ([[self setting] intForKey:@"ISBS"] == 1) {
+     NSArray *M_Data = @[[NSNumber numberWithInt:0],
+     [[hInfo objectForKey:@"2"] ingoreObjectAtIndex:1],
+     [NSNumber numberWithInt:0],
+     [self numValue:[[hInfo objectForKey:@"0"] ingoreObjectAtIndex:0]],
+     [[hInfo objectForKey:@"1"] ingoreObjectAtIndex:1],
+     [self GetCurrentTime],
+     // 到货日期
+     [self numValue:[[hInfo objectForKey:@"7"] ingoreObjectAtIndex:0]],
+     // 往来单位
+     [self numValue:[[hInfo objectForKey:@"5"] ingoreObjectAtIndex:0]],
+     [self numValue:[[hInfo objectForKey:@"3"] ingoreObjectAtIndex:0]],
+     // 部门ID
+     
+     
+     [self GetCurrentDateTime],
+     [self GetCurrentDate],
+     [NSNumber numberWithInt:-1],
+     [NSNumber numberWithInt:100],
+     [NSNumber numberWithInt:0],
+     [self numValue:[[hInfo objectForKey:@"5"] ingoreObjectAtIndex:0]],
+     [self numValue:[[hInfo objectForKey:@"7"] ingoreObjectAtIndex:0]],
+     [self numValue:[[hInfo objectForKey:@"3"] ingoreObjectAtIndex:0]],
+     [[hInfo objectForKey:@"6"] ingoreObjectAtIndex:1],
+     [[hInfo objectForKey:@"8"] ingoreObjectAtIndex:1],
+     [[hInfo objectForKey:@"8"] ingoreObjectAtIndex:1],
+     [self floatValue:vc2.total],
+     [self floatValue:vc2.total],
+     [self floatValue:vc2.total],
+     [self floatValue:vc2.total],
+     [self floatValue:vc2.count],
+     [self numValue:[[hInfo objectForKey:@"9"] ingoreObjectAtIndex:0]],
+     [self floatValue:[[hInfo objectForKey:@"10"] ingoreObjectAtIndex:1]],
+     [self numValue:[self GetUserID]]
+     ];
+     }
+     */
     NSDictionary *dic = nil;
     if ([self.setting intForKey:@"ISBS"] == 1) {
         dic = [self GetBS];
@@ -200,7 +182,7 @@
     __block XinZenDingDanViewController *tempSelf = self;
     [self StartQuery:link withStrInfo:dic completeBlock:^(id obj) {
         NSDictionary *info = [obj objectFromJSONString];
-
+        
         
         if ([info intForKey:@"BillID"] > 0 && [info intForKey:@"BillID"] != NSNotFound) {
             if ([[info strForKey:@"Result"] length] > 0) {
@@ -239,10 +221,10 @@
                 [self.navigationController pushViewController:viewController animated:YES];
             }
             
-           
             
-
-//            [tempSelf.navigationController popViewControllerAnimated:YES];
+            
+            
+            //            [tempSelf.navigationController popViewControllerAnimated:YES];
         }else{
             if ([[info strForKey:@"Result"] length] > 0) {
                 [tempSelf ShowMessage:[info strForKey:@"Result"]];
@@ -264,7 +246,7 @@
     [dInfo addObjectsFromArray:vc2.products];
     [dInfo addObjectsFromArray:vc2.delProducts];
     
-
+    
     NSString *stockID = @"-1";
     NSString *strDate = @"";
     NSString *strRemark = @"";
@@ -330,8 +312,8 @@
         
         [rsd addObject:[self numValue:self.InvId]];                       //1 单据ID
         
-//        [rsd addObject:[self numValue:self.InvId]];                     //0 明细ID,	 编辑时传ListID,删除时传-ListID
-//        [rsd addObject:[self numValue:@"0"]];                          //1 单据ID
+        //        [rsd addObject:[self numValue:self.InvId]];                     //0 明细ID,	 编辑时传ListID,删除时传-ListID
+        //        [rsd addObject:[self numValue:@"0"]];                          //1 单据ID
         [rsd addObject:[self numValue:stockID]];      //2 仓库ID
         [rsd addObject:[self numValue:[rs strForKey:@"商品ID"]]];         //3 商品ID
         [rsd addObject:[self numValue:[rs strForKey:@"单位ID"]]];       //4 商品单位ID 单位ID
@@ -384,7 +366,7 @@
     NSMutableArray *dInfo = [NSMutableArray array];
     [dInfo addObjectsFromArray:vc2.products];
     [dInfo addObjectsFromArray:vc2.delProducts];
-
+    
     
     NSString *stockID = @"-1";
     NSString *dpID = @"0";
@@ -407,7 +389,7 @@
         strDate2 = [[hInfo objectForKey:@"7"] objectAtIndex:1];
     }
     
-
+    
     
     NSArray *M_Data = @[[NSNumber numberWithInt:[self.InvId integerValue]],     //0 单据ID
                         [[hInfo objectForKey:@"2"] ingoreObjectAtIndex:1],      //1 单据编号
@@ -430,7 +412,7 @@
     NSMutableArray *D_Data = [NSMutableArray array];
     for (NSDictionary *rs in dInfo){
         NSMutableArray *rsd = [NSMutableArray array];
-                    //0 明细ID
+        //0 明细ID
         if (self.InvId == 0) {
             [rsd addObject:[self numValue:@"0"]];//新增
         }else{
@@ -473,41 +455,6 @@
     return dic;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
--(void)dealloc{
-    self.AccID = nil;
-    self.InvId = nil;
-    self.headInfo = nil;
-    self.products = nil;
-    [_mutileView release];
-    [super dealloc];
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
-//
-//- (IBAction)addButtonClick:(id)sender {
-//    SPGLViewController *vc = (SPGLViewController *)  [self.storyboard instantiateViewControllerWithIdentifier:@"SPGLViewController"];
-//    vc.bSelect = YES;
-//    vc.products = self.products;
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
-
 -(void)print{
     XinZenHeaderViewController *vc1 = (XinZenHeaderViewController *) [self.mutileView.viewControllers objectAtIndex:0];
     XinZenDetailViewController *vc2 = (XinZenDetailViewController *)[self.mutileView.viewControllers objectAtIndex:1];
@@ -523,61 +470,61 @@
     [dataSource addObject:@"商品    数量   单价    金额"];
     [dataSource addObject:@"-------------------------"];
     
-//    float total=0;
-//    int cnt = 0;
+    //    float total=0;
+    //    int cnt = 0;
     for (NSDictionary *rs in dInfo) {
         NSString *str = [NSString stringWithFormat:@"%@ %@ %@ %@",[rs strForKey:@"名称"],[rs strForKey:@"数量"],[rs strForKey:@"单价"],[rs strForKey:@"折后金额"]];
-//        total+=[[rs strForKey:@"折后金额"] floatValue];
-//        cnt += [[rs strForKey:@"数量"] integerValue];
+        //        total+=[[rs strForKey:@"折后金额"] floatValue];
+        //        cnt += [[rs strForKey:@"数量"] integerValue];
         [dataSource addObject:str];
     }
-
+    
     [dataSource addObject:@"-------------------------"];
     [dataSource addObject:[NSString stringWithFormat:@"总数量:%d",[vc2.count intValue]]];
     [dataSource addObject:[NSString stringWithFormat:@"总金额:%.2f",[vc2.disTotal doubleValue]]];
     [dataSource addObject:[NSString stringWithFormat:@"打印日期:%@",[self GetCurrentDateTime]]];
     [dataSource addObject:[NSString stringWithFormat:@"客户签名:"]];
     [self printText:dataSource];
-//    UIImage *printImage = [tableView screenshot];
-//    UIImage * scaleImage = [self scaleToSize:printImage size:CGSizeMake(595, 1660)];
-//    
-//    UIImage *jietuImage = [self imageFromImage:scaleImage inRect:CGRectMake(0, 0, 595, 880)];
+    //    UIImage *printImage = [tableView screenshot];
+    //    UIImage * scaleImage = [self scaleToSize:printImage size:CGSizeMake(595, 1660)];
+    //
+    //    UIImage *jietuImage = [self imageFromImage:scaleImage inRect:CGRectMake(0, 0, 595, 880)];
     
     
     /*
-    UIPrintInteractionController *printC = [UIPrintInteractionController sharedPrintController];//显示出打印的用户界面。
-    printC.delegate = self;
-    
-    if (!printC) {
-        NSLog(@"打印机初始化失败");
-    }
-    printC.showsNumberOfCopies = YES;
-    printC.showsPageRange = YES;
-//    NSData *imgDate = UIImagePNGRepresentation(jietuImage);
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dataSource];
-    BOOL canPrint = [UIPrintInteractionController canPrintData:data];
-    if (printC && [UIPrintInteractionController canPrintData:data]) {
-        UIPrintInfo *printInfo = [UIPrintInfo printInfo];//准备打印信息以预设值初始化的对象。
-        printInfo.outputType = UIPrintInfoOutputGrayscale;//设置输出类型。B&W content only
-        
-//        printC.showsPageRange = YES;//显示的页面范围
-        
-        printInfo.jobName = @"新增订单";
-        printC.printInfo = printInfo;
-        printC.printingItem = data;//single NSData, NSURL, UIImage, ALAsset
-        
-        // 等待完成
-        void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) =
-        ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
-            if (!completed && error) {
-                NSLog(@"可能无法完成，因为印刷错误: %@", error);
-            }
-        };
-        
-        [printC presentAnimated:YES completionHandler:completionHandler];//在iPhone上弹出打印那个页面
-    }else{
-        [self ShowMessage:@"没有数据打印"];
-    }
+     UIPrintInteractionController *printC = [UIPrintInteractionController sharedPrintController];//显示出打印的用户界面。
+     printC.delegate = self;
+     
+     if (!printC) {
+     NSLog(@"打印机初始化失败");
+     }
+     printC.showsNumberOfCopies = YES;
+     printC.showsPageRange = YES;
+     //    NSData *imgDate = UIImagePNGRepresentation(jietuImage);
+     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:dataSource];
+     BOOL canPrint = [UIPrintInteractionController canPrintData:data];
+     if (printC && [UIPrintInteractionController canPrintData:data]) {
+     UIPrintInfo *printInfo = [UIPrintInfo printInfo];//准备打印信息以预设值初始化的对象。
+     printInfo.outputType = UIPrintInfoOutputGrayscale;//设置输出类型。B&W content only
+     
+     //        printC.showsPageRange = YES;//显示的页面范围
+     
+     printInfo.jobName = @"新增订单";
+     printC.printInfo = printInfo;
+     printC.printingItem = data;//single NSData, NSURL, UIImage, ALAsset
+     
+     // 等待完成
+     void (^completionHandler)(UIPrintInteractionController *, BOOL, NSError *) =
+     ^(UIPrintInteractionController *printController, BOOL completed, NSError *error) {
+     if (!completed && error) {
+     NSLog(@"可能无法完成，因为印刷错误: %@", error);
+     }
+     };
+     
+     [printC presentAnimated:YES completionHandler:completionHandler];//在iPhone上弹出打印那个页面
+     }else{
+     [self ShowMessage:@"没有数据打印"];
+     }
      */
     
 }
@@ -612,9 +559,9 @@
     for(int i = 0;i<[array count];i++)
     {
         [stringToPrint appendFormat:@"%@",[array objectAtIndex:i]];
- 
+        
         [stringToPrint appendFormat:@"\n"];
-
+        
     }
     UIPrintInteractionController *pic = [UIPrintInteractionController sharedPrintController];
     
@@ -639,9 +586,24 @@
             NSLog(@"Printing could not complete because of error: %@", error);
         }
     };
- 
+    
     [pic presentAnimated:YES completionHandler:completionHandler];
     
 }
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

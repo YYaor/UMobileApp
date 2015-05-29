@@ -7,6 +7,7 @@
 //
 
 #import "ShangPinDtlViewController.h"
+#import "KCLBViewController.h"
 
 @interface ShangPinDtlViewController ()
 
@@ -91,7 +92,7 @@
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return [[@[@"290",@"120",@"92"] objectAtIndex:indexPath.section] floatValue];
+    return [[@[@"290",@"150",@"92"] objectAtIndex:indexPath.section] floatValue];
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -147,6 +148,15 @@
         }
     }
     return cell;
+}
+
+-(IBAction)KCXXClick:(id)sender{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    KCLBViewController *vc = (KCLBViewController *)[sb instantiateViewControllerWithIdentifier:@"KCLBViewController"];
+     NSArray *rs =  [self.result firstObject];
+    vc.shID = [[rs objectAtIndex:0] integerValue];
+    [self.navigationController pushViewController:vc animated:YES];
+    
 }
 
 

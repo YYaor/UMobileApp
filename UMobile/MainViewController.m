@@ -29,7 +29,7 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(1, 600);
+    self.scrollView.contentSize = CGSizeMake(1, 800);
     
 
 }
@@ -89,7 +89,10 @@
                      @{@"Name": @"往来单位管理",@"Image":@"kehuguanli",@"Action":@"khglClick:",@"Type":@"0"},
                      @{@"Name": @"商品管理",@"Image":@"shangpinguanli",@"Action":@"spglClick:",@"Type":@"0"},
                      @{@"Name": @"订单管理",@"Image":@"dingdanguanli",@"Action":@"ddglClick:",@"Type":@"0"},
-                     @{@"Name": @"日报",@"Image":@"ribao",@"Action":@"ribaoClick:",@"Type":@"1"}
+                     @{@"Name": @"日报",@"Image":@"ribao",@"Action":@"ribaoClick:",@"Type":@"1"},
+                     @{@"Name": @"实时库存查询",@"Image":@"shishikucunchaxun",@"Action":@"sskcClick:",@"Type":@"0"},
+                     @{@"Name": @"销售明细查询",@"Image":@"xiaoshoumingxichaxun",@"Action":@"xsmxClick:",@"Type":@"1"},
+                     @{@"Name": @"业务单据查询",@"Image":@"yewudanjuchaxun",@"Action":@"ywdjClick:",@"Type":@"0"}
                      ];
     [self setButtonActions];
     
@@ -121,7 +124,7 @@
     if ([[self GetOM].rightsMode count] == 0) {
         return;
     }
-    for (int i =  1 ;  i < 9 ; i ++){
+    for (int i =  1 ;  i < 12 ; i ++){
         UIImageView *imageView = (UIImageView *) [self.scrollView viewWithTag:i];
         if (![[[self GetOM].rightsMode objectAtIndex:i] isEqualToString:@"True"]) {
             //不接受点击
@@ -202,6 +205,7 @@
                        [KxMenuItem menuItem:@"新建客户" image:[UIImage imageNamed:@"xjkh_image"] target:self action:@selector(xinjiankehuClick:)],
                        [KxMenuItem menuItem:@"新建订单" image:[UIImage imageNamed:@"xjdd_image"] target:self action:@selector(xinjiandingdanClick:)],
                        [KxMenuItem menuItem:@"条码查询" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(chaxunClick:)],
+                       [KxMenuItem menuItem:@"新增业务单据" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(yewudanjuClick:)],
                        ];
     [KxMenu showMenuInView:self.view fromRect:CGRectMake(280, 64, 10, 1) menuItems:menus];
 }
@@ -244,6 +248,11 @@
         UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"XinZenDingDanViewController"];
         [self.navigationController pushViewController:vc animated:YES];
     }
+}
+
+-(void)yewudanjuClick:(id)sender{
+    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"YeWuDanJuViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 
@@ -318,7 +327,7 @@
 }
 
 -(void)ribaoClick:(id)sender{
-    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"RiBaoViewController"];
+    UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"RBViewController"];
     [self.navigationController presentViewController:vc animated:YES completion:NULL];
 }
 
@@ -334,6 +343,21 @@
 
 -(void)ddglClick:(id)sender{
     UIViewController *vc =  [self.storyboard instantiateViewControllerWithIdentifier:@"DDCXViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)sskcClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"SSKCViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)ywdjClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"YWDJViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+-(void)xsmxClick:(id)sender{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"XSMXViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -354,13 +378,13 @@
     [self StartQuery:[self GetLinkWithFunction:85 andParam:param] completeBlock:^(id obj) {
         
         NSMutableArray *mode = [[[obj objectFromJSONString] objectForKey:@"D_Data"] firstObject];
-        [tempSelf GetOM].rightsMode =  mode;//@[@"False",@"False",@"True",@"False",@"True",@"False",@"False",@"False",@"False"];
+//        [tempSelf GetOM].rightsMode =  mode;//@[@"False",@"False",@"True",@"False",@"True",@"False",@"False",@"False",@"False"];
         
         //0业务设置,1审核,2预警,3排行榜,4报表中心,5客户管理,6商品管理,7订单查询,8日报,9移动禁用 True False
-        if([[mode objectAtIndex:9] isEqualToString: @"True"]){//9移动禁用，退出
-            [tempSelf makeToastInWindow:@"移动化应用已禁用"];
-            [tempSelf.navigationController popToRootViewControllerAnimated:YES];
-        }
+//        if([[mode objectAtIndex:9] isEqualToString: @"True"]){//9移动禁用，退出
+//            [tempSelf makeToastInWindow:@"移动化应用已禁用"];
+//            [tempSelf.navigationController popToRootViewControllerAnimated:YES];
+//        }
         [tempSelf setButtonEnable];
         //设置按钮
         

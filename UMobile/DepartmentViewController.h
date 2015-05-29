@@ -9,7 +9,11 @@
 #import "RCViewController.h"
 #import "LeftView.h"
 
+@protocol departmentViewControllerDelegate <NSObject>
 
+-(void) departmentSelectedWith:(NSInteger )departId departName:(NSString *)departName;
+
+@end
 
 
 @interface DepartmentViewController : RCViewController<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,LeftViewDelagete>{
@@ -24,5 +28,7 @@
 
 @property (nonatomic, retain) NSMutableArray *result;
 @property (nonatomic, retain) NSString *selectId;
+
+@property (nonatomic , assign) id<departmentViewControllerDelegate> delegate;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SettingViewController.h"
+#import "SetDefaultConfigViewController.h"
 
 @interface SettingViewController ()
 
@@ -34,6 +35,8 @@
                       @"Detail":@[
                               @{@"Name":@"库存数量",@"Image":@"",@"Action":@"stockClick:",@"Type":@"1",@"Value":@"Stock"},
                               @{@"Name":@"可用数量",@"Image":@"",@"Action":@"useClick:",@"Type":@"1",@"Value":@"Usable"},
+                              @{@"Name":@"开单默认",@"Image":@"",@"Action":@"setDefaultClick:",@"Type":@"0",@"Value":@"SetDefaultParam"},
+                              @{@"Name":@"相同商品自动合并",@"Action":@"fixClick",@"Type":@"1",@"Value":@"MergeSameAgreement"},
                               ]},
                     @{@"Header":@"U+",
                       @"Detail":@[
@@ -82,7 +85,11 @@
     vc.parentVC = nil;
     [self.navigationController pushViewController:vc animated:YES];
 }
-
+-(void)setDefaultClick:(NSDictionary *)info{
+    UIStoryboard *myStoryBoard = [UIStoryboard storyboardWithName:@"SecondaryStoryboard" bundle:nil];
+    SetDefaultConfigViewController *vc = [myStoryBoard instantiateViewControllerWithIdentifier:@"SetDefaultConfigViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark -
 
@@ -169,6 +176,7 @@
         RCChooseButton *button = (RCChooseButton *)[cell viewWithTag:2];
         button.choose = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }else if (type == 1){
+        [self.setting setObject:@"1" forKey:@"MergeSameAgreement"];
         UISwitch *switcher = (UISwitch *)[cell viewWithTag:2];
         switcher.on = [self.setting intForKey:[dic strForKey:@"Value"]] == 1;
     }

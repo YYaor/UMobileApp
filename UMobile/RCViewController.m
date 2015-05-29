@@ -274,6 +274,24 @@
     //NSDictionary* dic =  test.JSONValue;
     return test;
 }
+-(NSString *)getParamStringWithParamArray:(NSArray *)paramArray{
+    NSMutableString *paramString = [[[NSMutableString alloc] init] autorelease];
+    for (int i=0;i<[paramArray count];i++){
+        if ([[paramArray objectAtIndex:i] isKindOfClass:[NSString class]]){
+            [paramString appendString:[NSString stringWithFormat:@"'%@'",[paramArray objectAtIndex:i]]];
+        }else if ([[paramArray objectAtIndex:i] isKindOfClass:[NSNumber class]]){
+            NSNumber *tempNum = [paramArray objectAtIndex:i];
+            [paramString appendString:[NSString stringWithFormat:@"%d",[tempNum intValue]]];
+        }
+        if (i != [paramArray count]-1){
+            [paramString appendString:@","];
+        }
+    }
+    if (paramString.length == 0){
+        [paramString appendString:@""];
+    }
+    return paramString;
+}
 
 #pragma mark -
 #pragma refresh
@@ -415,10 +433,10 @@
     }
 
     
-    if ([strID length] == 0) strID = @"119";
-    if ([server length] == 0) server = @"www.cnsub.net";
-    if ([serverPort length] == 0) serverPort = @"32021";
-    if ([serverPath length] == 0) serverPath = @"cnsubMB01";
+    if ([strID length] == 0) strID = @"18180847173";
+    if ([server length] == 0) server = @"http://u893863.oicp.net";
+    if ([serverPort length] == 0) serverPort = @"32023";
+    if ([serverPath length] == 0) serverPath = @"cnsubMB02";
     
     
     NSString *serverLink =  [NSString stringWithFormat:@"%@:%@/",server,serverPort];
@@ -469,10 +487,10 @@
     }
 //    NSLog(@"striD %@",strID);
     
-    if ([strID length] == 0) strID = @"119";
-    if ([server length] == 0) server = @"www.cnsub.net";
-    if ([serverPort length] == 0) serverPort = @"32021";
-    if ([serverPath length] == 0) serverPath = @"cnsubMB01";
+    if ([strID length] == 0) strID = @"18180847173";
+    if ([server length] == 0) server = @"http://u893863.oicp.net";
+    if ([serverPort length] == 0) serverPort = @"32023";
+    if ([serverPath length] == 0) serverPath = @"cnsubMB02";
     
     NSString *serverLink =  [NSString stringWithFormat:@"%@:%@/",server,serverPort];
     
@@ -704,8 +722,8 @@
     [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Param\"\r\n\r\n"];
     [bodyContent appendFormat:@"%@\r\n-----------------------------%@\r\n",[info JSONString],POST_BOUNDS];
     
-    //[bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Submit\"\r\n\r\n提交\r\n"];
-    //[bodyContent appendFormat:@"-----------------------------%@--\r\n",POST_BOUNDS];
+//    [bodyContent appendFormat:@"Content-Disposition: form-data; name=\"Submit\"\r\n\r\n提交\r\n"];
+//    [bodyContent appendFormat:@"-----------------------------%@--\r\n",POST_BOUNDS];
     
     
     //    }
