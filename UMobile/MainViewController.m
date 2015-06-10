@@ -385,7 +385,7 @@
 //            [tempSelf makeToastInWindow:@"移动化应用已禁用"];
 //            [tempSelf.navigationController popToRootViewControllerAnimated:YES];
 //        }
-        [tempSelf setButtonEnable];
+//        [tempSelf setButtonEnable];
         //设置按钮
         
     } lock:YES];

@@ -63,6 +63,8 @@ typedef enum{
 
 @property(nonatomic,retain) NSInputStream *inputStream;
 
+@property(nonatomic,retain) NSString *PTCODE;
+
 @property(nonatomic) FromType fromType;
 
 @property(nonatomic,assign,readwrite) NSString *tel;
@@ -73,6 +75,8 @@ typedef enum{
 -(void)ShowMessage:(NSString *)str;
 -(void)serverRequestFinished:(id)obj;
 -(id)StartQuery:(NSString *)link;
+
+-(NSString *)getPTCODE;
 
 -(void)serverRequestFailed:(id)obj;
 -(void)reSizeImage:(NSMutableString *)result;//用于设置Html String 里image 宽度，暂只做了jpg

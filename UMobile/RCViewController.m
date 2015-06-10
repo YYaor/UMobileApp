@@ -23,6 +23,7 @@
 @implementation RCViewController
 @synthesize parentVC;
 @synthesize setting ;
+@synthesize PTCODE;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -506,7 +507,12 @@
         if (param == nil) {
             return [NSString stringWithFormat:@"http://%@Bill.api?UID=%@/%@",serverLink,strID,serverPath];
         }
-        link = [NSString stringWithFormat:@"http://%@Data.api?UID=%@/%@&Call=%d&Param=%@",serverLink,strID,serverPath,functionType,param];
+        if ([self.setting objectForKey:@"PTCODE"] == nil || [[self.setting objectForKey:@"PTCODE"] isEqualToString:@""]) {
+            link = [NSString stringWithFormat:@"http://%@Data.api?UID=%@/%@&Call=%d&Param=%@",serverLink,strID,serverPath,functionType,param];
+        }else{
+            link = [NSString stringWithFormat:@"http://%@Data.api?UID=%@X%@/%@&Call=%d&Param=%@",serverLink,strID,[self.setting objectForKey:@"PTCODE"],serverPath,functionType,param];
+        }
+        
     }
     NSLog(@"link %@",link);
 

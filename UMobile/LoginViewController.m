@@ -135,7 +135,7 @@
         }
     }
     [self.view endEditing:YES];
-    NSString *param = [NSString stringWithFormat:@"'%@','%@','02'",
+    NSString *param = [NSString stringWithFormat:@"'%@','%@','03'",
                        [self getTextFromView:self.view withTag:1],
                        [self getTextFromView:self.view withTag:2]
                        ];
@@ -151,6 +151,7 @@
             
         }else{
             result = [[dic objectForKey:@"D_Data"] objectAtIndex:0];
+            [self.setting setObject:[dic objectForKey:@"PTCODE"] forKey:@"PTCODE"];
             // change
             if ([[result objectAtIndex:0] isEqualToString:@"登录成功"]) {
                 // BS
@@ -190,6 +191,10 @@
         
     } lock:YES];
     
+}
+
+-(NSString *)getPTCODE{
+    return self.PTCODE;
 }
 
 //演示
