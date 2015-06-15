@@ -5483,7 +5483,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="J8p-Pv-07u">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7W-7O-SvA">
@@ -5659,7 +5659,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="2O9-sW-QYx">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caH-Ub-wQS">
@@ -12415,7 +12415,7 @@
                     <navigationItem key="navigationItem" id="Mhw-YD-Byh">
                         <nil key="title"/>
                         <view key="titleView" contentMode="scaleToFill" id="K83-Tb-iiD">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fin-Bi-yBI">
@@ -12662,7 +12662,7 @@
                             </connections>
                         </barButtonItem>
                         <view key="titleView" contentMode="scaleToFill" id="66O-Eg-K0z">
-                            <rect key="frame" x="96" y="6" width="128" height="33"/>
+                            <rect key="frame" x="96" y="5.5" width="128" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ki-Xo-QhK">
