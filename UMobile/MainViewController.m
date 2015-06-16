@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 
+static const CGFloat topViewHeight = 64;
+
 @interface MainViewController ()
 
 @end
@@ -29,9 +31,7 @@
 
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
-    self.scrollView.contentSize = CGSizeMake(1, 800);
-    
-
+    self.scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width*2, _scrollView.frame.size.height);
 }
 
 - (IBAction)settingClick:(id)sender {
@@ -359,6 +359,114 @@
 -(void)xsmxClick:(id)sender{
     UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"XSMXViewController"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark - Views
+
+-(void) initViews{
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"home_bg"]];
+    //remove all views from storyboard
+    for (UIView *view in self.scrollView.subviews){
+        [view removeFromSuperview];
+    }
+    //remove all constraints
+    [self.view removeConstraints:self.view.constraints];
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    //---top views
+    UIView *topView = [[UIView alloc] init];
+    topView.translatesAutoresizingMaskIntoConstraints = NO;
+    topView.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:topView];
+    [topView release];
+    
+    NSMutableArray *constrArr = [NSMutableArray array];
+    //-----vertical
+    [constrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[topView(topHeight)]-(0)-[_scrollView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:topViewHeight],@"topHeight", nil] views:NSDictionaryOfVariableBindings(topView,_scrollView)]];
+    //----horizonal
+    [constrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(0)-[topView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(topView)]];
+    [constrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(0)-[_scrollView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:nil views:NSDictionaryOfVariableBindings(_scrollView)]];
+    [self.view addConstraints:constrArr];
+    
+    //-------views on top View
+    UIButton *leftButton = [[UIButton alloc] init];
+    leftButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [leftButton setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
+    [leftButton addTarget:self action:@selector(settingClick:) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:leftButton];
+    [leftButton release];
+    
+    UIImageView *logoImageView = [[UIImageView alloc] init];
+    logoImageView.translatesAutoresizingMaskIntoConstraints = NO;
+    logoImageView.image = [UIImage imageNamed:@""];
+    logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [topView addSubview:logoImageView];
+    [logoImageView release];
+    
+    UIButton *rightButton = [[UIButton alloc] init];
+    rightButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [rightButton setImage:[UIImage imageNamed:@"addbutton"] forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(addClick:) forControlEvents:UIControlEventTouchUpInside];
+    [topView addSubview:rightButton];
+    [rightButton release];
+    
+    CGFloat statusHeight = 20;
+    CGFloat horSpaceToBoard = 10;
+    CGFloat viewsHorSpace = 10;
+    CGFloat buttonWidth = 40;
+    
+    NSMutableArray *topConstrArr = [NSMutableArray array];
+    //---vertical
+    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[leftButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(leftButton)]];
+    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[logoImageView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(logoImageView)]];
+    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[rightButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(rightButton)]];
+    //--horizonal
+    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(toBoard)-[leftButton(btnWidth)]-(viewSpace)-[logoImageView]-(viewSpace)-[rightButton(btnWidth)]-(toBoard)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat: horSpaceToBoard],@"toBoard",[NSNumber numberWithFloat:viewsHorSpace],@"viewSpace",[NSNumber numberWithFloat:buttonWidth],@"btnWidth", nil] views:NSDictionaryOfVariableBindings(leftButton,logoImageView,rightButton)]];
+    [topView addConstraints:topConstrArr];
+    
+}
+-(void) initButtons{
+    CGRect mainRect = self.view.frame;
+    CGFloat buttonWidth = 80;
+    CGFloat buttonHeight = 80;
+    int numberOfBtnsHor = 2;
+    int numberofBtnsVer = 3;
+    CGFloat horizonSpace = (mainRect.size.width - numberOfBtnsHor * buttonWidth) /(numberOfBtnsHor + 1);
+    CGFloat VertiacalSpace = 0;
+    CGFloat offset = 0;
+    
+    VertiacalSpace = (mainRect.size.height - offset-topViewHeight- buttonHeight *numberofBtnsVer) / (numberofBtnsVer+1);
+    //----------------------calculate back scroll content size
+    int crow =(int) ([self.buttons count] / numberOfBtnsHor);
+    if ( [self.buttons count] % numberOfBtnsHor >0)
+    {
+        crow +=1;
+    }
+    
+    CGFloat cHeight = crow*(VertiacalSpace + buttonHeight)+VertiacalSpace + offset;
+    if (cHeight < mainRect.size.height-topViewHeight)
+    {
+        cHeight = mainRect.size.height;
+        
+    }
+    
+    self.scrollView.contentSize = CGSizeMake(mainRect.size.width*2, cHeight);
+    
+    for (int i =0;i<[self.buttons count];i++)
+    {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        
+        int page = (int)(i/(numberOfBtnsHor *numberofBtnsVer));
+        int k = (int) ((i-page*(numberofBtnsVer*numberOfBtnsHor))/numberOfBtnsHor);
+        CGFloat btnXPoint = (i % numberOfBtnsHor) * (buttonWidth +horizonSpace) + horizonSpace + page*mainRect.size.width;
+        CGFloat btnYPoint = offset+VertiacalSpace+k * (VertiacalSpace + buttonHeight);
+        button.frame = CGRectMake(btnXPoint,btnYPoint, buttonWidth, buttonHeight);
+        
+        [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [button setImage:[UIImage imageNamed:[[self.buttons objectAtIndex:i]objectForKey:@"Image"]] forState:UIControlStateNormal];
+        SEL buttonSel = NSSelectorFromString([[self.buttons objectAtIndex:i]objectForKey:@"Action"]);
+        [button addTarget:self action:buttonSel forControlEvents:UIControlEventTouchUpInside];
+        button.titleLabel.font = [UIFont systemFontOfSize:15.0f];
+        [self.scrollView addSubview:button];
+    }
 }
 
 #pragma mark -
