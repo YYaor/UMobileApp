@@ -1603,11 +1603,6 @@
                                 <action selector="backClick:" destination="WOc-SX-HeF" id="B1F-F8-Q2y"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="more_pressed_icon.png" id="wDT-OM-8Va">
-                            <connections>
-                                <action selector="moreClick:" destination="WOc-SX-HeF" id="L16-gW-wia"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
@@ -1698,7 +1693,6 @@
     </scenes>
     <resources>
         <image name="back_normal_icon.png" width="30" height="30"/>
-        <image name="more_pressed_icon.png" width="30" height="30"/>
         <image name="navigationbar_pop.png" width="40" height="40"/>
         <image name="商品管理_26.png" width="22" height="37"/>
     </resources>

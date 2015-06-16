@@ -54,8 +54,8 @@
     
     NSArray *rs = [array objectAtIndex:indexPath.row];
     [self setText:[rs objectAtIndex:1] forView:cell withTag:1];
-    [self setText:[rs objectAtIndex:2] forView:cell withTag:2];
-    [self setText:[rs objectAtIndex:3] forView:cell withTag:3];
+    [self setText:[NSString stringWithFormat:@"%@.00",[rs objectAtIndex:3]] forView:cell withTag:2];
+    [self setText:[NSString stringWithFormat:@"%@.00",[rs objectAtIndex:2]] forView:cell withTag:3];
     return cell;
 }
 
