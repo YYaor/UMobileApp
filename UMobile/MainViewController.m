@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 
-static const CGFloat topViewHeight = 64;
+static const CGFloat topViewHeight = 0;
 
 @interface MainViewController ()
 
@@ -26,11 +26,12 @@ static const CGFloat topViewHeight = 64;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     [self setNavigationShow];
 }
-
 -(void)viewDidLayoutSubviews{
     [super viewDidLayoutSubviews];
+    self.scrollView.pagingEnabled = YES;
     self.scrollView.contentSize = CGSizeMake(_scrollView.frame.size.width*2, _scrollView.frame.size.height);
 }
 
@@ -59,7 +60,8 @@ static const CGFloat topViewHeight = 64;
 {
     [super viewDidLoad];
     
-    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     __block MainViewController *tempSelf = self;
     
     //获取业务权限
@@ -95,6 +97,8 @@ static const CGFloat topViewHeight = 64;
                      @{@"Name": @"业务单据查询",@"Image":@"yewudanjuchaxun",@"Action":@"ywdjClick:",@"Type":@"0"}
                      ];
     [self setButtonActions];
+    //---
+    [self initViews];
     
 }
 
@@ -207,7 +211,7 @@ static const CGFloat topViewHeight = 64;
                        [KxMenuItem menuItem:@"条码查询" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(chaxunClick:)],
                        [KxMenuItem menuItem:@"新增业务单据" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(yewudanjuClick:)],
                        ];
-    [KxMenu showMenuInView:self.view fromRect:CGRectMake(280, 64, 10, 1) menuItems:menus];
+    [KxMenu showMenuInView:self.view fromRect:CGRectMake(280, 0, 10, 1) menuItems:menus];
 }
 
 
@@ -387,53 +391,54 @@ static const CGFloat topViewHeight = 64;
     [self.view addConstraints:constrArr];
     
     //-------views on top View
-    UIButton *leftButton = [[UIButton alloc] init];
-    leftButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [leftButton setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
-    [leftButton addTarget:self action:@selector(settingClick:) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:leftButton];
-    [leftButton release];
+//    UIButton *leftButton = [[UIButton alloc] init];
+//    leftButton.translatesAutoresizingMaskIntoConstraints = NO;
+//    [leftButton setImage:[UIImage imageNamed:@"setting"] forState:UIControlStateNormal];
+//    [leftButton addTarget:self action:@selector(settingClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [topView addSubview:leftButton];
+//    [leftButton release];
+//    
+//    UIImageView *logoImageView = [[UIImageView alloc] init];
+//    logoImageView.translatesAutoresizingMaskIntoConstraints = NO;
+//    logoImageView.image = [UIImage imageNamed:@""];
+//    logoImageView.contentMode = UIViewContentModeScaleAspectFit;
+//    [topView addSubview:logoImageView];
+//    [logoImageView release];
+//    
+//    UIButton *rightButton = [[UIButton alloc] init];
+//    rightButton.translatesAutoresizingMaskIntoConstraints = NO;
+//    [rightButton setImage:[UIImage imageNamed:@"addbutton"] forState:UIControlStateNormal];
+//    [rightButton addTarget:self action:@selector(addClick:) forControlEvents:UIControlEventTouchUpInside];
+//    [topView addSubview:rightButton];
+//    [rightButton release];
     
-    UIImageView *logoImageView = [[UIImageView alloc] init];
-    logoImageView.translatesAutoresizingMaskIntoConstraints = NO;
-    logoImageView.image = [UIImage imageNamed:@""];
-    logoImageView.contentMode = UIViewContentModeScaleAspectFit;
-    [topView addSubview:logoImageView];
-    [logoImageView release];
+//    CGFloat statusHeight = 20;
+//    CGFloat horSpaceToBoard = 10;
+//    CGFloat viewsHorSpace = 10;
+//    CGFloat buttonWidth = 40;
     
-    UIButton *rightButton = [[UIButton alloc] init];
-    rightButton.translatesAutoresizingMaskIntoConstraints = NO;
-    [rightButton setImage:[UIImage imageNamed:@"addbutton"] forState:UIControlStateNormal];
-    [rightButton addTarget:self action:@selector(addClick:) forControlEvents:UIControlEventTouchUpInside];
-    [topView addSubview:rightButton];
-    [rightButton release];
+//    NSMutableArray *topConstrArr = [NSMutableArray array];
+//    //---vertical
+//    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[leftButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(leftButton)]];
+//    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[logoImageView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(logoImageView)]];
+//    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[rightButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(rightButton)]];
+//    //--horizonal
+//    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(toBoard)-[leftButton(btnWidth)]-(viewSpace)-[logoImageView]-(viewSpace)-[rightButton(btnWidth)]-(toBoard)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat: horSpaceToBoard],@"toBoard",[NSNumber numberWithFloat:viewsHorSpace],@"viewSpace",[NSNumber numberWithFloat:buttonWidth],@"btnWidth", nil] views:NSDictionaryOfVariableBindings(leftButton,logoImageView,rightButton)]];
+//    [topView addConstraints:topConstrArr];
     
-    CGFloat statusHeight = 20;
-    CGFloat horSpaceToBoard = 10;
-    CGFloat viewsHorSpace = 10;
-    CGFloat buttonWidth = 40;
-    
-    NSMutableArray *topConstrArr = [NSMutableArray array];
-    //---vertical
-    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[leftButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(leftButton)]];
-    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[logoImageView]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(logoImageView)]];
-    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(statusHeight)-[rightButton]-(0)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat:statusHeight],@"statusHeight", nil] views:NSDictionaryOfVariableBindings(rightButton)]];
-    //--horizonal
-    [topConstrArr addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(toBoard)-[leftButton(btnWidth)]-(viewSpace)-[logoImageView]-(viewSpace)-[rightButton(btnWidth)]-(toBoard)-|" options:NSLayoutFormatDirectionLeadingToTrailing metrics:[NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithFloat: horSpaceToBoard],@"toBoard",[NSNumber numberWithFloat:viewsHorSpace],@"viewSpace",[NSNumber numberWithFloat:buttonWidth],@"btnWidth", nil] views:NSDictionaryOfVariableBindings(leftButton,logoImageView,rightButton)]];
-    [topView addConstraints:topConstrArr];
-    
+    [self initButtons];
 }
 -(void) initButtons{
     CGRect mainRect = self.view.frame;
-    CGFloat buttonWidth = 80;
-    CGFloat buttonHeight = 80;
+    CGFloat buttonWidth = 140;
+    CGFloat buttonHeight = 140;
     int numberOfBtnsHor = 2;
     int numberofBtnsVer = 3;
     CGFloat horizonSpace = (mainRect.size.width - numberOfBtnsHor * buttonWidth) /(numberOfBtnsHor + 1);
     CGFloat VertiacalSpace = 0;
     CGFloat offset = 0;
     
-    VertiacalSpace = (mainRect.size.height - offset-topViewHeight- buttonHeight *numberofBtnsVer) / (numberofBtnsVer+1);
+    VertiacalSpace = (mainRect.size.height - offset-topViewHeight- buttonHeight *numberofBtnsVer-64) / (numberofBtnsVer+1);
     //----------------------calculate back scroll content size
     int crow =(int) ([self.buttons count] / numberOfBtnsHor);
     if ( [self.buttons count] % numberOfBtnsHor >0)
@@ -442,9 +447,9 @@ static const CGFloat topViewHeight = 64;
     }
     
     CGFloat cHeight = crow*(VertiacalSpace + buttonHeight)+VertiacalSpace + offset;
-    if (cHeight < mainRect.size.height-topViewHeight)
+    if (cHeight < mainRect.size.height-topViewHeight-64)
     {
-        cHeight = mainRect.size.height;
+        cHeight = mainRect.size.height-64;
         
     }
     
