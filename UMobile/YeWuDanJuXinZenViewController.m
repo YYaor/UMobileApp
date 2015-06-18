@@ -34,74 +34,74 @@
                 //--往来单位
                 [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:6],[copiedDataArray objectAtIndex:8], nil] forKey:@"3"];
                 //--经手人
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"4"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"7"];
                 //--部门
                 //[_allInfo setObject:[NSArray arrayWithObjects:[copiedDataArray objectAtIndex:0],[copiedDataArray objectAtIndex:0], nil] forKey:@"5"];
                 //--仓库
                 [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:12],[copiedDataArray objectAtIndex:13], nil] forKey:@"6"];
                 //--摘要
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"7"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"9"];
                 //--付款帐户
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"8"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"10"];
                 //--付款金额
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"9"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"11"];
                 //--附加说明
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"10"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"12"];
                 //--审核人
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:24],[copiedDataArray objectAtIndex:25], nil] forKey:@"11"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:24],[copiedDataArray objectAtIndex:25], nil] forKey:@"13"];
                 
             }else{
-                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
-                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"5"]] forKey:@"5"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"7"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"5"]] forKey:@"8"];
                 [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"6"]] forKey:@"6"];
                 NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
-                [_allInfo setObject:peopleArr forKey:@"4"];
+                [_allInfo setObject:peopleArr forKey:@"7"];
                 
                 NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
-                [_allInfo setObject:bumenArr forKey:@"5"];
+                [_allInfo setObject:bumenArr forKey:@"8"];
                 
                 NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
                 [_allInfo setObject:CKArr forKey:@"6"];
                 
                 NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"8",[USettingModel getSetting].SKZHName, nil];
-                [_allInfo setObject:SKArr forKey:@"8"];
+                [_allInfo setObject:SKArr forKey:@"10"];
             }
         }else{
             if (copiedDataArray && copiedDataArray.count > 25){
                 //--经手人
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"3"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:14],[copiedDataArray objectAtIndex:15], nil] forKey:@"5"];
                 //--部门
                 //[_allInfo setObject:[NSArray arrayWithObjects:[copiedDataArray objectAtIndex:0],[copiedDataArray objectAtIndex:0], nil] forKey:@"4"];
                 //--往来单位
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:6],[copiedDataArray objectAtIndex:8], nil] forKey:@"5"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:6],[copiedDataArray objectAtIndex:8], nil] forKey:@"7"];
                 //--入库仓库
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:12],[copiedDataArray objectAtIndex:13], nil] forKey:@"6"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:12],[copiedDataArray objectAtIndex:13], nil] forKey:@"8"];
                 //--摘要
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"7"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:18], nil] forKey:@"9"];
                 //--付款帐户
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"8"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:20],[copiedDataArray objectAtIndex:21], nil] forKey:@"10"];
                 //--付款金额
-                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"9"];
+                [_allInfo setObject:[NSMutableArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:22], nil] forKey:@"11"];
                 //--附加说明
-                [_allInfo setObject:[NSArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"10"];
+                [_allInfo setObject:[NSArray arrayWithObjects:@"0",[copiedDataArray objectAtIndex:19], nil] forKey:@"12"];
                 //--审核人
                 [_allInfo setObject:[NSMutableArray arrayWithObjects:[copiedDataArray objectAtIndex:24],[copiedDataArray objectAtIndex:25], nil] forKey:@"11"];
 
             }else{
-                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"3"]] forKey:@"3"];
-                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"4"];
-                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"7"]] forKey:@"7"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"3"]] forKey:@"5"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"4"]] forKey:@"6"];
+                [_allInfo setObj:[NSMutableArray arrayWithArray:[hInfo objectForKey:@"7"]] forKey:@"9"];
                 NSMutableArray *peopleArr = [NSMutableArray arrayWithObjects:@"4",[USettingModel getSetting].JSRName, nil];
-                [_allInfo setObject:peopleArr forKey:@"4"];
+                [_allInfo setObject:peopleArr forKey:@"6"];
                 
                 NSMutableArray *bumenArr = [NSMutableArray arrayWithObjects:@"5",[USettingModel getSetting].BMName, nil];
-                [_allInfo setObject:bumenArr forKey:@"5"];
+                [_allInfo setObject:bumenArr forKey:@"7"];
                 
                 NSMutableArray *CKArr = [NSMutableArray arrayWithObjects:@"6",[USettingModel getSetting].FHCKName, nil];
-                [_allInfo setObject:CKArr forKey:@"6"];
+                [_allInfo setObject:CKArr forKey:@"8"];
                 
                 NSMutableArray *SKArr = [NSMutableArray arrayWithObjects:@"9",[USettingModel getSetting].SKZHName, nil];
-                [_allInfo setObject:SKArr forKey:@"9"];
+                [_allInfo setObject:SKArr forKey:@"11"];
             }
         }
         
@@ -109,7 +109,7 @@
         
         
         
-        for(int i = 0 ; i < 12 ; i ++){
+        for(int i = 0 ; i < self.titles.count; i ++){
             NSString *key = [NSString stringWithFormat:@"%d",i];
             if (![_allInfo objectForKey:key])
                 [_allInfo setObject:[NSMutableArray array] forKey:key];
@@ -125,7 +125,7 @@
     if (_allInfo) [_allInfo release];
     _allInfo = [allInfo retain];
     
-    for(int i = 0 ; i < 12 ; i ++){
+    for(int i = 0 ; i < self.titles.count ; i ++){
         NSString *key = [NSString stringWithFormat:@"%d",i];
         if (![_allInfo objectForKey:key])
             [_allInfo setObject:[NSMutableArray array] forKey:key];
@@ -164,18 +164,33 @@
                            @{@"Name":@"附加说明",@"Type":@"0"},
                            @{@"Name":@"审核人",@"Type":@"0"},
                            ];
-        self.titles_out = @[@{@"Name":@"单据类型",@"Type":@"0"},
-                            @{@"Name":@"单据日期",@"Type":@"1"},
-                            @{@"Name":@"单据编号*",@"Type":@"0"},
-                            @{@"Name":@"往来单位*",@"Type":@"0"},
-                            @{@"Name":@"经手人*",@"Type":@"0"},
-                            @{@"Name":@"部门*",@"Type":@"0"},
-                            @{@"Name":@"发货仓库",@"Type":@"0"},
-                            @{@"Name":@"摘要",@"Type":@"0"},
-                            @{@"Name":@"收款帐户",@"Type":@"0"},
-                            @{@"Name":@"收款金额",@"Type":@"0"},
-                            @{@"Name":@"附加说明",@"Type":@"0"},
-                            @{@"Name":@"审核人",@"Type":@"0"},
+//        self.titles_out = @[@{@"Name":@"单据类型",@"Type":@"0"}, //0
+//                            @{@"Name":@"单据日期",@"Type":@"1"}, //1
+//                            @{@"Name":@"单据编号*",@"Type":@"0"},//2
+//                            @{@"Name":@"往来单位*",@"Type":@"0"},//3
+//                            @{@"Name":@"经手人*",@"Type":@"0"},  //4
+//                            @{@"Name":@"部门*",@"Type":@"0"},   //5
+//                            @{@"Name":@"发货仓库",@"Type":@"0"}, //6
+//                            @{@"Name":@"摘要",@"Type":@"0"},     //7
+//                            @{@"Name":@"收款帐户",@"Type":@"0"},  //8
+//                            @{@"Name":@"收款金额",@"Type":@"0"},  //9
+//                            @{@"Name":@"附加说明",@"Type":@"0"},  //10
+//                            @{@"Name":@"审核人",@"Type":@"0"},    //11
+//                            ];
+        self.titles_out = @[@{@"Name":@"单据类型",@"Type":@"0"}, //0
+                            @{@"Name":@"单据日期",@"Type":@"1"}, //1
+                            @{@"Name":@"单据编号*",@"Type":@"0"}, //2
+                            @{@"Name":@"往来单位*",@"Type":@"0"}, //3
+                            @{@"Name":@"此前应收",@"Type":@"0"},  //4
+                            @{@"Name":@"此前预收",@"Type":@"0"},  //5
+                            @{@"Name":@"发货仓库",@"Type":@"0"},  //6
+                            @{@"Name":@"经手人*",@"Type":@"0"},  //7
+                            @{@"Name":@"结算单位*",@"Type":@"0"},//8
+                            @{@"Name":@"摘要",@"Type":@"0"},    //9
+                            @{@"Name":@"收款帐户",@"Type":@"0"}, //10
+                            @{@"Name":@"收款金额",@"Type":@"0"}, //11
+                            @{@"Name":@"附加说明",@"Type":@"0"}, //12
+                            @{@"Name":@"审核人",@"Type":@"0"},  //13
                             ];
     }else{
         self.titles_in = @[@{@"Name":@"单据类型",@"Type":@"0"},
@@ -191,18 +206,20 @@
                            @{@"Name":@"附加说明",@"Type":@"0"},
                            @{@"Name":@"审核人",@"Type":@"0"},
                            ];
-        self.titles_out = @[@{@"Name":@"单据类型",@"Type":@"0"},
-                            @{@"Name":@"单据日期",@"Type":@"1"},
-                            @{@"Name":@"单据编号*",@"Type":@"0"},
-                            @{@"Name":@"经手人*",@"Type":@"0"},
-                            @{@"Name":@"部门",@"Type":@"0"},
-                            @{@"Name":@"往来单位*",@"Type":@"0"},
-                            @{@"Name":@"发货仓库",@"Type":@"0"},
-                            @{@"Name":@"摘要",@"Type":@"0"},
-                            @{@"Name":@"收款帐户",@"Type":@"0"},
-                            @{@"Name":@"收款金额",@"Type":@"0"},
-                            @{@"Name":@"附加说明",@"Type":@"0"},
-                            @{@"Name":@"审核人",@"Type":@"0"}
+        self.titles_out = @[@{@"Name":@"单据类型",@"Type":@"0"},  //0
+                            @{@"Name":@"单据日期",@"Type":@"1"},  //1
+                            @{@"Name":@"单据编号*",@"Type":@"0"}, //2
+                            @{@"Name":@"此前应收",@"Type":@"0"},  //3
+                            @{@"Name":@"此前预收",@"Type":@"0"},  //4
+                            @{@"Name":@"经手人*",@"Type":@"0"},   //5
+                            @{@"Name":@"部门",@"Type":@"0"},     //6
+                            @{@"Name":@"往来单位*",@"Type":@"0"}, //7
+                            @{@"Name":@"发货仓库",@"Type":@"0"},  //8
+                            @{@"Name":@"摘要",@"Type":@"0"},     //9
+                            @{@"Name":@"收款帐户",@"Type":@"0"},  //10
+                            @{@"Name":@"收款金额",@"Type":@"0"},  //11
+                            @{@"Name":@"附加说明",@"Type":@"0"},  //12
+                            @{@"Name":@"审核人",@"Type":@"0"}     //13
                             ];
     }
     
@@ -268,7 +285,7 @@
     NSUInteger function = [[arr1 ingoreObjectAtIndex:0] intValue] == 5?67:68;
     NSString *param = [NSString  stringWithFormat:@"'%@',1",[arr2 ingoreObjectAtIndex:1]];
     NSString *link=  [self GetLinkWithFunction:function andParam:param];
-    __block XinZenHeaderViewController *tempSelf = self;
+    __unsafe_unretained typeof(self) tempSelf = self;
     [self StartQuery:link completeBlock:^(id obj) {
         NSArray *rs = [[obj objectFromJSONString] objectForKey:@"D_Data"];
         if ([rs count]>0){
@@ -292,7 +309,7 @@
     if (indexPath.row < [self.titles count]) {
         UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell1"];
         NSDictionary *dic =  [self.titles objectAtIndex:indexPath.row];
-        NSArray *rs =  [self.allInfo objectForKey:[NSString stringWithFormat:@"%d",indexPath.row]];
+        NSArray *rs =  [self.allInfo objectForKey:[NSString stringWithFormat:@"%ld",(long)indexPath.row]];
         NSLog(@"rs = %@",rs);
         [self setText:[dic strForKey:@"Name"] forView:cell withTag:1];
         MHTextField *textField = (MHTextField *)[cell viewWithTag:2];
@@ -346,19 +363,21 @@
     UITableViewCell *cell = [self GetSuperCell:textField];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     if(indexPath.row == 2) return NO;
-    NSString *key = [NSString stringWithFormat:@"%d",indexPath.row];
+    NSString *key = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     
-    int jsr = 3;//经手人
-    int bm = 4;//部门
-    int wldw = 5;//往来单位
+    int jsr = 5;//经手人
+    int bm = 6;//部门
+    int wldw = 7;//往来单位
     int rq = 6;//日期
-    int cq = 7;//仓库
+    int cq = 9;//仓库
+    int ckzl = 10; //收款帐户
     if([@"1" isEqual:[[self setting] objectForKey:@"ISBS"]]){   //区分BS帐套
         wldw = 3;//往来单位
-        jsr = 4;//经手人
-        bm = 5;//部门
+        jsr = 7;//经手人
+        bm = 8;//部门
         cq = 6;//仓库
 //        rq = 7;//日期
+        ckzl = 10; //收款帐户
     }
     
     
@@ -455,7 +474,7 @@
         [self.parentVC.navigationController pushViewController:vc animated:YES];
         
         return NO;
-    }else if (indexPath.row == 8){
+    }else if (indexPath.row == ckzl){
         AccountViewController *vc = (AccountViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"AccountViewController"];
         NSMutableArray *dic = [self.allInfo objectForKey:key];
         if (!dic){
@@ -482,7 +501,7 @@
             [self.view makeToast:@"请选择往来单位"];
         }
         return NO;
-    }else if(indexPath.row == 11){
+    }else if(indexPath.row == self.titles.count-1){
         SaleViewController *vc = (SaleViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"SaleViewController"];
         NSMutableArray *dic = [self.allInfo objectForKey:key];
         if (!dic){
@@ -536,7 +555,7 @@
             
             //            loadNo = indexPath.row == 1;
             textField.text = dateView.strDate;
-            NSString *key = [NSString stringWithFormat:@"%d",indexPath.row];
+            NSString *key = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
             NSArray *arr = @[@"0",textField.text];
             [self.allInfo setObject:arr forKey:key];
             if (indexPath.row == 1){
@@ -581,7 +600,7 @@
         }
     }
     
-    NSString *key = [NSString stringWithFormat:@"%d",indexPath.row];
+    NSString *key = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     NSArray *arr = @[@"0",textField.text];
     [self.allInfo setObject:arr forKey:key];
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
