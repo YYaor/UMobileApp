@@ -10,6 +10,7 @@
 #import "XSMXDetailTableViewCell.h"
 #import "XSMXDetailHeaderView.h"
 #import "XSMXDetailCellModel.h"
+#import "KxMenu.h"
 
 @interface XSMXDetailViewController ()<XSMXDetailTableViewCellDelegate,XSMXDetailHearViewDelegate>
 {
@@ -72,6 +73,28 @@ static const CGFloat cellHeight = 60;
         }
     } lock:YES];
 
+}
+-(void)sortMenuClick:(KxMenuItem *)item{
+    NSDictionary *dates = @{@"本日":@"Today",@"本周":@"thisWeek",@"本月":@"thisMonth"};
+    NSDictionary *info = [[self GetOM] getFlowDate];
+    //[self setText:[info strForKey:[dates strForKey:item.title]] forView:self.view withTag:1];
+    [self.paramArray replaceObjectAtIndex:5 withObject:[info strForKey:[dates strForKey:item.title]]];
+    [self.paramArray replaceObjectAtIndex:6 withObject:[info strForKey:@"Today"]];
+    [self headerRereshing];
+}
+
+
+- (IBAction)sortClick:(id)sender {
+    if ([KxMenu sharedMenu].isVisiable) {
+        [KxMenu dismissMenu];
+        return;
+    }
+    NSArray *menus = @[
+                       [KxMenuItem menuItem:@"本日" image:[UIImage imageNamed:@"popup_icon_approve_date"] target:self action:@selector(sortMenuClick:)],
+                       [KxMenuItem menuItem:@"本周" image:[UIImage imageNamed:@"popup_icon_approve_curweek"] target:self action:@selector(sortMenuClick:)],
+                       [KxMenuItem menuItem:@"本月" image:[UIImage imageNamed:@"popup_icon_approve_curmonth"] target:self action:@selector(sortMenuClick:)],
+                       ];
+    [KxMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width/2, 0, 10, 1) menuItems:menus];
 }
 
 
