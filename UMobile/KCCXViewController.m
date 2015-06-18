@@ -152,6 +152,7 @@
     [self setText:[rs objectAtIndex:4] forView:cell withTag:3];
     [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:5] doubleValue]] forView:cell withTag:6];
     [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:6] doubleValue]] forView:cell withTag:7];
+    [self setText:[rs objectAtIndex:1] forView:cell withTag:8];
     
     if([self.setting intForKey:@"Stock"] == 0){
 //        [self setHiden:cell withTag:16];

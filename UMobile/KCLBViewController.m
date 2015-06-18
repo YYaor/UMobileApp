@@ -56,6 +56,7 @@
     [self setText:[rs objectAtIndex:1] forView:cell withTag:1];
     [self setText:[NSString stringWithFormat:@"%@.00",[rs objectAtIndex:3]] forView:cell withTag:2];
     [self setText:[NSString stringWithFormat:@"%@.00",[rs objectAtIndex:2]] forView:cell withTag:3];
+    
     return cell;
 }
 
