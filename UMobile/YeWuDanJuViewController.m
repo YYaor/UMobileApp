@@ -36,7 +36,7 @@
     
     vc1.bEdit = self.bEdit;
     vc1.bClean = self.bClean;
-    if (self.bEdit) self.navigationItem.title = @"销售订单录入";
+    if (self.bEdit) self.navigationItem.title = @"销售单录入";
     vc2.parentVC = self;
     vc2.products = self.products;
     vc2.bClean = self.bClean;

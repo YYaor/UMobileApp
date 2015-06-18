@@ -138,8 +138,8 @@
     [self setText:[rs objectAtIndex:2] forView:cell withTag:1];
     [self setText:[rs objectAtIndex:3] forView:cell withTag:2];
     [self setText:[rs objectAtIndex:4] forView:cell withTag:3];
-    [self setText:[NSString stringWithFormat:@"%.0f",[[rs objectAtIndex:5] doubleValue]] forView:cell withTag:6];
-    [self setText:[NSString stringWithFormat:@"%.0f",[[rs objectAtIndex:6] doubleValue]] forView:cell withTag:7];
+    [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:5] doubleValue]] forView:cell withTag:6];
+    [self setText:[NSString stringWithFormat:@"%.2f",[[rs objectAtIndex:6] doubleValue]] forView:cell withTag:7];
     
     if([self.setting intForKey:@"Stock"] == 0){
 //        [self setHiden:cell withTag:16];

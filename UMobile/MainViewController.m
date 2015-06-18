@@ -208,8 +208,8 @@ static const CGFloat topViewHeight = 0;
     NSArray *menus = @[
                        [KxMenuItem menuItem:@"新建客户" image:[UIImage imageNamed:@"xjkh_image"] target:self action:@selector(xinjiankehuClick:)],
                        [KxMenuItem menuItem:@"新建订单" image:[UIImage imageNamed:@"xjdd_image"] target:self action:@selector(xinjiandingdanClick:)],
-                       [KxMenuItem menuItem:@"条码查询" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(chaxunClick:)],
                        [KxMenuItem menuItem:@"新增业务单据" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(yewudanjuClick:)],
+                       [KxMenuItem menuItem:@"条码扫描" image:[UIImage imageNamed:@"tmcx_image"] target:self action:@selector(chaxunClick:)],
                        ];
     [KxMenu showMenuInView:self.view fromRect:CGRectMake(280, 0, 10, 1) menuItems:menus];
 }

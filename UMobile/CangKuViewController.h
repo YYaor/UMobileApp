@@ -29,6 +29,7 @@ typedef enum:NSInteger{
 @property (nonatomic,retain) NSString *title;
 @property (nonatomic,retain) NSString *link;
 @property (nonatomic) NSUInteger showIndex;
+@property (nonatomic,assign)BOOL isKaidan;
 
 @property (nonatomic , assign) ChooseCkType chooseType;
 @property (nonatomic , assign) id<cangkuControllerDelegate> delegate;

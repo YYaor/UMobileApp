@@ -41,8 +41,14 @@
 
 
 -(void)headerRereshing{
-    if (!self.link)
-        self.link = [self GetLinkWithFunction:62 andParam:@"'',0,0,1,1"];//  [NSString stringWithFormat:@"%@?UID=119&Call=62&Param='',1",MainUrl];
+    if (!self.link){
+        if (self.isKaidan == YES) {
+             self.link = [self GetLinkWithFunction:62 andParam:@"'',0,0,1,1,0"];
+        }else{
+             self.link = [self GetLinkWithFunction:62 andParam:@"'',0,0,1,1,1"];
+        }
+    }
+       //  [NSString stringWithFormat:@"%@?UID=119&Call=62&Param='',1",MainUrl];
     
     __block CangKuViewController *tempSelf = self;
     [self StartQuery:self.link completeBlock:^(id obj) {

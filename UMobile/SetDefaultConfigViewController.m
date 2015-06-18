@@ -153,6 +153,7 @@
     }else if(textField == self.FHCKField || textField == self.DHCKField){
         CangKuViewController *cangKu = [storyBoard instantiateViewControllerWithIdentifier:@"CangKuViewController"];
         cangKu.delegate = self;
+        cangKu.isKaidan = YES;
         if (textField == self.FHCKField){
             cangKu.chooseType = ChooseCkType_FHCK;
         }else{

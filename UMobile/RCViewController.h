@@ -76,7 +76,7 @@ typedef enum{
 -(void)serverRequestFinished:(id)obj;
 -(id)StartQuery:(NSString *)link;
 
--(NSString *)getPTCODE;
+//-(NSString *)getPTCODE;
 
 -(void)serverRequestFailed:(id)obj;
 -(void)reSizeImage:(NSMutableString *)result;//用于设置Html String 里image 宽度，暂只做了jpg
