@@ -28,5 +28,7 @@
 @property (nonatomic) BOOL bSelect;
 @property (nonatomic,assign) NSMutableArray *products;
 @property (nonatomic,retain) NSString *searchCode;
+@property (retain, nonatomic) IBOutlet UILabel *totalAvaliableLabel;
+@property (retain, nonatomic) IBOutlet UILabel *totalStoreLabel;
 
 @end

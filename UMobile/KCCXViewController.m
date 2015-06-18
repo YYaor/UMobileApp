@@ -54,7 +54,7 @@
     page = 1;
     NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"'%@','%@',%@,20,-1",[self.shangpinName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[self.cangkuName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[[self GetUserID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    __block SPGLViewController *tempSelf = self;
+    __block typeof(self) tempSelf = self;
     [self setFooterRefresh:self.tableView];
     [self StartQuery:link completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
@@ -63,6 +63,7 @@
         
         [tempSelf.tableView reloadData];
         [tempSelf.tableView headerEndRefreshing];
+        [tempSelf updateBottomViewLabel];
     } lock:NO];
 }
 
@@ -70,7 +71,7 @@
     page ++ ;
     NSString *link = [self GetLinkWithFunction:91 andParam:[NSString stringWithFormat:@"'%@','%@',%@,20,-1",[self.shangpinName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[self.cangkuName stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding],[[self GetUserID] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
     
-    __block SPGLViewController *tempSelf = self;
+    __block typeof(self)tempSelf = self;
     [self StartQuery:link completeBlock:^(id obj) {
         NSArray *rs =  [[obj objectFromJSONString] objectForKey:@"D_Data"];
         
@@ -85,9 +86,20 @@
         }
         
         
+        
     } lock:NO];
 }
-
+-(void) updateBottomViewLabel{
+    if ([_result count] >0){
+        NSArray *tempArray =  [_result firstObject];
+        _totalAvaliableLabel.text = [NSString stringWithFormat:@"可用量合计:%@",[tempArray objectAtIndex:9]];
+        _totalStoreLabel.text = [NSString stringWithFormat:@"现存量合计:%@",[tempArray objectAtIndex:10]];
+    }else{
+        _totalAvaliableLabel.text = @"可用量合计:";
+        _totalStoreLabel.text = @"现存量合计:";
+    }
+    
+}
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
  if (buttonIndex == 1){
      UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -224,6 +236,8 @@
     [_searchBar release];
     
     
+    [_totalAvaliableLabel release];
+    [_totalStoreLabel release];
     [super dealloc];
 }
 
