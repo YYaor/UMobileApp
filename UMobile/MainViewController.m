@@ -80,7 +80,7 @@ static const CGFloat topViewHeight = 0;
             
             //获取用户模块操作权限，调整功能模块布局
             [tempSelf setPageMode:nil];
-            [tempSelf GetTime];
+//            [tempSelf GetTime];
         } lock:YES];
     }
 

@@ -50,6 +50,7 @@
 -(IBAction)restClick:(id)sender{
     [self resetData];
     [self loadData];
+    [self setText:@"" forView:self.view withTag:9];
 }
 
 -(IBAction)searchClick:(id)sender{

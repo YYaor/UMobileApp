@@ -529,9 +529,6 @@
             
             NSArray *arr2 = [self.allInfo objectForKey:[NSString stringWithFormat:@"%d",rq]];//取货日期
             NSString *qh = @"";
-            if ([arr2 count] != 0) {
-                qh = [arr2 objectAtIndex:1];
-            }
             
             if(indexPath.row == 1){
                 dj = dateView.strDate;
