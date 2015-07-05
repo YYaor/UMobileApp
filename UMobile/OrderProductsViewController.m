@@ -71,12 +71,12 @@
         return 95;
     }else if (self.fromType == FromType_ShenHe || (hStock & hUsable)) {
         if ([self.setting intForKey:@"ISBS"] == 0) {
-            return 140;
+            return 175;
         }else{
             return 115;
         }
     }else{
-        return 140;
+        return 210;
     }
 }
 
@@ -97,7 +97,7 @@
         identify  = @"Cell3";
     }else if (self.fromType == FromType_ShenHe || (hStock & hUsable)) {
         if ([self.setting intForKey:@"ISBS"] == 0) {
-            identify = @"Cell";
+            identify = @"Cell4";
         }else{
             identify  = @"Cell2";
         }

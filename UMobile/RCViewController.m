@@ -243,7 +243,8 @@
 
 -(NSString *)GetCurrentDate{
 
-
+    return @"2015-04-22";//TODO 这个地方改动有问题
+    
     NSDateFormatter *format = [[[NSDateFormatter alloc]init] autorelease];
     [format setDateFormat:@"yyyy-MM-dd"];
     NSDate *date =[NSDate date];

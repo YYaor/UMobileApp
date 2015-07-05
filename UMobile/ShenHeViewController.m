@@ -39,15 +39,15 @@
                        [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"销售退货单",@"Action": @"buttonClick:",@"Image":@"审核_25",@"Type":@"4",@"Style":@"1",@"SearchType":@"输入客户/制单人查询"}],
                        [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"销售换货单",@"Action": @"buttonClick:",@"Image":@"审核_23",@"Type":@"14",@"Style":@"1",@"SearchType":@"输入客户/制单人查询"}],
                        [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"同价调拨单",@"Action": @"buttonClick:",@"Image":@"审核_32",@"Type":@"7",@"Style":@"999",@"SearchType":@"输入制单人查询"}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"变价调拨单",@"Action": @"buttonClick:",@"Image":@"审核_33",@"Type":@"8",@"Style":@"999",@"SearchType":@"输入制单人查询"}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"收款单",@"Action": @"buttonClick:",@"Image":@"审核_35",@"Type":@"101",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"付款单",@"Action": @"buttonClick:",@"Image":@"审核_40",@"Type":@"100",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"现金费用单",@"Action": @"buttonClick:",@"Image":@"审核_24",@"Type":@"102",@"Style":@"999",@"SearchType":@"输入制单人查询"}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"一般费用单",@"Action": @"buttonClick:",@"Image":@"审核_41",@"Type":@"103",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"预收款单",@"Action": @"buttonClick:",@"Image":@"审核_42",@"Type":@"128",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"预付款单",@"Action": @"buttonClick:",@"Image":@"审核_34",@"Type":@"129",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"其它收入单",@"Action": @"buttonClick:",@"Image":@"审核_44",@"Type":@"104",@"Style":@"999",@"SearchType":@""}],
-                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"转款单",@"Action": @"buttonClick:",@"Image":@"审核_49",@"Type":@"105",@"Style":@"999",@"SearchType":@"输入制单人查询"}]
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"变价调拨单",@"Action": @"buttonClick:",@"Image":@"审核_32",@"Type":@"8",@"Style":@"999",@"SearchType":@"输入制单人查询"}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"收款单",@"Action": @"buttonClick:",@"Image":@"审核_33",@"Type":@"101",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"付款单",@"Action": @"buttonClick:",@"Image":@"审核_35",@"Type":@"100",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"现金费用单",@"Action": @"buttonClick:",@"Image":@"审核_40",@"Type":@"102",@"Style":@"999",@"SearchType":@"输入制单人查询"}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"一般费用单",@"Action": @"buttonClick:",@"Image":@"审核_24",@"Type":@"103",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"预收款单",@"Action": @"buttonClick:",@"Image":@"审核_41",@"Type":@"128",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"预付款单",@"Action": @"buttonClick:",@"Image":@"审核_42",@"Type":@"129",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"其它收入单",@"Action": @"buttonClick:",@"Image":@"审核_34",@"Type":@"104",@"Style":@"999",@"SearchType":@""}],
+                       [NSMutableDictionary dictionaryWithDictionary:@{@"Name":@"转款单",@"Action": @"buttonClick:",@"Image":@"审核_44",@"Type":@"105",@"Style":@"999",@"SearchType":@"输入制单人查询"}]
                        ];
     
     //Type 为 对应 下级的callFunction 根据 此值取不同的显示内容

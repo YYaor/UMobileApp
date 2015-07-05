@@ -82,7 +82,7 @@
 -(void)headerRereshing{
     page=1;
     __block DDGLViewController *tempSelf = self;
-    NSString *nparam = [NSString stringWithFormat:@"%@,'%@',20,%d",self.param, self.searchBar.text,page];
+    NSString *nparam = [NSString stringWithFormat:@"%@,'%@',20,%d,'',0",self.param, self.searchBar.text,page];
     NSString *nlink = [self GetLinkWithFunction:72 andParam:nparam];
     NSString *newLink = [nlink stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     [self StartQuery:newLink completeBlock:^(id obj) {
@@ -99,7 +99,7 @@
     page++;
     __block DDGLViewController *tempSelf = self;
 
-    NSString *nparam = [NSString stringWithFormat:@"%@,'%@',20,%d",self.param, self.searchBar.text,page];
+    NSString *nparam = [NSString stringWithFormat:@"%@,'%@',20,%d,'',0",self.param, self.searchBar.text,page];
 
     NSString *nlink = [self GetLinkWithFunction:72 andParam:nparam];
     
@@ -180,7 +180,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 65;
+    return 75;
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{

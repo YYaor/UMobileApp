@@ -22,8 +22,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     callFunction = [[self.types ingoreObjectAtIndex:2] integerValue];
-    if (callFunction == 118 || callFunction == 119 || callFunction == 102 || callFunction == 103 || callFunction == 128 || callFunction == 129) {
+    if (callFunction == 118 || callFunction == 119 || callFunction == 102  || callFunction == 128 || callFunction == 129) {
         self.keys = @[@"3",@"2",@"8",@"12"];
+    }else if (callFunction == 103){
+        if([self.setting intForKey:@"ISBS"] == 1)
+            self.keys = @[@"3",@"2",@"8",@"12"];
+        else
+            self.keys = @[@"3",@"2",@"8",@"24",@"25",@"12"];
     }else if (callFunction == 104 || callFunction == 105){
         self.keys = @[@"3",@"2",@"8",@"24",@"25",@"12"];
     }
@@ -114,8 +119,13 @@
     UITableViewCell *cell = nil;
     if (indexPath.row == 0){
         
-        if(callFunction == 118 || callFunction == 119 || callFunction == 128 || callFunction == 129 || callFunction == 102 || callFunction == 103 || callFunction == 128 || callFunction == 129)
+        if(callFunction == 118 || callFunction == 119 || callFunction == 128 || callFunction == 129 || callFunction == 102  || callFunction == 128 || callFunction == 129)
             cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell4"];
+        else if (callFunction == 103)
+            if ([self.setting intForKey:@"ISBS"] == 1)
+                cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell4"];
+            else
+                cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell6"];
         else if (callFunction == 104)
             cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell5"];
         else if (callFunction == 105)
@@ -123,7 +133,16 @@
         else
             cell = [self.tableView dequeueReusableCellWithIdentifier:@"Cell1"];
         
-        [self setText:[NSString stringWithFormat:@"%@信息",[self.types objectAtIndex:0]] forView:cell withTag:999];
+        if (self.yjType == 5 || self.yjType == 6) {
+            if (self.yjType == 5) {
+                [self setText:@"进货商信息" forView:cell withTag:999];
+            }else{
+                [self setText:@"销售商信息" forView:cell withTag:999];
+            }
+            
+        }else {
+            [self setText:[NSString stringWithFormat:@"%@信息",[self.types objectAtIndex:0]] forView:cell withTag:999];
+        }
         for (int i = 1; i < [self.keys count] + 1; i ++){
             NSString *value = [self.result objectAtIndex:[[self.keys objectAtIndex:i - 1] integerValue]];
             [self setText:value forView:cell withTag:i];
